@@ -11,6 +11,36 @@
       "description": "A flat lay of natural skincare ingredients like honey, oats, and lemon on a clean surface.",
       "imageUrl": "https://images.unsplash.com/photo-1483137140003-ae073b395549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwaW5ncmVkaWVudHN8ZW58MHx8fHwxNzU5MTQ3NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "natural ingredients"
+    },
+    {
+      "id": "ebook-mockup",
+      "description": "A 3D mockup of the Protocolo Anti-Indústria ebook.",
+      "imageUrl": "https://i.imgur.com/gY9OJ24.png",
+      "imageHint": "ebook mockup"
+    },
+    {
+      "id": "ebook-preview",
+      "description": "A preview of the internal pages of the Protocolo Anti-Indústria ebook.",
+      "imageUrl": "https://i.imgur.com/8aAfb2n.png",
+      "imageHint": "ebook preview"
+    },
+    {
+      "id": "guarantee-seal",
+      "description": "A triple guarantee seal for the product.",
+      "imageUrl": "https://i.imgur.com/e2aJ5aA.png",
+      "imageHint": "guarantee seal"
+    },
+    {
+      "id": "bonus-mockup",
+      "description": "A mockup for the bonus guides.",
+      "imageUrl": "https://i.imgur.com/KxS3ALz.png",
+      "imageHint": "guide mockup"
+    },
+    {
+      "id": "happy-woman",
+      "description": "A happy woman representing the target audience.",
+      "imageUrl": "https://images.unsplash.com/photo-1552693673-1bf95829b54b?w=800&h=1200&fit=crop",
+      "imageHint": "happy woman"
     }
   ]
 }

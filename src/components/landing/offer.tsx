@@ -1,85 +1,110 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, CreditCard, Gift, ShieldCheck } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, CreditCard, Gift, PlusCircle, Check } from "lucide-react";
+import Image from "next/image";
+
+const bonuses = [
+  {
+    title: "Guia de Compras Inteligente",
+    value: "R$ 47,00",
+    description: "Uma lista de compras otimizada para gastar o mínimo possível no supermercado.",
+    image: "https://i.imgur.com/KxS3ALz.png"
+  },
+  {
+    title: "Receitas SOS para Emergências",
+    value: "R$ 67,00",
+    description: "Soluções rápidas para uma espinha inesperada ou pele ressecada antes de um evento.",
+    image: "https://i.imgur.com/KxS3ALz.png"
+  },
+  {
+    title: "Manual de Conservação e Durabilidade",
+    value: "R$ 37,00",
+    description: "Aprenda a fazer seus produtos durarem mais, economizando ainda mais tempo e dinheiro.",
+    image: "https://i.imgur.com/KxS3ALz.png"
+  },
+];
 
 export function Offer() {
   return (
-    <section className="w-full py-12 md:py-24 bg-card">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            💎 OFERTA COMPLETA - VALOR TOTAL{" "}
-            <span className="line-through">R$ 347</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+            Tudo o que Você Precisa para uma Pele Perfeita Está Aqui
           </h2>
+          <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
+            Ao garantir seu acesso hoje, você não leva apenas o protocolo. Você
+            recebe o arsenal completo para sua independência no skincare.
+          </p>
         </div>
-        <Card className="max-w-4xl mx-auto shadow-2xl bg-background/50">
-          <CardContent className="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-bold flex items-center gap-2 mb-2">
-                  <BookOpen className="h-6 w-6 text-primary" />
-                  PRODUTO PRINCIPAL:
-                </h3>
-                <p className="font-semibold text-primary text-lg">
-                  Protocolo Anti-Indústria
+        <div className="grid lg:grid-cols-5 gap-8 items-center">
+          <div className="lg:col-span-3 space-y-8">
+            <Card className="shadow-lg border-primary border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl font-headline flex items-center gap-2">
+                  <BookOpen className="h-8 w-8 text-primary" />
+                  <span>Protocolo Anti-Indústria (Valor: R$197)</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-muted-foreground">
+                <p>
+                  O guia completo com 4 módulos, 15 receitas testadas,
+                  cronograma de 30 dias e o exclusivo método de diagnóstico
+                  caseiro.
                 </p>
-                <ul className="list-disc list-inside text-muted-foreground space-y-1 mt-2">
-                  <li>4 Módulos Completos com 15 Receitas Testadas</li>
-                  <li>Cronograma de 30 Dias Personalizado</li>
-                  <li>Diagnóstico Caseiro Profissional</li>
-                  <li>Sistema de Economia Máxima</li>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2"><Check className="text-primary mt-1 h-5 w-5 flex-shrink-0"/><span>Diagnóstico preciso para seu tipo de pele.</span></li>
+                  <li className="flex items-start gap-2"><Check className="text-primary mt-1 h-5 w-5 flex-shrink-0"/><span>Receitas passo a passo para cada necessidade.</span></li>
+                  <li className="flex items-start gap-2"><Check className="text-primary mt-1 h-5 w-5 flex-shrink-0"/><span>Cronograma diário para resultados em 30 dias.</span></li>
                 </ul>
-              </div>
+              </CardContent>
+            </Card>
 
-              <div>
-                <h3 className="text-xl font-bold flex items-center gap-2 mb-2">
-                  <Gift className="h-6 w-6 text-primary" />
-                  BÔNUS EXCLUSIVOS:
-                </h3>
-                <ul className="list-disc list-inside text-muted-foreground space-y-1 mt-2">
-                  <li>
-                    Lista de Compras Mensal{" "}
-                    <span className="font-semibold">(R$ 47)</span>
-                  </li>
-                  <li>
-                    Receitas SOS <span className="font-semibold">(R$ 67)</span>
-                  </li>
-                  <li>
-                    Guia de Conservação{" "}
-                    <span className="font-semibold">(R$ 37)</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="flex items-center justify-center">
+              <PlusCircle className="h-12 w-12 text-secondary" />
             </div>
-            <div className="space-y-6 flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl font-bold flex items-center gap-2 mb-2">
-                  <ShieldCheck className="h-6 w-6 text-primary" />
-                  GARANTIA TRIPLA DE SATISFAÇÃO
-                </h3>
-                <ul className="list-disc list-inside text-muted-foreground space-y-1 mt-2">
-                  <li>30 dias para testar sem riscos</li>
-                  <li>Devolução de 100% se não economizar R$ 100</li>
-                  <li>Suporte completo via WhatsApp</li>
-                </ul>
-              </div>
-              <div className="bg-primary/10 p-6 rounded-lg text-center space-y-4">
-                <p className="text-lg font-semibold">INVESTIMENTO PROMOCIONAL:</p>
-                <p className="text-lg text-muted-foreground">
-                  De <span className="line-through decoration-red-500 decoration-2">R$ 347</span> POR APENAS
+
+            <Card className="shadow-lg border-secondary border-2">
+               <CardHeader>
+                <CardTitle className="text-2xl font-headline flex items-center gap-2">
+                  <Gift className="h-8 w-8 text-secondary" />
+                  <span>3 Bônus Exclusivos (Valor: R$151)</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-muted-foreground">
+                 <p>Ferramentas extras para acelerar e potencializar seus resultados, totalmente grátis hoje.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {bonuses.map(bonus => (
+                    <div key={bonus.title} className="text-center">
+                        <Image src={bonus.image} alt={bonus.title} width={100} height={100} className="mx-auto mb-2 rounded" />
+                        <p className="font-semibold">{bonus.title}</p>
+                        <p className="text-sm line-through">{bonus.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="lg:col-span-2">
+            <Card className="bg-primary/5 p-6 rounded-lg text-center space-y-4 shadow-2xl border-2 border-secondary sticky top-24">
+               <h3 className="text-2xl font-headline font-bold text-primary">Oferta Especial de Lançamento</h3>
+                <p className="text-lg font-semibold">Leve tudo isso hoje por:</p>
+                <p className="text-muted-foreground">
+                  Valor total: <span className="line-through">R$ 348,00</span>
                 </p>
                 <p className="text-6xl font-extrabold text-primary">R$ 27,90</p>
+                 <p className="font-semibold">ou 12x de R$ 2,79</p>
                 <Button
                   size="lg"
-                  className="w-full text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform"
+                  className="w-full text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
                 >
                   <CreditCard className="mr-2 h-6 w-6" />
-                  GARANTIR MINHA OFERTA COMPLETA
+                  QUERO MEU KIT COMPLETO AGORA
                 </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                 <p className="text-xs text-muted-foreground">Oferta por tempo limitado. Acesso imediato após a compra.</p>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );
