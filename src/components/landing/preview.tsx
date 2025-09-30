@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { BookOpen, Coins, CalendarClock, FlaskConical } from "lucide-react";
 import Image from "next/image";
 
@@ -13,7 +6,7 @@ export function Preview() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:order-last">
             <Image
               src="https://i.imgur.com/8aAfb2n.png"
               alt="Páginas internas do ebook Protocolo Anti-Indústria"
@@ -72,9 +65,8 @@ export function Preview() {
                     Módulo 3: O Cronograma Inteligente
                   </h3>
                   <p className="text-muted-foreground">
-                    Um plano de 30 dias, semana a semana, com rotinas de 5
-                    minutos pela manhã e 10 minutos à noite, desenhado para quem
-                    não tem tempo a perder.
+                    Um plano de 30 dias, com rotinas de 5
+                    minutos, desenhado para quem não tem tempo a perder.
                   </p>
                 </div>
               </div>
@@ -88,8 +80,7 @@ export function Preview() {
                   </h3>
                   <p className="text-muted-foreground">
                     Descubra como conservar suas receitas, a lista de compras
-                    ideal de R$47 e as substituições inteligentes para economizar
-                    ainda mais.
+                    ideal e substituições inteligentes para economizar.
                   </p>
                 </div>
               </div>

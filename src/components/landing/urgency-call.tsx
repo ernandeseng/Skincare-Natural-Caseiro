@@ -1,8 +1,15 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { Rocket, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { SkinDiagnosticForm } from "./skin-diagnostic-form";
 
 export function UrgencyCall() {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +17,7 @@ export function UrgencyCall() {
     minutes: "29",
     seconds: "59",
   });
+   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -28,7 +36,12 @@ export function UrgencyCall() {
       );
       const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
 
-      setTimeLeft({ hours, minutes, seconds });
+      if (diff > 0) {
+        setTimeLeft({ hours, minutes, seconds });
+      } else {
+        setTimeLeft({ hours: "00", minutes: "00", seconds: "00" });
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
@@ -42,36 +55,43 @@ export function UrgencyCall() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
             A Oferta Termina em...
           </h2>
-          <div className="flex items-center space-x-4">
-            <div className="text-center p-4 bg-background rounded-lg shadow-md w-24">
-              <p className="text-4xl font-bold text-primary">{timeLeft.hours}</p>
-              <p className="text-sm text-muted-foreground">Horas</p>
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.hours}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">Horas</p>
             </div>
-            <div className="text-center p-4 bg-background rounded-lg shadow-md w-24">
-              <p className="text-4xl font-bold text-primary">
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-3xl md:text-4xl font-bold text-primary">
                 {timeLeft.minutes}
               </p>
-              <p className="text-sm text-muted-foreground">Minutos</p>
+              <p className="text-xs md:text-sm text-muted-foreground">Minutos</p>
             </div>
-            <div className="text-center p-4 bg-background rounded-lg shadow-md w-24">
-              <p className="text-4xl font-bold text-primary">
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-3xl md:text-4xl font-bold text-primary">
                 {timeLeft.seconds}
               </p>
-              <p className="text-sm text-muted-foreground">Segundos</p>
+              <p className="text-xs md:text-sm text-muted-foreground">Segundos</p>
             </div>
           </div>
-          <p className="max-w-3xl text-lg md:text-xl text-primary/90">
+          <p className="max-w-3xl text-base md:text-xl text-primary/90">
             Não deixe para amanhã a transformação que você pode começar HOJE!
             Seu acesso ao Protocolo com preço especial é LIBERADO
             INSTANTANEAMENTE após a confirmação do pagamento.
           </p>
-          <Button
-            size="lg"
-            className="w-full max-w-md text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-primary !text-primary-foreground"
-          >
-            <Rocket className="mr-2 h-6 w-6" />
-            GARANTIR ACESSO IMEDIATO
-          </Button>
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+              <Button
+                size="lg"
+                className="w-full max-w-md text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-primary !text-primary-foreground"
+              >
+                <Rocket className="mr-2 h-6 w-6" />
+                GARANTIR ACESSO IMEDIATO
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md md:max-w-lg">
+              <SkinDiagnosticForm setOpen={setOpen} />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

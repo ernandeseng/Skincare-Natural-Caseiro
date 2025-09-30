@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, UserCheck } from "lucide-react";
 import Image from "next/image";
 
@@ -16,6 +16,16 @@ export function TargetAudience() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+           <div className="flex justify-center lg:order-last">
+            <Image
+              src="https://images.unsplash.com/photo-1552693673-1bf95829b54b?w=800&h=1200&fit=crop"
+              alt="Mulher sorrindo, representando o público-alvo"
+              width={500}
+              height={750}
+              className="rounded-lg shadow-2xl object-cover aspect-[2/3]"
+              data-ai-hint="happy woman"
+            />
+          </div>
           <div className="space-y-6">
             <div className="inline-block rounded-lg bg-primary/10 p-3">
               <UserCheck className="h-8 w-8 text-primary" />
@@ -46,16 +56,6 @@ export function TargetAudience() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-          <div className="flex justify-center">
-            <Image
-              src="https://images.unsplash.com/photo-1552693673-1bf95829b54b?w=800&h=1200&fit=crop"
-              alt="Mulher sorrindo, representando o público-alvo"
-              width={500}
-              height={750}
-              className="rounded-lg shadow-2xl object-cover"
-              data-ai-hint="happy woman"
-            />
           </div>
         </div>
       </div>

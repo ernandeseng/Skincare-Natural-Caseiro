@@ -1,20 +1,29 @@
+
+"use client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ShieldCheck, HeartHandshake } from "lucide-react";
+import { ShieldCheck, HeartHandshake } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { SkinDiagnosticForm } from "./skin-diagnostic-form";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Guarantee() {
+  const [open, setOpen] = useState(false);
+  const guaranteeSeal = PlaceHolderImages.find(p => p.id === 'guarantee-seal')!;
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="lg:w-1/2 flex justify-center">
             <Image
-              src="https://i.imgur.com/e2aJ5aA.png"
-              alt="Selo de Garantia Tripla"
+              src={guaranteeSeal.imageUrl}
+              alt={guaranteeSeal.description}
               width={400}
               height={400}
-              className="object-contain"
+              className="object-contain w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
+              data-ai-hint={guaranteeSeal.imageHint}
             />
           </div>
           <div className="lg:w-1/2 text-center lg:text-left space-y-6">
@@ -38,14 +47,22 @@ export function Guarantee() {
               você esperava, o prejuízo é nosso.
             </p>
 
-            <Button
-              size="lg"
-              variant="secondary"
-              className="w-full max-w-md mx-auto lg:mx-0 text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
-            >
-              <ShieldCheck className="mr-2 h-6 w-6" />
-              QUERO TESTAR SEM RISCO NENHUM
-            </Button>
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                 <Button
+                  size="lg"
+                  variant="secondary"
+                  className="w-full max-w-md mx-auto lg:mx-0 text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
+                >
+                  <ShieldCheck className="mr-2 h-6 w-6" />
+                  QUERO TESTAR SEM RISCO NENHUM
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md md:max-w-lg">
+                <SkinDiagnosticForm setOpen={setOpen} />
+              </DialogContent>
+            </Dialog>
+
           </div>
         </div>
       </div>
