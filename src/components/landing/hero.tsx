@@ -65,7 +65,7 @@ export function Hero() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="https://i.imgur.com/gY9OJ24.png"
+              src="https://i.imgur.com/069bgon.png"
               alt="Mockup 3D do ebook Protocolo Anti-Indústria"
               width={600}
               height={600}
