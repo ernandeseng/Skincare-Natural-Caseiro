@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   "Economia de até R$ 2.400 por ano",
@@ -13,7 +14,7 @@ export function Hero() {
     <section className="w-full bg-card py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-6">
-          <div className="space-y-2">
+          <div className="space-y-4">
             <h1 className="text-sm font-bold tracking-widest text-primary uppercase">
               Protocolo Anti-Indústria
             </h1>
@@ -21,6 +22,13 @@ export function Hero() {
               Descubra o único sistema que usa ingredientes do seu supermercado
               para conquistar uma pele mais limpa e saudável
             </p>
+            <Image
+              src="https://i.imgur.com/069bgon.png"
+              alt="Mulher feliz com a pele bonita"
+              width={800}
+              height={450}
+              className="rounded-lg shadow-xl mx-auto"
+            />
           </div>
           <div className="max-w-[900px] space-y-6 rounded-lg border bg-background/50 p-6 md:p-10 shadow-lg">
             <h2 className="text-2xl md:text-4xl font-bold text-primary animate-pulse">
