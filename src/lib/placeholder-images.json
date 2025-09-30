@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A woman with glowing, healthy skin, with a soft, natural background.",
+      "imageUrl": "https://images.unsplash.com/photo-1581182815808-b6eb627a8798?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxza2luY2FyZSUyMG1vZGVsfGVufDB8fHx8MTc1OTEzNTE4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "skincare model"
+    },
+    {
+      "id": "natural-ingredients",
+      "description": "A flat lay of natural skincare ingredients like honey, oats, and lemon on a clean surface.",
+      "imageUrl": "https://images.unsplash.com/photo-1483137140003-ae073b395549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwaW5ncmVkaWVudHN8ZW58MHx8fHwxNzU5MTQ3NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "natural ingredients"
+    }
+  ]
 }
