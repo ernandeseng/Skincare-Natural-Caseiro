@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, UserCheck } from "lucide-react";
+import { UserCheck, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
 const targetAudienceItems = [
@@ -13,7 +13,7 @@ const targetAudienceItems = [
 
 export function TargetAudience() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
            <div className="flex justify-center lg:order-last">
@@ -22,7 +22,7 @@ export function TargetAudience() {
               alt="Mulher sorrindo, representando o público-alvo"
               width={500}
               height={750}
-              className="rounded-lg shadow-2xl object-cover aspect-[2/3]"
+              className="rounded-lg shadow-2xl object-cover aspect-[2/3] w-full max-w-sm mx-auto"
               data-ai-hint="happy woman"
             />
           </div>
@@ -30,7 +30,7 @@ export function TargetAudience() {
             <div className="inline-block rounded-lg bg-primary/10 p-3">
               <UserCheck className="h-8 w-8 text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
               Este Protocolo Foi Desenhado Para Você?
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
@@ -41,7 +41,7 @@ export function TargetAudience() {
             <ul className="space-y-4">
               {targetAudienceItems.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <span className="text-lg text-muted-foreground">
                     {item}
                   </span>
@@ -49,8 +49,8 @@ export function TargetAudience() {
               ))}
             </ul>
             <Card className="bg-primary/10 border-primary/20 shadow-none">
-              <CardContent className="p-4">
-                <p className="text-center text-lg font-semibold text-primary">
+              <CardContent className="p-4 md:p-6">
+                <p className="text-center text-base md:text-lg font-semibold text-primary">
                   Se você se viu aqui, está no lugar certo para começar uma
                   verdadeira revolução na sua pele.
                 </p>

@@ -43,10 +43,10 @@ const benefits: Benefit[] = [
 
 export function Benefits() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+    <section className="w-full py-12 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
             A Conquista da Pele Perfeita é Apenas o Começo
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
@@ -61,19 +61,19 @@ export function Benefits() {
               key={index}
               className="border-2 border-transparent hover:border-secondary hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <CardHeader className="flex flex-col items-center text-center gap-4">
+              <CardHeader className="flex flex-col items-center text-center gap-4 p-4 md:p-6">
                 <div className="p-4 bg-secondary/20 rounded-full">
                   <benefit.icon className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="font-headline text-2xl">
+                <CardTitle className="font-headline text-xl md:text-2xl">
                   {benefit.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
+              <CardContent className="text-center p-4 md:p-6 pt-0">
                 <p className="text-muted-foreground mb-4">
                   {benefit.description}
                 </p>
-                <div className="text-4xl font-bold text-primary">
+                <div className="text-3xl md:text-4xl font-bold text-primary">
                   {benefit.number}
                 </div>
               </CardContent>

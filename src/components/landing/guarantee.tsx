@@ -13,7 +13,7 @@ export function Guarantee() {
   const guaranteeSeal = PlaceHolderImages.find(p => p.id === 'guarantee-seal')!;
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+    <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="lg:w-1/2 flex justify-center">
@@ -22,12 +22,12 @@ export function Guarantee() {
               alt={guaranteeSeal.description}
               width={400}
               height={400}
-              className="object-contain w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
+              className="object-contain w-[250px] h-[250px] md:w-[350px] md:h-[350px]"
               data-ai-hint={guaranteeSeal.imageHint}
             />
           </div>
           <div className="lg:w-1/2 text-center lg:text-left space-y-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">
               Seu Risco é ZERO. Nossa Confiança é 100%.
             </h2>
             <p className="text-lg md:text-xl text-primary-foreground/80">
@@ -35,10 +35,10 @@ export function Guarantee() {
               transformar a sua pele e a sua vida que colocamos toda a
               responsabilidade em nossos ombros.
             </p>
-            <div className="space-y-4 text-left p-6 bg-white/10 rounded-lg">
+            <div className="space-y-4 text-left p-4 md:p-6 bg-white/10 rounded-lg">
                 <div className="flex items-start gap-4">
                     <HeartHandshake className="h-8 w-8 text-secondary flex-shrink-0 mt-1"/>
-                    <p className="text-lg"><span className="font-bold text-secondary">Garantia Incondicional de 30 Dias:</span> Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora, sem perguntas, sem ressentimentos.</p>
+                    <p className="text-base md:text-lg"><span className="font-bold text-secondary">Garantia Incondicional de 30 Dias:</span> Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora, sem perguntas, sem ressentimentos.</p>
                 </div>
             </div>
             <p className="text-lg md:text-xl text-primary-foreground/80">

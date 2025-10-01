@@ -17,7 +17,7 @@ export function Preview() {
           </div>
           <div className="space-y-6">
             <div className="space-y-3">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+              <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
                 Uma Espiada no Que Te Espera
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground">

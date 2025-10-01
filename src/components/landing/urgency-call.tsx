@@ -48,11 +48,11 @@ export function UrgencyCall() {
   }, []);
 
   return (
-    <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary">
+    <section className="w-full py-12 md:py-20 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-6">
           <Clock className="h-12 w-12 text-primary" />
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
             A Oferta Termina em...
           </h2>
           <div className="flex items-center space-x-2 md:space-x-4">

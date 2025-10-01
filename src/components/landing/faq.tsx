@@ -52,10 +52,10 @@ const faqs = [
 export function Faq() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+    <section className="w-full py-12 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
             Suas Dúvidas, Nossas Respostas
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
@@ -71,12 +71,12 @@ export function Faq() {
                 value={`item-${index}`}
                 className="bg-background rounded-lg shadow-sm border border-border/50"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold px-6 py-4 hover:no-underline group text-primary">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold px-4 py-4 md:px-6 group text-primary">
                   <span className="flex-1">{faq.question}</span>
                   <Plus className="h-6 w-6 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
                   <Minus className="h-6 w-6 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground text-left px-6 pb-4">
+                <AccordionContent className="text-base text-muted-foreground text-left px-4 pb-4 md:px-6">
                   {faq.answer}
                   {faq.question ===
                     "Como posso saber se isso vai funcionar para o meu tipo de pele?" && (
@@ -84,7 +84,7 @@ export function Faq() {
                       <DialogTrigger asChild>
                         <Button
                           variant="link"
-                          className="text-secondary font-bold p-0 h-auto mt-2"
+                          className="text-secondary font-bold p-0 h-auto mt-2 text-left"
                         >
                           Faça nosso diagnóstico gratuito online!
                         </Button>

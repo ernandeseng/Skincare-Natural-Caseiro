@@ -43,10 +43,10 @@ const bonuses = [
 export function Offer() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
             Tudo o que Você Precisa para uma Pele Perfeita Está Aqui
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
@@ -57,13 +57,13 @@ export function Offer() {
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           <div className="lg:col-span-3 space-y-8">
             <Card className="shadow-lg border-primary border-2">
-              <CardHeader>
+              <CardHeader className="p-4 md:p-6">
                 <CardTitle className="text-xl md:text-2xl font-headline flex items-center gap-2">
                   <BookOpen className="h-8 w-8 text-primary" />
                   <span>Protocolo Anti-Indústria (Valor: R$197)</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-muted-foreground p-4 md:p-6 pt-0">
                 <p>
                   O guia completo com 4 módulos, 15 receitas testadas,
                   cronograma de 30 dias e o exclusivo método de diagnóstico
@@ -82,20 +82,20 @@ export function Offer() {
             </div>
 
             <Card className="shadow-lg border-secondary border-2">
-               <CardHeader>
+               <CardHeader className="p-4 md:p-6">
                 <CardTitle className="text-xl md:text-2xl font-headline flex items-center gap-2">
                   <Gift className="h-8 w-8 text-secondary" />
                   <span>3 Bônus Exclusivos (Valor: R$151)</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-muted-foreground p-4 md:p-6 pt-0">
                  <p>Ferramentas extras para acelerar e potencializar seus resultados, totalmente grátis hoje.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {bonuses.map(bonus => (
                     <div key={bonus.title} className="text-center">
                         <Image src={bonus.image} alt={bonus.title} width={100} height={100} className="mx-auto mb-2 rounded" data-ai-hint={bonus.imageHint} />
-                        <p className="font-semibold">{bonus.title}</p>
-                        <p className="text-sm line-through">{bonus.value}</p>
+                        <p className="font-semibold text-sm">{bonus.title}</p>
+                        <p className="text-xs line-through">{bonus.value}</p>
                     </div>
                   ))}
                 </div>
