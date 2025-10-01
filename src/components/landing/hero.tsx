@@ -49,7 +49,7 @@ export function Hero() {
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
-                    className="w-full text-base md:text-lg h-14 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform"
+                    className="w-full text-base md:text-lg h-auto py-4 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform whitespace-normal"
                   >
                     COMECE SEU DIAGNÓSTICO GRATUITO
                     <ArrowRight className="ml-2 h-5 w-5" />

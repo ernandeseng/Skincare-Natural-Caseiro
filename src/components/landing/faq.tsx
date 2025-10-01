@@ -104,7 +104,7 @@ export function Faq() {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="w-full max-w-md text-lg h-14 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform"
+                className="w-full max-w-md text-base md:text-lg h-auto py-3 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform whitespace-normal"
               >
                 Quero Começar Minha Transformação
                 <ArrowRight className="ml-2 h-5 w-5" />

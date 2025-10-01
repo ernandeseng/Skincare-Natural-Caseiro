@@ -47,8 +47,7 @@ export function Guarantee() {
               <DialogTrigger asChild>
                  <Button
                   size="lg"
-                  variant="secondary"
-                  className="w-full max-w-md mx-auto lg:mx-0 text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
+                  className="w-full max-w-md mx-auto lg:mx-0 text-base md:text-lg h-auto py-3 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground whitespace-normal"
                 >
                   <ShieldCheck className="mr-2 h-5 w-5" />
                   QUERO TESTAR SEM RISCO

@@ -114,7 +114,7 @@ export function Offer() {
                     <DialogTrigger asChild>
                       <Button
                         size="lg"
-                        className="w-full text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
+                        className="w-full text-base md:text-lg h-auto py-3 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground whitespace-normal"
                       >
                         <CreditCard className="mr-2 h-5 w-5" />
                         QUERO MEU KIT COMPLETO

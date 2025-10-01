@@ -50,18 +50,18 @@ export function UrgencyCall() {
             A Oferta Termina em...
           </h2>
           <div className="flex items-center space-x-2 md:space-x-4">
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20">
-              <p className="text-3xl font-bold text-primary">{timeLeft.hours}</p>
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-2xl md:text-3xl font-bold text-primary">{timeLeft.hours}</p>
               <p className="text-xs text-muted-foreground">Horas</p>
             </div>
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20">
-              <p className="text-3xl font-bold text-primary">
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-2xl md:text-3xl font-bold text-primary">
                 {timeLeft.minutes}
               </p>
               <p className="text-xs text-muted-foreground">Minutos</p>
             </div>
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20">
-              <p className="text-3xl font-bold text-primary">
+            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
+              <p className="text-2xl md:text-3xl font-bold text-primary">
                 {timeLeft.seconds}
               </p>
               <p className="text-xs text-muted-foreground">Segundos</p>
@@ -75,7 +75,7 @@ export function UrgencyCall() {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="w-full max-w-md text-lg h-14 font-bold shadow-lg hover:scale-105 transition-transform !bg-primary !text-primary-foreground"
+                className="w-full max-w-md text-base md:text-lg h-auto py-3 font-bold shadow-lg hover:scale-105 transition-transform !bg-primary !text-primary-foreground whitespace-normal"
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 GARANTIR ACESSO IMEDIATO

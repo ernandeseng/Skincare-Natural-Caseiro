@@ -73,7 +73,7 @@ export function Benefits() {
                 <p className="text-muted-foreground mb-4 text-base">
                   {benefit.description}
                 </p>
-                <div className="text-3xl font-bold text-primary">
+                <div className="text-2xl md:text-3xl font-bold text-primary">
                   {benefit.number}
                 </div>
               </CardContent>

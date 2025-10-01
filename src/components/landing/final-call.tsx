@@ -30,7 +30,7 @@ export function FinalCall() {
               <Button
                 size="lg"
                 variant="secondary"
-                className="w-full max-w-xl text-base md:text-lg h-16 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground"
+                className="w-full max-w-xl text-base md:text-lg h-auto py-4 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground whitespace-normal"
               >
                 <Gem className="mr-2 h-5 w-5" />
                 SIM, EU QUERO O PROTOCOLO!

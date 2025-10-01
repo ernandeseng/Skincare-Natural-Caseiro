@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Preview() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="flex justify-center lg:order-last">
@@ -13,7 +13,7 @@ export function Preview() {
               alt="Páginas internas do ebook Protocolo Anti-Indústria"
               width={600}
               height={700}
-              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full"
+              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-sm md:max-w-md"
             />
           </div>
           <div className="space-y-6">
