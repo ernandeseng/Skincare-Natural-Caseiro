@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -50,8 +51,7 @@ export function Benefits() {
             A Conquista da Pele Perfeita é Apenas o Começo
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
-            Com o Protocolo Anti-Indústria, você não está apenas comprando
-            receitas, está investindo em uma nova vida com mais autoestima,
+            Você está investindo em uma nova vida com mais autoestima,
             economia e liberdade.
           </p>
         </div>
@@ -62,18 +62,18 @@ export function Benefits() {
               className="border-2 border-transparent hover:border-secondary hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <CardHeader className="flex flex-col items-center text-center gap-4 p-4 md:p-6">
-                <div className="p-4 bg-secondary/20 rounded-full">
-                  <benefit.icon className="h-8 w-8 text-secondary" />
+                <div className="p-3 bg-secondary/20 rounded-full">
+                  <benefit.icon className="h-7 w-7 text-secondary" />
                 </div>
-                <CardTitle className="font-headline text-xl md:text-2xl">
+                <CardTitle className="font-headline text-xl">
                   {benefit.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center p-4 md:p-6 pt-0">
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 text-base">
                   {benefit.description}
                 </p>
-                <div className="text-3xl md:text-4xl font-bold text-primary">
+                <div className="text-3xl font-bold text-primary">
                   {benefit.number}
                 </div>
               </CardContent>

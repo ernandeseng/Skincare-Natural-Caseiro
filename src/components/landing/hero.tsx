@@ -25,23 +25,23 @@ export function Hero() {
   const ebookMockup = PlaceHolderImages.find(p => p.id === 'ebook-mockup')!;
 
   return (
-    <section className="w-full bg-gradient-to-b from-primary/10 to-background pt-8 md:pt-24 lg:pt-32">
+    <section className="w-full bg-gradient-to-b from-primary/10 to-background pt-8 md:pt-20 lg:pt-24">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 md:space-y-6">
             <Badge
               variant="secondary"
-              className="bg-secondary text-secondary-foreground text-sm py-1 px-3"
+              className="bg-secondary/90 text-secondary-foreground text-sm py-1 px-3"
             >
               ✨ Oferta de Lançamento por Tempo Limitado
             </Badge>
-            <h1 className="font-headline text-3xl font-bold md:text-5xl lg:text-6xl text-primary leading-tight">
+            <h1 className="font-headline text-3xl font-bold md:text-4xl lg:text-5xl text-primary leading-tight">
               A Pele dos Seus Sonhos com Ingredientes que Você Já Tem em Casa
             </h1>
-            <p className="max-w-[600px] text-base md:text-xl text-muted-foreground">
+            <p className="max-w-[600px] text-base md:text-lg text-muted-foreground">
               Descubra o Protocolo Anti-Indústria: o único sistema que liberta
               você dos cosméticos caros e ineficazes, entregando uma pele
-              saudável, radiante e sem espinhas gastando menos de R$50 por mês.
+              saudável, radiante e sem espinhas.
             </p>
 
             <div className="w-full max-w-md space-y-4">
@@ -52,7 +52,7 @@ export function Hero() {
                     className="w-full text-base md:text-lg h-14 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform"
                   >
                     COMECE SEU DIAGNÓSTICO GRATUITO
-                    <ArrowRight className="ml-2 h-6 w-6" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md md:max-w-lg">
@@ -60,8 +60,8 @@ export function Hero() {
                 </DialogContent>
               </Dialog>
 
-              <div className="text-center bg-muted/50 p-4 rounded-lg">
-                <p className="text-lg text-muted-foreground">
+              <div className="text-center bg-muted/50 p-3 rounded-lg">
+                <p className="text-md text-muted-foreground">
                   Acesso completo de{" "}
                   <span className="line-through decoration-red-500 decoration-2">
                     R$ 197
@@ -75,11 +75,11 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="space-y-2 text-left w-full pt-4">
+            <div className="space-y-2 text-left w-full pt-2">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="font-medium text-muted-foreground text-sm md:text-base">
+                  <span className="font-medium text-muted-foreground text-sm">
                     {feature}
                   </span>
                 </div>
@@ -88,11 +88,11 @@ export function Hero() {
           </div>
           <div className="flex justify-center order-first lg:order-last">
             <Image
-              src={ebookMockup.imageUrl}
+              src={"https://i.imgur.com/069bgon.png"}
               alt={ebookMockup.description}
-              width={600}
-              height={600}
-              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] h-auto"
+              width={500}
+              height={500}
+              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-[250px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] h-auto"
               priority
               data-ai-hint={ebookMockup.imageHint}
             />

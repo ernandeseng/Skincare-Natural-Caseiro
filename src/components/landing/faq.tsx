@@ -18,34 +18,34 @@ import { SkinDiagnosticForm } from "./skin-diagnostic-form";
 
 const faqs = [
   {
-    question: "Ingredientes caseiros realmente funcionam para a pele?",
+    question: "Ingredientes caseiros realmente funcionam?",
     answer:
-      "Sim! E a ciência comprova. O mel, por exemplo, é um antibacteriano e umectante natural usado há séculos. A aveia acalma a pele e o limão é rico em Vitamina C antioxidante. O Protocolo Anti-Indústria usa as propriedades cientificamente comprovadas de ingredientes naturais para entregar resultados superiores, sem os químicos e conservantes artificiais da indústria.",
+      "Sim! E a ciência comprova. O mel, por exemplo, é um antibacteriano e umectante natural. A aveia acalma a pele. O Protocolo usa as propriedades cientificamente comprovadas de ingredientes naturais para entregar resultados superiores, sem químicos artificiais.",
   },
   {
-    question: "Não tenho tempo para preparar receitas complicadas.",
+    question: "Não tenho tempo para receitas complicadas.",
     answer:
-      "Nós entendemos perfeitamente. Por isso, cada receita do protocolo foi desenhada para ser preparada em no máximo 5 minutos. Além disso, o cronograma é flexível para se adaptar à sua rotina, por mais corrida que seja. É mais rápido do que esperar um app de delivery.",
+      "Nós entendemos. Por isso, cada receita do protocolo foi desenhada para ser preparada em no máximo 5 minutos. O cronograma é flexível para se adaptar à sua rotina, por mais corrida que seja.",
   },
   {
-    question: "E se minha pele for sensível e reagir mal?",
+    question: "E se minha pele for sensível?",
     answer:
-      "A beleza do método natural é que ele é gentil com a pele. Usamos ingredientes puros, sem os aditivos que geralmente causam irritação. Além disso, você tem nossa Garantia Incondicional de 30 dias. Se sua pele não amar o protocolo, você recebe 100% do seu dinheiro de volta, sem perguntas.",
+      "A beleza do método natural é que ele é gentil com a pele. Usamos ingredientes puros, sem os aditivos que geralmente causam irritação. Além disso, você tem nossa Garantia Incondicional de 30 dias. Se sua pele não amar o protocolo, devolvemos seu dinheiro.",
   },
   {
-    question: "Como posso saber se isso vai funcionar para o meu tipo de pele?",
+    question: "Como saber se vai funcionar para mim?",
     answer:
-      "O Módulo 1 do protocolo é inteiramente dedicado a isso! Você receberá um guia de diagnóstico caseiro, simples e eficaz, para identificar seu tipo de pele (oleosa, seca, mista, sensível) e suas necessidades específicas. A partir daí, o sistema te direciona para as receitas e rotinas exatas para você. Você também pode fazer nosso diagnóstico gratuito online!",
+      "O Módulo 1 do protocolo é dedicado a isso! Você receberá um guia de diagnóstico caseiro para identificar seu tipo de pele (oleosa, seca, mista, etc) e suas necessidades. A partir daí, o sistema te direciona para as receitas e rotinas exatas para você. Você também pode fazer nosso diagnóstico gratuito online!",
   },
   {
-    question: "Em quanto tempo posso esperar resultados visíveis?",
+    question: "Em quanto tempo vejo resultados?",
     answer:
-      "Muitas das nossas alunas relatam uma melhora na textura e no brilho da pele já na primeira semana. Para resultados transformadores, como redução de acne e oleosidade, o cronograma de 30 dias é o ideal. A consistência é a chave!",
+      "Muitas alunas relatam melhora na textura e brilho da pele já na primeira semana. Para resultados transformadores, como redução de acne, o cronograma de 30 dias é o ideal. A consistência é a chave!",
   },
   {
-    question: "A compra online neste site é segura?",
+    question: "A compra neste site é segura?",
     answer:
-      "Completamente segura. Nossa plataforma de pagamento utiliza a mesma tecnologia de criptografia de ponta dos grandes bancos (SSL). Seus dados estão 100% protegidos. Sua única preocupação será como lidar com tantos elogios à sua nova pele.",
+      "Completamente segura. Nossa plataforma de pagamento utiliza a mesma tecnologia de criptografia de ponta dos grandes bancos (SSL). Seus dados estão 100% protegidos.",
   },
 ];
 
@@ -71,20 +71,20 @@ export function Faq() {
                 value={`item-${index}`}
                 className="bg-background rounded-lg shadow-sm border border-border/50"
               >
-                <AccordionTrigger className="text-left text-base md:text-lg font-semibold px-4 py-4 md:px-6 group text-primary">
+                <AccordionTrigger className="text-left text-base font-semibold px-4 py-4 md:px-6 group text-primary">
                   <span className="flex-1">{faq.question}</span>
-                  <Plus className="h-6 w-6 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
-                  <Minus className="h-6 w-6 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
+                  <Plus className="h-5 w-5 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
+                  <Minus className="h-5 w-5 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground text-left px-4 pb-4 md:px-6">
                   {faq.answer}
                   {faq.question ===
-                    "Como posso saber se isso vai funcionar para o meu tipo de pele?" && (
+                    "Como saber se vai funcionar para mim?" && (
                     <Dialog open={open} onOpenChange={setOpen}>
                       <DialogTrigger asChild>
                         <Button
                           variant="link"
-                          className="text-secondary font-bold p-0 h-auto mt-2 text-left"
+                          className="text-secondary font-bold p-0 h-auto mt-2 text-left text-base"
                         >
                           Faça nosso diagnóstico gratuito online!
                         </Button>
@@ -107,7 +107,7 @@ export function Faq() {
                 className="w-full max-w-md text-lg h-14 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform"
               >
                 Quero Começar Minha Transformação
-                <ArrowRight className="ml-2 h-6 w-6" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md md:max-w-lg">

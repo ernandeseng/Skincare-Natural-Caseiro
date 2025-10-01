@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { UserCheck, CheckCircle } from "lucide-react";
 import Image from "next/image";
@@ -22,11 +23,11 @@ export function TargetAudience() {
               alt="Mulher sorrindo, representando o público-alvo"
               width={500}
               height={750}
-              className="rounded-lg shadow-2xl object-cover aspect-[2/3] w-full max-w-sm mx-auto"
+              className="rounded-lg shadow-2xl object-cover aspect-[2/3] w-full max-w-xs mx-auto"
               data-ai-hint="happy woman"
             />
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 text-center lg:text-left">
             <div className="inline-block rounded-lg bg-primary/10 p-3">
               <UserCheck className="h-8 w-8 text-primary" />
             </div>
@@ -34,23 +35,22 @@ export function TargetAudience() {
               Este Protocolo Foi Desenhado Para Você?
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground">
-              Se você se identifica com pelo menos uma das situações abaixo, a
-              resposta é um sonoro SIM. O Protocolo Anti-Indústria foi criado
-              para mulheres reais com problemas reais.
+              Se você se identifica com uma das situações abaixo, a
+              resposta é SIM.
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-left">
               {targetAudienceItems.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-lg text-muted-foreground">
+                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-base text-muted-foreground">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
             <Card className="bg-primary/10 border-primary/20 shadow-none">
-              <CardContent className="p-4 md:p-6">
-                <p className="text-center text-base md:text-lg font-semibold text-primary">
+              <CardContent className="p-4">
+                <p className="text-center text-base font-semibold text-primary">
                   Se você se viu aqui, está no lugar certo para começar uma
                   verdadeira revolução na sua pele.
                 </p>
