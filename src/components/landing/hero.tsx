@@ -57,7 +57,7 @@ export function Hero() {
               ))}
             </div>
 
-             <div className="w-full flex justify-center md:justify-start pt-4">
+             <div className="w-full flex justify-center pt-4">
                <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <Button
