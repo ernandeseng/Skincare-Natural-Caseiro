@@ -239,9 +239,7 @@ body, html {
 @media (max-width: 768px) {
   
   /* Container principal */
-  .bonus-section,
-  section[class*="bônus"],
-  section[class*="bonus"] {
+  .bonus-section {
     padding: 60px 15px !important;
     margin: 0 !important;
     width: 100% !important;
@@ -251,8 +249,7 @@ body, html {
   }
   
   /* Título principal */
-  .bonus-section h2,
-  .bonus-section .section-title {
+  .bonus-section h2 {
     font-size: clamp(1.5em, 5vw, 1.9em) !important;
     padding: 0 10px !important;
     margin: 0 0 15px 0 !important;
@@ -262,8 +259,7 @@ body, html {
   }
   
   /* Subtítulo "Valor: R$ 151" */
-  .bonus-section .subtitle,
-  .bonus-section p:first-of-type {
+  .bonus-section .subtitle {
     font-size: 1em !important;
     padding: 0 10px !important;
     margin-bottom: 30px !important;
@@ -271,9 +267,7 @@ body, html {
   }
   
   /* Grid de cards */
-  .bonus-grid,
-  .bonus-cards-container,
-  div[class*="grid"] {
+  .bonus-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 25px !important;
@@ -322,9 +316,7 @@ body, html {
   }
   
   /* Box de oferta especial */
-  .offer-box,
-  .special-offer,
-  div[class*="oferta"] {
+  .offer-box {
     width: 100% !important;
     max-width: 100% !important;
     margin: 30px auto !important;
@@ -354,8 +346,7 @@ body, html {
   }
   
   /* Preço atual grande */
-  .current-price,
-  .new-price-large {
+  .current-price {
     font-size: 2.2em !important;
     margin: 15px 0 !important;
     text-align: center !important;
