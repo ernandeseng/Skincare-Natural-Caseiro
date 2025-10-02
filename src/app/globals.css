@@ -99,3 +99,143 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-position: 60% center;
+    background-attachment: scroll;
+    overflow-x: hidden;
+  }
+  
+  .hero::before {
+    background: linear-gradient(180deg, 
+      rgba(5, 150, 105, 0.92) 0%, 
+      rgba(5, 150, 105, 0.85) 50%,
+      rgba(0, 0, 0, 0.7) 100%);
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Título */
+  .hero h1 {
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Subtítulo */
+  .hero .subtitle,
+  .hero p {
+    font-size: clamp(1em, 3.5vw, 1.2em);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  
+  /* Lista de Benefícios */
+  .hero .benefits-list,
+  .hero ul {
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  .hero .benefits-list li,
+  .hero ul li {
+    font-size: 0.95em;
+    padding: 12px 15px;
+    margin: 10px 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .hero .benefits-list li::before,
+  .hero .check-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  
+  /* Botão CTA */
+  .hero .cta-button,
+  .hero-cta-button,
+  .hero button,
+  .hero a[class*="button"] {
+    width: calc(100% - 40px) !important;
+    max-width: 400px !important;
+    min-width: auto !important;
+    margin: 30px auto !important;
+    padding: 18px 30px !important;
+    font-size: 1.1em !important;
+    display: block !important;
+    text-align: center !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Preço */
+  .hero .price,
+  .hero .pricing {
+    padding: 20px 15px;
+    margin: 20px 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .hero .price .old-price {
+    font-size: 1em;
+  }
+  
+  .hero .price .new-price {
+    font-size: 1.8em;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6em !important;
+    padding: 0 5px;
+  }
+  
+  .hero .subtitle,
+  .hero p {
+    font-size: 0.95em !important;
+  }
+  
+  .hero .benefits-list li {
+    font-size: 0.9em !important;
+    padding: 10px 12px !important;
+  }
+  
+  .hero .cta-button {
+    font-size: 1em !important;
+    padding: 16px 25px !important;
+  }
+}
+
+/* Garantir que nenhum elemento cause scroll horizontal */
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
