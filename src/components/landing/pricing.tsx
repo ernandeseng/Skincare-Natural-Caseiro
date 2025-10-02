@@ -25,7 +25,7 @@ export function Pricing() {
                             Leve tudo isso hoje (de <span className="line-through">R$ 348,00</span>) por apenas:
                         </p>
                         <p className="text-6xl font-extrabold text-primary current-price">R$ 27,90</p>
-                        <p className="font-semibold text-md -mt-2 installment">ou 12x de R$ 2,79</p>
+                        <p className="font-semibold text-md -mt-2 installment">ou em até 3x no cartão</p>
                         <Dialog open={open} onOpenChange={setOpen}>
                             <DialogTrigger asChild>
                             <Button
