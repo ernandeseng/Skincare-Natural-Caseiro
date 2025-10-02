@@ -1,16 +1,8 @@
 
 "use client";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, CreditCard, Gift, PlusCircle, Check } from "lucide-react";
+import { BookOpen, Gift, Check } from "lucide-react";
 import Image from "next/image";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { SkinDiagnosticForm } from "./skin-diagnostic-form";
-import { useState } from "react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 
@@ -41,21 +33,19 @@ const bonuses = [
 ];
 
 export function Offer() {
-  const [open, setOpen] = useState(false);
   return (
     <section id="offer" className="bonus-section w-full py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
-            Tudo o que Você Precisa para uma Pele Perfeita
+            Você Leva o Protocolo Completo e Mais 3 Bônus Exclusivos
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
-            Ao garantir seu acesso hoje, você recebe o arsenal completo para sua independência no skincare.
+            Ao garantir seu acesso hoje, você recebe o arsenal completo para sua independência no skincare, totalmente grátis.
           </p>
         </div>
-        <div className="grid lg:grid-cols-5 gap-8 items-start">
-          <div className="lg:col-span-3 space-y-8">
-            <Card className="shadow-lg border-primary/20 border-2">
+        <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <Card className="shadow-lg border-primary/20 border-2 h-full">
               <CardHeader className="p-6">
                 <CardTitle className="text-2xl md:text-3xl font-headline flex items-center gap-3">
                   <BookOpen className="h-8 w-8 text-primary" />
@@ -77,11 +67,7 @@ export function Offer() {
               </CardContent>
             </Card>
 
-            <div className="flex items-center justify-center">
-              <PlusCircle className="h-12 w-12 text-secondary" />
-            </div>
-
-            <Card className="shadow-lg border-secondary/30 border-2">
+            <Card className="shadow-lg border-secondary/30 border-2 h-full">
                <CardHeader className="p-6">
                 <CardTitle className="text-2xl md:text-3xl font-headline flex items-center gap-3">
                   <Gift className="h-8 w-8 text-secondary" />
@@ -102,35 +88,6 @@ export function Offer() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-          <div className="lg:col-span-2">
-            <div className="lg:sticky top-24">
-              <Card className="bg-primary/5 p-6 md:p-8 rounded-xl text-center space-y-4 shadow-2xl border-2 border-secondary">
-                <h3 className="text-2xl font-headline font-bold text-primary">Oferta Especial de Lançamento</h3>
-                  <p className="text-md font-semibold text-muted-foreground">
-                    Leve tudo isso hoje (de <span className="line-through">R$ 348,00</span>) por apenas:
-                  </p>
-                  <p className="text-6xl font-extrabold text-primary">R$ 27,90</p>
-                  <p className="font-semibold text-md -mt-2">ou 12x de R$ 2,79</p>
-                  <Dialog open={open} onOpenChange={setOpen}>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant="cta"
-                          size="xl"
-                          className="w-full"
-                        >
-                          <CreditCard className="mr-2 h-6 w-6" />
-                          QUERO MEU KIT COMPLETO
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-md md:max-w-lg">
-                        <SkinDiagnosticForm setOpen={setOpen} />
-                      </DialogContent>
-                    </Dialog>
-                  <p className="text-xs text-muted-foreground pt-2">Oferta por tempo limitado. Acesso imediato.</p>
-              </Card>
-            </div>
-          </div>
         </div>
       </div>
     </section>
