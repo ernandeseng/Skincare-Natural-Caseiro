@@ -57,12 +57,12 @@ export function Hero() {
               ))}
             </div>
 
-             <div className="w-full max-w-md space-y-4 pt-4">
+             <div className="w-full flex justify-center md:justify-start pt-4">
                <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
-                    className="w-full text-lg h-auto py-5 font-bold whitespace-normal bg-gradient-to-r from-yellow-500 to-pink-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    className="w-full max-w-md text-lg h-auto py-5 font-bold whitespace-normal bg-gradient-to-r from-yellow-500 to-pink-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
                   >
                     COMECE SEU DIAGNÓSTICO GRATUITO
                     <ArrowRight className="ml-2 h-5 w-5" />
