@@ -60,12 +60,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <Button
-          onClick={() => scrollTo('#offer')}
-          className="hidden md:flex"
-        >
-          Eu Quero!
-        </Button>
       </div>
     </header>
   );
