@@ -24,13 +24,12 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[95vh] md:min-h-screen flex items-center bg-cover bg-no-repeat bg-center"
+      className="hero relative w-full min-h-[95vh] md:min-h-screen flex items-center bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: "url('https://i.imgur.com/9NEHXfv.png')" }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
       <div className="relative container mx-auto px-4 md:px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8">
             <Badge
               variant="secondary"
               className="bg-secondary/90 text-secondary-foreground text-sm py-1.5 px-4 rounded-full"
@@ -75,11 +74,6 @@ export function Hero() {
               </Dialog>
             </div>
           </div>
-          
-          <div className="hidden md:block">
-            
-          </div>
-        </div>
       </div>
     </section>
   );

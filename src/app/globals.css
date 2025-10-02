@@ -117,11 +117,6 @@
       rgba(0, 0, 0, 0.7) 100%);
   }
   
-  .hero-content {
-    max-width: 100%;
-    padding: 20px 0;
-    text-align: center;
-  }
   
   /* Título */
   .hero h1 {
