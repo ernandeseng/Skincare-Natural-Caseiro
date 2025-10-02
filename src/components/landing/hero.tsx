@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[95vh] md:min-h-screen flex items-center bg-cover bg-no-repeat bg-center md:bg-right-center"
+      className="relative w-full min-h-[95vh] md:min-h-screen flex items-center bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: "url('https://i.imgur.com/9NEHXfv.png')" }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
@@ -83,4 +83,3 @@ export function Hero() {
     </section>
   );
 }
-
