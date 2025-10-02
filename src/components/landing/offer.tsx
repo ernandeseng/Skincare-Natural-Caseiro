@@ -91,9 +91,9 @@ export function Offer() {
               </CardHeader>
               <CardContent className="space-y-4 text-muted-foreground p-6 pt-0">
                  <p className="text-base">Ferramentas extras para acelerar seus resultados, totalmente grátis hoje.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div className="flex flex-wrap justify-center gap-6 text-center">
                   {bonuses.map(bonus => (
-                    <div key={bonus.title} className="flex flex-col items-center">
+                    <div key={bonus.title} className="flex flex-col items-center w-28">
                         <Image src={bonus.image} alt={bonus.title} width={150} height={150} className="mb-3 rounded-lg w-full max-w-[120px] shadow-md" data-ai-hint={bonus.imageHint} />
                         <p className="font-semibold text-sm text-primary">{bonus.title}</p>
                         <p className="text-xs line-through">{bonus.value}</p>
