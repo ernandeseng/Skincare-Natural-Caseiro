@@ -34,8 +34,8 @@ export function Hero() {
   return (
     <section id="hero" className="w-full bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20 md:pt-48 md:pb-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 xl:gap-20 items-center">
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+        <div className="flex justify-center">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 max-w-2xl">
             <Badge
               variant="secondary"
               className="bg-secondary/90 text-secondary-foreground text-sm py-1.5 px-4 rounded-full"
@@ -78,17 +78,6 @@ export function Hero() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="flex justify-center order-first lg:order-last">
-            <Image
-              src={"https://i.imgur.com/069bgon.png"}
-              alt={ebookMockup.description}
-              width={600}
-              height={600}
-              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none h-auto drop-shadow-2xl"
-              priority
-              data-ai-hint={ebookMockup.imageHint}
-            />
           </div>
         </div>
       </div>
