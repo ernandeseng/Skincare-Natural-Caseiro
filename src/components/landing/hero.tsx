@@ -66,20 +66,6 @@ export function Hero() {
                   <SkinDiagnosticForm setOpen={setOpen} />
                 </DialogContent>
               </Dialog>
-
-              <div className="text-center bg-muted/50 p-3 rounded-lg border border-border/50">
-                <p className="text-md text-muted-foreground">
-                  Acesso completo de{" "}
-                  <span className="line-through decoration-red-500 decoration-2">
-                    R$ 197
-                  </span>{" "}
-                  por apenas 12x de
-                </p>
-                <p className="text-4xl md:text-5xl font-extrabold text-primary">R$ 2,79</p>
-                <p className="text-sm text-muted-foreground">
-                  ou R$ 27,90 à vista
-                </p>
-              </div>
             </div>
 
             <div className="space-y-3 text-left w-full pt-4">
