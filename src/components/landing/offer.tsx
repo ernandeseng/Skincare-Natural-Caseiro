@@ -115,8 +115,9 @@ export function Offer() {
                   <Dialog open={open} onOpenChange={setOpen}>
                       <DialogTrigger asChild>
                         <Button
-                          size="lg"
-                          className="w-full text-lg h-auto py-4 font-bold shadow-lg hover:scale-105 transition-transform whitespace-normal"
+                          variant="cta"
+                          size="xl"
+                          className="w-full"
                         >
                           <CreditCard className="mr-2 h-6 w-6" />
                           QUERO MEU KIT COMPLETO

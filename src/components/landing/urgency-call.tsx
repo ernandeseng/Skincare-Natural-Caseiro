@@ -88,9 +88,9 @@ export function UrgencyCall() {
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button
-                size="lg"
-                className="w-full max-w-md text-lg h-auto py-4 font-bold whitespace-normal"
-                variant="default"
+                variant="cta"
+                size="xl"
+                className="w-full max-w-lg"
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 GARANTIR ACESSO IMEDIATO

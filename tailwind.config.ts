@@ -96,22 +96,22 @@ export default {
             height: '0',
           },
         },
-        'pulse-shadow': {
+        'pulse-glow': {
           '0%, 100%': {
-            boxShadow: '0 12px 35px rgba(255, 0, 110, 0.4), 0 4px 15px rgba(255, 77, 148, 0.3)',
+            boxShadow: '0 12px 35px rgba(255, 107, 53, 0.45), 0 4px 15px rgba(255, 140, 66, 0.35)',
           },
           '50%': {
-            boxShadow: '0 12px 35px rgba(255, 0, 110, 0.6), 0 4px 15px rgba(255, 77, 148, 0.5)',
+            boxShadow: '0 12px 35px rgba(255, 107, 53, 0.65), 0 4px 15px rgba(255, 140, 66, 0.55)',
           },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-shadow': 'pulse-shadow 2.5s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',
       },
       dropShadow: {
-        'cta': '0 0 20px rgba(255, 0, 110, 0.3)',
+        'cta': '0 0 20px rgba(255, 107, 53, 0.3)',
       }
     },
   },

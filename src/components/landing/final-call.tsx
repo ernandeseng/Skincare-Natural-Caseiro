@@ -28,8 +28,9 @@ export function FinalCall() {
            <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button
-                size="lg"
-                className="w-full max-w-xl text-xl h-auto py-4 font-bold whitespace-normal"
+                variant="cta"
+                size="xl"
+                className="animate-pulse-glow w-full max-w-xl"
               >
                 <Gem className="mr-3 h-6 w-6" />
                 SIM, EU QUERO O PROTOCOLO!

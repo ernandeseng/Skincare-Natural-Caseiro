@@ -89,13 +89,13 @@
 }
 
 @layer utilities {
-  @keyframes pulse-shadow {
+  @keyframes pulse-glow {
     0%,
     100% {
-      box-shadow: 0 12px 35px rgba(255, 0, 110, 0.4), 0 4px 15px rgba(255, 77, 148, 0.3);
+      box-shadow: 0 12px 35px rgba(255, 107, 53, 0.45), 0 4px 15px rgba(255, 140, 66, 0.35);
     }
     50% {
-      box-shadow: 0 12px 35px rgba(255, 0, 110, 0.6), 0 4px 15px rgba(255, 77, 148, 0.5);
+      box-shadow: 0 12px 35px rgba(255, 107, 53, 0.65), 0 4px 15px rgba(255, 140, 66, 0.55);
     }
   }
 }

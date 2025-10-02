@@ -103,8 +103,9 @@ export function Faq() {
            <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button
-                size="lg"
-                className="w-full max-w-md text-lg h-auto py-4 font-bold whitespace-normal"
+                variant="cta"
+                size="xl"
+                className="w-full max-w-lg"
               >
                 Quero Começar Minha Transformação
                 <ArrowRight className="ml-2 h-5 w-5" />

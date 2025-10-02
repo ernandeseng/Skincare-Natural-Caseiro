@@ -49,8 +49,9 @@ export function Guarantee() {
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
                  <Button
-                  size="lg"
-                  className="w-full max-w-md mx-auto lg:mx-0 text-lg h-auto py-4 font-bold whitespace-normal"
+                  variant="cta"
+                  size="xl"
+                  className="w-full max-w-md mx-auto lg:mx-0"
                 >
                   <ShieldCheck className="mr-2 h-5 w-5" />
                   QUERO TESTAR SEM RISCO
