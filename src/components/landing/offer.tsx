@@ -43,7 +43,7 @@ const bonuses = [
 export function Offer() {
   const [open, setOpen] = useState(false);
   return (
-    <section id="offer" className="w-full py-20 md:py-32 bg-background">
+    <section id="offer" className="bonus-section w-full py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
