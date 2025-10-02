@@ -57,15 +57,29 @@ export function Hero() {
               ))}
             </div>
 
-             <div className="w-full flex justify-center pt-4">
+             <div className="w-full flex justify-center pt-10">
                <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
-                    className="w-full max-w-md text-lg h-auto py-5 font-bold whitespace-normal bg-gradient-to-r from-yellow-500 to-pink-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    className="
+                      block w-fit min-w-[450px] md:w-auto
+                      h-auto py-5 px-20
+                      bg-gradient-to-r from-[#ff006e] to-[#ff4d94]
+                      text-white text-[1.3em] font-bold tracking-[0.3px]
+                      border-2 border-white/30 rounded-lg
+                      shadow-[0_12px_35px_rgba(255,0,110,0.4),_0_4px_15px_rgba(255,77,148,0.3)]
+                      transition-all duration-300 ease-in-out
+                      animate-pulse-shadow
+                      hover:transform hover:-translate-y-1 hover:scale-105
+                      hover:bg-gradient-to-r hover:from-[#ff1a7a] hover:to-[#ff5da0]
+                      hover:shadow-[0_18px_45px_rgba(255,0,110,0.5),_0_8px_20px_rgba(255,77,148,0.4)]
+                      hover:brightness-110 hover:drop-shadow-cta
+                      md:min-w-auto md:w-11/12 md:max-w-md md:text-lg md:py-4 md:px-10
+                    "
                   >
-                    COMECE SEU DIAGNÓSTICO GRATUITO
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    QUERO TRANSFORMAR MINHA PELE
+                    <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md md:max-w-lg">
@@ -76,7 +90,7 @@ export function Hero() {
           </div>
           
           <div className="hidden md:block">
-            {/* Coluna direita vazia para a imagem de fundo aparecer */}
+            
           </div>
         </div>
       </div>
