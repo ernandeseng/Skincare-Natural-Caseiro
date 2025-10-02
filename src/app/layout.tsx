@@ -2,6 +2,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Inter, Poppins } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-headline",
+});
+
 
 export const metadata: Metadata = {
   title: "Protocolo Anti-Indústria",
@@ -15,19 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="font-body antialiased">
         {children}

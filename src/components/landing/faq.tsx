@@ -52,10 +52,10 @@ const faqs = [
 export function Faq() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="w-full py-12 md:py-24 bg-muted/30">
+    <section id="faq" className="w-full py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
             Suas Dúvidas, Nossas Respostas
           </h2>
           <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
@@ -69,14 +69,14 @@ export function Faq() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background rounded-lg shadow-sm border border-border/50"
+                className="bg-background rounded-xl shadow-sm border border-border/50"
               >
-                <AccordionTrigger className="text-left text-base font-semibold px-4 py-4 md:px-6 group text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold px-6 py-5 group text-primary">
                   <span className="flex-1">{faq.question}</span>
-                  <Plus className="h-5 w-5 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
-                  <Minus className="h-5 w-5 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
+                  <Plus className="h-6 w-6 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
+                  <Minus className="h-6 w-6 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground text-left px-4 pb-4 md:px-6">
+                <AccordionContent className="text-base text-muted-foreground text-left px-6 pb-5">
                   {faq.answer}
                   {faq.question ===
                     "Como saber se vai funcionar para mim?" && (
@@ -100,11 +100,11 @@ export function Faq() {
           </Accordion>
         </div>
         <div className="flex justify-center mt-12">
-          <Dialog open={open} onOpenChange={setOpen}>
+           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="w-full max-w-md text-base md:text-lg h-auto py-3 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform whitespace-normal"
+                className="w-full max-w-md text-lg h-auto py-4 font-bold whitespace-normal"
               >
                 Quero Começar Minha Transformação
                 <ArrowRight className="ml-2 h-5 w-5" />

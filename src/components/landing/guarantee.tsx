@@ -13,30 +13,33 @@ export function Guarantee() {
   const guaranteeSeal = PlaceHolderImages.find(p => p.id === 'guarantee-seal')!;
 
   return (
-    <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
+    <section id="guarantee" className="w-full py-20 md:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          <div className="lg:w-1/2 flex justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+          <div className="lg:w-1/2 flex justify-center lg:justify-end">
             <Image
               src={guaranteeSeal.imageUrl}
               alt={guaranteeSeal.description}
               width={400}
               height={400}
-              className="object-contain w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+              className="object-contain w-[250px] h-[250px] md:w-[350px] md:h-[350px] drop-shadow-2xl"
               data-ai-hint={guaranteeSeal.imageHint}
             />
           </div>
-          <div className="lg:w-1/2 text-center lg:text-left space-y-6">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">
+          <div className="lg:w-1/2 text-center lg:text-left space-y-6 max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold">
               Seu Risco é ZERO. Nossa Confiança é 100%.
             </h2>
             <p className="text-lg md:text-xl text-primary-foreground/80">
               Temos tanta certeza de que o Protocolo vai transformar sua pele que colocamos toda a responsabilidade em nossos ombros.
             </p>
-            <div className="space-y-4 text-left p-4 bg-white/10 rounded-lg">
+            <div className="space-y-4 text-left p-6 bg-white/10 rounded-xl">
                 <div className="flex items-start gap-4">
-                    <HeartHandshake className="h-8 w-8 text-secondary flex-shrink-0 mt-1"/>
-                    <p className="text-base"><span className="font-bold text-secondary">Garantia Incondicional de 30 Dias:</span> Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora.</p>
+                    <HeartHandshake className="h-10 w-10 text-secondary flex-shrink-0 mt-1"/>
+                    <div>
+                      <h3 className="font-bold text-secondary text-lg mb-1">Garantia Incondicional de 30 Dias</h3>
+                      <p className="text-base">Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora.</p>
+                    </div>
                 </div>
             </div>
             <p className="text-lg md:text-xl text-primary-foreground/80">
@@ -47,7 +50,7 @@ export function Guarantee() {
               <DialogTrigger asChild>
                  <Button
                   size="lg"
-                  className="w-full max-w-md mx-auto lg:mx-0 text-base md:text-lg h-auto py-3 font-bold shadow-lg hover:scale-105 transition-transform !bg-secondary !text-secondary-foreground whitespace-normal"
+                  className="w-full max-w-md mx-auto lg:mx-0 text-lg h-auto py-4 font-bold whitespace-normal"
                 >
                   <ShieldCheck className="mr-2 h-5 w-5" />
                   QUERO TESTAR SEM RISCO

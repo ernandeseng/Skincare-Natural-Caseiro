@@ -21,11 +21,23 @@ export function UrgencyCall() {
 
   useEffect(() => {
     // This will only run on the client, after initial hydration
+    const getEndTime = () => {
+      let endTime = localStorage.getItem('countdownEndTime');
+      if (!endTime) {
+        const now = new Date();
+        const endOfDay = new Date(now);
+        endOfDay.setHours(23, 59, 59, 999);
+        endTime = String(endOfDay.getTime());
+        localStorage.setItem('countdownEndTime', endTime);
+      }
+      return Number(endTime);
+    }
+    
+    const endTime = getEndTime();
+
     const timer = setInterval(() => {
-      const now = new Date();
-      const endOfDay = new Date(now);
-      endOfDay.setHours(23, 59, 59, 999);
-      const diff = endOfDay.getTime() - now.getTime();
+      const now = new Date().getTime();
+      const diff = endTime - now;
 
       if (diff > 0) {
         const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, "0");
@@ -42,32 +54,34 @@ export function UrgencyCall() {
   }, []);
 
   return (
-    <section className="w-full py-12 md:py-20 bg-secondary">
+    <section className="w-full py-16 md:py-24 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-6">
-          <Clock className="h-10 w-10 text-primary" />
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
+          <Clock className="h-12 w-12 text-primary" />
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
             A Oferta Termina em...
           </h2>
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
-              <p className="text-2xl md:text-3xl font-bold text-primary">{timeLeft.hours}</p>
+          <div className="flex items-center space-x-3 md:space-x-4">
+            <div className="text-center p-3 md:p-4 bg-background rounded-lg shadow-md w-24 md:w-28">
+              <p className="text-3xl md:text-5xl font-bold text-primary">{timeLeft.hours}</p>
               <p className="text-xs text-muted-foreground">Horas</p>
             </div>
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
-              <p className="text-2xl md:text-3xl font-bold text-primary">
+             <p className="text-3xl md:text-5xl font-bold text-primary">:</p>
+            <div className="text-center p-3 md:p-4 bg-background rounded-lg shadow-md w-24 md:w-28">
+              <p className="text-3xl md:text-5xl font-bold text-primary">
                 {timeLeft.minutes}
               </p>
               <p className="text-xs text-muted-foreground">Minutos</p>
             </div>
-            <div className="text-center p-2 md:p-4 bg-background rounded-lg shadow-md w-20 md:w-24">
-              <p className="text-2xl md:text-3xl font-bold text-primary">
+             <p className="text-3xl md:text-5xl font-bold text-primary">:</p>
+            <div className="text-center p-3 md:p-4 bg-background rounded-lg shadow-md w-24 md:w-28">
+              <p className="text-3xl md:text-5xl font-bold text-primary">
                 {timeLeft.seconds}
               </p>
               <p className="text-xs text-muted-foreground">Segundos</p>
             </div>
           </div>
-          <p className="max-w-2xl text-base md:text-lg text-primary/90">
+          <p className="max-w-3xl text-lg md:text-xl text-primary/90">
             Não deixe para amanhã a transformação que você pode começar HOJE!
             Acesso com preço especial liberado instantaneamente.
           </p>
@@ -75,7 +89,8 @@ export function UrgencyCall() {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="w-full max-w-md text-base md:text-lg h-auto py-3 font-bold shadow-lg hover:scale-105 transition-transform !bg-primary !text-primary-foreground whitespace-normal"
+                className="w-full max-w-md text-lg h-auto py-4 font-bold whitespace-normal"
+                variant="default"
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 GARANTIR ACESSO IMEDIATO

@@ -24,32 +24,39 @@ export function Hero() {
   const [open, setOpen] = useState(false);
   const ebookMockup = PlaceHolderImages.find(p => p.id === 'ebook-mockup')!;
 
+  const scrollTo = (selector: string) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="w-full bg-gradient-to-b from-primary/10 to-background pt-8 md:pt-20 lg:pt-24">
+    <section id="hero" className="w-full bg-gradient-to-b from-primary/5 via-background to-background pt-32 pb-20 md:pt-48 md:pb-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 md:space-y-6">
+        <div className="grid lg:grid-cols-2 gap-10 xl:gap-20 items-center">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
             <Badge
               variant="secondary"
-              className="bg-secondary/90 text-secondary-foreground text-sm py-1 px-3"
+              className="bg-secondary/90 text-secondary-foreground text-sm py-1.5 px-4 rounded-full"
             >
               ✨ Oferta de Lançamento por Tempo Limitado
             </Badge>
-            <h1 className="font-headline text-3xl font-bold md:text-4xl lg:text-5xl text-primary leading-tight">
-              A Pele dos Seus Sonhos com Ingredientes que Você Já Tem em Casa
+            <h1 className="font-headline text-4xl font-bold md:text-5xl lg:text-6xl text-primary leading-tight">
+              A Pele dos Seus Sonhos com Ingredientes da Sua Cozinha
             </h1>
-            <p className="max-w-[600px] text-base md:text-lg text-muted-foreground">
+            <p className="max-w-xl text-lg md:text-xl text-muted-foreground">
               Descubra o Protocolo Anti-Indústria: o único sistema que liberta
               você dos cosméticos caros e ineficazes, entregando uma pele
-              saudável, radiante e sem espinhas.
+              saudável e radiante.
             </p>
 
-            <div className="w-full max-w-md space-y-4">
-              <Dialog open={open} onOpenChange={setOpen}>
+            <div className="w-full max-w-md space-y-4 pt-4">
+               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
-                    className="w-full text-base md:text-lg h-auto py-4 font-bold bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/90 hover:scale-105 transition-transform whitespace-normal"
+                    className="w-full text-lg h-auto py-4 font-bold whitespace-normal"
                   >
                     COMECE SEU DIAGNÓSTICO GRATUITO
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -60,7 +67,7 @@ export function Hero() {
                 </DialogContent>
               </Dialog>
 
-              <div className="text-center bg-muted/50 p-3 rounded-lg">
+              <div className="text-center bg-muted/50 p-3 rounded-lg border border-border/50">
                 <p className="text-md text-muted-foreground">
                   Acesso completo de{" "}
                   <span className="line-through decoration-red-500 decoration-2">
@@ -75,11 +82,11 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="space-y-2 text-left w-full pt-2">
+            <div className="space-y-3 text-left w-full pt-4">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="font-medium text-muted-foreground text-sm">
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="font-medium text-muted-foreground text-base">
                     {feature}
                   </span>
                 </div>
@@ -90,9 +97,9 @@ export function Hero() {
             <Image
               src={"https://i.imgur.com/069bgon.png"}
               alt={ebookMockup.description}
-              width={500}
-              height={500}
-              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-[250px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] h-auto"
+              width={600}
+              height={600}
+              className="rounded-lg shadow-2xl object-contain transform hover:scale-105 transition-transform duration-500 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none h-auto drop-shadow-2xl"
               priority
               data-ai-hint={ebookMockup.imageHint}
             />
