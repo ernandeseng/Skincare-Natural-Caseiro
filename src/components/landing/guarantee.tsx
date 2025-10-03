@@ -13,7 +13,7 @@ export function Guarantee() {
   const guaranteeSeal = PlaceHolderImages.find(p => p.id === 'guarantee-seal')!;
 
   return (
-    <section id="guarantee" className="w-full py-20 md:py-32 bg-primary text-primary-foreground">
+    <section id="guarantee" className="w-full py-20 md:py-32 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           <div className="lg:w-1/2 flex justify-center lg:justify-end">
@@ -27,22 +27,22 @@ export function Guarantee() {
             />
           </div>
           <div className="lg:w-1/2 text-center lg:text-left space-y-6 max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
               Seu Risco é ZERO. Nossa Confiança é 100%.
             </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/80">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Temos tanta certeza de que o Protocolo vai transformar sua pele que colocamos toda a responsabilidade em nossos ombros.
             </p>
-            <div className="space-y-4 text-left p-6 bg-white/10 rounded-xl">
+            <div className="space-y-4 text-left p-6 bg-primary/5 rounded-xl">
                 <div className="flex items-start gap-4">
                     <HeartHandshake className="h-10 w-10 text-secondary flex-shrink-0 mt-1"/>
                     <div>
                       <h3 className="font-bold text-secondary text-lg mb-1">Garantia Incondicional de 30 Dias</h3>
-                      <p className="text-base">Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora.</p>
+                      <p className="text-base text-primary/90">Se por QUALQUER motivo você não ficar 100% satisfeita, basta nos enviar um único e-mail. Devolvemos todo o seu investimento na hora.</p>
                     </div>
                 </div>
             </div>
-            <p className="text-lg md:text-xl text-primary-foreground/80">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Você pode testar todo o método, aplicar as receitas e ver os resultados. Se não for o que você esperava, o prejuízo é nosso.
             </p>
 
