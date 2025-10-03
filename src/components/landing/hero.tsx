@@ -24,10 +24,15 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero relative w-full min-h-[95vh] md:min-h-screen flex items-center bg-cover bg-no-repeat bg-center"
-      style={{ backgroundImage: "url('https://i.imgur.com/9NEHXfv.png')" }}
+      className="hero relative w-full min-h-[95vh] md:min-h-screen flex items-center"
     >
+      <picture className="absolute inset-0 w-full h-full">
+        <source media="(max-width: 768px)" srcSet="https://i.imgur.com/5r68Vpf.jpeg" />
+        <img src="https://i.imgur.com/aP8kzt7.jpeg" alt="Background" className="w-full h-full object-cover" />
+      </picture>
+
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
+      
       <div className="relative container mx-auto px-4 md:px-6 w-full">
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8">
             <Badge
