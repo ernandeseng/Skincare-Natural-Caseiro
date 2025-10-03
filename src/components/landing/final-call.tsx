@@ -41,9 +41,9 @@ export function FinalCall() {
             </DialogContent>
           </Dialog>
 
-          <div className="text-sm text-primary-foreground/60 pt-6">
+          <div className="text-sm text-primary-foreground pt-6">
             <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
-            <p className="mt-2">© 2024 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
+            <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
           </div>
         </div>
       </div>
