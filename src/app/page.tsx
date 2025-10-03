@@ -9,7 +9,6 @@ import { Pricing } from "@/components/landing/pricing";
 import { Preview } from "@/components/landing/preview";
 import { SalesNotification } from "@/components/landing/sales-notification";
 import { TargetAudience } from "@/components/landing/target-audience";
-import { UrgencyCall } from "@/components/landing/urgency-call";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
         <Hero />
         <Preview />
         <Benefits />
-        <UrgencyCall />
         <TargetAudience />
         <Offer />
         <Pricing />
