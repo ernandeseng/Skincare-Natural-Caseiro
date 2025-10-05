@@ -2,7 +2,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -35,12 +34,6 @@ export function Hero() {
       
       <div className="relative container mx-auto px-4 md:px-6 w-full">
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8">
-            <Badge
-              variant="secondary"
-              className="bg-secondary/90 text-secondary-foreground text-sm py-1.5 px-4 rounded-full"
-            >
-              🔥 Lançamento Exclusivo: Desconto Especial só até domingo!
-            </Badge>
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight shadow-2xl">
               A Pele dos Seus Sonhos com Ingredientes da Sua Cozinha
             </h1>
