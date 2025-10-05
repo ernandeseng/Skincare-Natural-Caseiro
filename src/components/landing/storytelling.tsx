@@ -71,12 +71,10 @@ export function Storytelling() {
         {/* Passo 1: A Frustração */}
         <div className="story-step" data-step="1">
           <div className="story-content">
-            <div className="story-icon">😔</div>
+            <div className="story-icon">😊</div>
             <h3 className="story-heading">Se você é como eu era...</h3>
             <p className="story-text">
-              Uma mãe que trabalha 8 horas, corre atrás dos filhos e ainda se
-              frustra ao ver no espelho aquela pele oleosa, cheia de cravos e
-              manchas - então você conhece essa dor.
+              Uma mulher que vive na correria — acorda cedo, trabalha, cuida da casa e mal tem tempo pra si — mas sonha em se livrar da pele oleosa, dos cravos e das manchas que insistem em ficar. Se isso soa familiar, então o Protocolo Anti-Indústria foi feito pra você.
             </p>
           </div>
           <div className="story-visual">
@@ -101,8 +99,7 @@ export function Storytelling() {
               Já ouviu dermatologistas indicarem produtos caros...
             </h3>
             <p className="story-text">
-              Que duravam apenas um mês. Já sentiu vergonha de tirar fotos sem
-              filtro e se perguntou: "Por que comigo nada funciona?"
+              Que prometiam milagres, mas duravam só algumas semanas? Já sentiu vergonha de tirar uma foto sem filtro e pensou: 'Por que comigo nada funciona?'
             </p>
           </div>
         </div>
@@ -112,10 +109,10 @@ export function Storytelling() {
           <div className="story-content centered">
             <div className="story-icon">💭</div>
             <h3 className="story-heading highlight-text">
-              E o pior: cada ida ao supermercado vem aquele dilema cruel...
+              E o pior: cada ida ao supermercado traz aquele dilema cruel...
             </h3>
             <p className="story-text large">
-              Comprar um creme ou colocar comida na mesa?
+              Comprar um creme novo ou colocar comida na mesa?
             </p>
           </div>
         </div>
@@ -128,9 +125,7 @@ export function Storytelling() {
               Eu vivi isso na pele até descobrir o Método Sinergia Doméstica™
             </h3>
             <p className="story-text">
-              Esta descoberta mudou tudo. Descobri que é possível conquistar
-              uma pele mais limpa e saudável usando apenas ingredientes da sua
-              cozinha - gastando apenas R$ 47 por mês.
+             Foi o ponto de virada. Descobri que dá pra conquistar uma pele limpa e saudável com ingredientes simples da cozinha — gastando menos de R$ 50 por mês. E o melhor: com resultados visíveis em 15 dias.
             </p>
           </div>
           <div className="story-visual">
@@ -151,10 +146,7 @@ export function Storytelling() {
               Não são receitas caseiras comuns do Google
             </h3>
             <p className="story-text">
-              É um sistema científico que explora o{" "}
-              <strong>Fenômeno SID™</strong> - onde ingredientes como mel,
-              aveia e limão, combinados na proporção correta, ativam os mesmos
-              mecanismos dos cosméticos mais caros.
+             O Protocolo Anti-Indústria é um sistema baseado no Fenômeno SID™ — uma combinação precisa de ingredientes como mel, aveia e limão que, juntos, ativam os mesmos mecanismos dos cosméticos caros, de forma 100% natural.
             </p>
           </div>
         </div>
