@@ -102,304 +102,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  /* Hero Section */
-  .hero {
-    min-height: 100vh;
-    padding: 40px 20px;
-    background-position: 60% center;
-    background-attachment: scroll;
-    overflow-x: hidden;
-  }
-  
-  .hero::before {
-    background: linear-gradient(180deg, 
-      rgba(5, 150, 105, 0.92) 0%, 
-      rgba(5, 150, 105, 0.85) 50%,
-      rgba(0, 0, 0, 0.7) 100%);
-  }
-  
-  
-  /* Título */
-  .hero h1 {
-    font-size: clamp(1.8em, 5vw, 2.5em);
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-    padding: 0 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  /* Subtítulo */
-  .hero .subtitle,
-  .hero p {
-    font-size: clamp(1em, 3.5vw, 1.2em);
-    line-height: 1.5;
-    margin-bottom: 25px;
-    padding: 0 10px;
-    max-width: 100%;
-  }
-  
-  /* Lista de Benefícios */
-  .hero .benefits-list,
-  .hero ul {
-    padding: 0;
-    margin: 20px 0;
-    width: 100%;
-  }
-  
-  .hero .benefits-list li,
-  .hero ul li {
-    font-size: 0.95em;
-    padding: 12px 15px;
-    margin: 10px 10px;
-    width: calc(100% - 20px);
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .hero .benefits-list li::before,
-  .hero .check-icon {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
-  
-  /* Botão CTA */
-  .hero .cta-button,
-  .hero-cta-button,
-  .hero button,
-  .hero a[class*="button"] {
-    width: calc(100% - 40px) !important;
-    max-width: 400px !important;
-    min-width: auto !important;
-    margin: 30px auto !important;
-    padding: 18px 30px !important;
-    font-size: 1.1em !important;
-    display: block !important;
-    text-align: center !important;
-    white-space: normal !important;
-    line-height: 1.3 !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Preço */
-  .hero .price,
-  .hero .pricing {
-    padding: 20px 15px;
-    margin: 20px 10px;
-    width: calc(100% - 20px);
-    box-sizing: border-box;
-  }
-  
-  .hero .price .old-price {
-    font-size: 1em;
-  }
-  
-  .hero .price .new-price {
-    font-size: 1.8em;
-  }
-}
-
-/* Para telas muito pequenas */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6em !important;
-    padding: 0 5px;
-  }
-  
-  .hero .subtitle,
-  .hero p {
-    font-size: 0.95em !important;
-  }
-  
-  .hero .benefits-list li {
-    font-size: 0.9em !important;
-    padding: 10px 12px !important;
-  }
-  
-  .hero .cta-button {
-    font-size: 1em !important;
-    padding: 16px 25px !important;
-  }
-}
-
-/* Garantir que nenhum elemento cause scroll horizontal */
-body, html {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* ========== CORREÇÃO MOBILE - SEÇÃO BÔNUS ========== */
-@media (max-width: 768px) {
-  
-  /* Container principal */
-  .bonus-section {
-    padding: 60px 15px !important;
-    margin: 0 !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Título principal */
-  .bonus-section h2 {
-    font-size: clamp(1.5em, 5vw, 1.9em) !important;
-    padding: 0 10px !important;
-    margin: 0 0 15px 0 !important;
-    text-align: center !important;
-    word-wrap: break-word !important;
-    line-height: 1.25 !important;
-  }
-  
-  /* Subtítulo "Valor: R$ 151" */
-  .bonus-section .subtitle {
-    font-size: 1em !important;
-    padding: 0 10px !important;
-    margin-bottom: 30px !important;
-    text-align: center !important;
-  }
-  
-  /* Grid de cards */
-  .bonus-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 25px !important;
-    padding: 0 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  
-  /* Cards individuais */
-  .bonus-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 20px 15px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    border-radius: 12px !important;
-  }
-  
-  /* Imagens nos cards */
-  .bonus-card img,
-  .bonus-card picture img {
-    width: 100% !important;
-    max-width: 250px !important;
-    height: auto !important;
-    margin: 0 auto 15px auto !important;
-    display: block !important;
-    object-fit: contain !important;
-  }
-  
-  /* Título do bônus */
-  .bonus-card h3 {
-    font-size: 1.15em !important;
-    margin: 15px 0 8px 0 !important;
-    word-wrap: break-word !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-  }
-  
-  /* Valor do bônus */
-  .bonus-card .value,
-  .bonus-card [class*="price"] {
-    font-size: 1.1em !important;
-    margin-top: 8px !important;
-    text-align: center !important;
-  }
-  
-  /* Box de oferta especial */
-  .offer-box {
-    width: 100% !important;
-    margin: 30px auto !important;
-    padding: 25px 15px !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Título "Oferta Especial de Lançamento" */
-  .offer-box h3 {
-    font-size: 1.3em !important;
-    margin-bottom: 15px !important;
-    text-align: center !important;
-  }
-  
-  /* Texto "Leve tudo isso hoje" */
-  .offer-box p {
-    font-size: 0.95em !important;
-    margin-bottom: 20px !important;
-    text-align: center !important;
-    padding: 0 10px !important;
-  }
-  
-  /* Preço antigo riscado */
-  .old-total-price {
-    font-size: 1.05em !important;
-    text-align: center !important;
-  }
-  
-  /* Preço atual grande */
-  .current-price {
-    font-size: 2.2em !important;
-    margin: 15px 0 !important;
-    text-align: center !important;
-  }
-  
-  /* Parcelamento */
-  .installment {
-    font-size: 0.9em !important;
-    text-align: center !important;
-    margin-top: 8px !important;
-  }
-  
-  /* Botão na oferta */
-  .offer-box button,
-  .offer-box a[class*="button"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 20px 0 0 0 !important;
-    padding: 18px 30px !important;
-    font-size: 1.05em !important;
-  }
-}
-
-/* Telas muito pequenas (< 400px) */
-@media (max-width: 400px) {
-  .bonus-section h2 {
-    font-size: 1.4em !important;
-  }
-  
-  .bonus-card {
-    padding: 18px 12px !important;
-  }
-  
-  .bonus-card img {
-    max-width: 200px !important;
-  }
-  
-  .current-price {
-    font-size: 2em !important;
-  }
-}
-
-/* Garantir que nada cause scroll horizontal */
-body, html {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
-
-* {
-  box-sizing: border-box !important;
-}
-
 /* Aplicar entre cada seção */
 section {
   position: relative;
@@ -772,9 +474,139 @@ section:nth-child(odd) {
     transform: scale(1);
 }
 
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  padding: 12px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 2px solid #10b981;
+}
 
-/* Mobile responsivo */
+.announcement-content {
+  position: relative;
+  height: 30px;
+  overflow: hidden;
+}
+
+.announcement-text * {
+  color: #ffffff !important;
+}
+
+.announcement-text {
+  font-size: 0.95em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  line-height: 1.4;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.announcement-text.active {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.announcement-text.exiting {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+}
+
+.announcement-icon {
+  font-size: 1.3em;
+  animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.highlight-text {
+  background: #10b981;
+  color: #1a1a1a !important;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 0 5px;
+  white-space: nowrap;
+}
+
+.countdown-inline {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #10b981 !important;
+  margin-left: 8px;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.announcement-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  to { left: 100%; }
+}
+
+body {
+  padding-top: 50px;
+}
+
+/* Prevenir scroll horizontal */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+/* Garantir que nenhum elemento ultrapasse a tela */
+* {
+  max-width: 100% !important;
+}
+
+img, video, iframe, embed, object {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh !important;
+    padding: 40px 20px !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+  }
   .story-section::before {
     left: 20px;
   }
@@ -827,30 +659,6 @@ section:nth-child(odd) {
   .highlight-step .story-content {
     padding: 40px 25px;
   }
-}
-
-/* Prevenir scroll horizontal */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-  position: relative !important;
-}
-
-* {
-  box-sizing: border-box !important;
-}
-
-/* Garantir que nenhum elemento ultrapasse a tela */
-* {
-  max-width: 100% !important;
-}
-
-img, video, iframe, embed, object {
-  max-width: 100% !important;
-  height: auto !important;
-}
-
-@media (max-width: 768px) {
   
   /* CONTAINER GLOBAL */
   .container, section, div[class*="container"] {
@@ -860,14 +668,6 @@ img, video, iframe, embed, object {
     margin-right: 0 !important;
     width: 100% !important;
     max-width: 100vw !important;
-  }
-
-  /* HERO SECTION */
-  .hero {
-    min-height: 100vh !important;
-    padding: 40px 20px !important;
-    background-position: center !important;
-    background-attachment: scroll !important;
   }
 
   .hero-content {
@@ -1163,132 +963,7 @@ img, video, iframe, embed, object {
     font-size: 0.85em !important;
     padding: 8px 12px !important;
   }
-}
 
-/* TELAS MUITO PEQUENAS (< 400px) */
-@media (max-width: 400px) {
-  .hero h1 {
-    font-size: 1.5em !important;
-  }
-
-  .hero p {
-    font-size: 0.9em !important;
-  }
-
-  section h2 {
-    font-size: 1.4em !important;
-  }
-
-  .final-price {
-    font-size: 2em !important;
-  }
-
-  button,
-  .cta-button {
-    padding: 16px 25px !important;
-    font-size: 1em !important;
-  }
-}
-
-.announcement-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
-  padding: 12px 20px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid #10b981;
-}
-
-.announcement-content {
-  position: relative;
-  height: 30px;
-  overflow: hidden;
-}
-
-.announcement-text {
-  color: #ffffff;
-  font-size: 0.95em;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0;
-  line-height: 1.4;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%) translateY(100%);
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.announcement-text.active {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-
-.announcement-text.exiting {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 0;
-}
-
-.announcement-icon {
-  font-size: 1.3em;
-  animation: pulse-icon 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse-icon {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-.highlight-text {
-  background: #fbbf24;
-  color: #1a1a1a;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-weight: 700;
-  margin: 0 5px;
-  white-space: nowrap;
-}
-
-.countdown-inline {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-weight: 700;
-  color: #fbbf24;
-  margin-left: 8px;
-  font-family: monospace;
-  letter-spacing: 1px;
-}
-
-.announcement-bar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
-    transparent);
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  to { left: 100%; }
-}
-
-@media (max-width: 768px) {
   .announcement-bar {
     padding: 10px 15px;
     font-size: 0.85em;
@@ -1321,9 +996,33 @@ img, video, iframe, embed, object {
     display: block;
     width: fit-content;
   }
+   body {
+    padding-top: 45px;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5em !important;
+  }
+
+  .hero p {
+    font-size: 0.9em !important;
+  }
+
+  section h2 {
+    font-size: 1.4em !important;
+  }
+
+  .final-price {
+    font-size: 2em !important;
+  }
+
+  button,
+  .cta-button {
+    padding: 16px 25px !important;
+    font-size: 1em !important;
+  }
   .announcement-bar {
     padding: 8px 10px;
   }
@@ -1337,15 +1036,7 @@ img, video, iframe, embed, object {
     display: inline;
   }
 }
-
-body {
-  padding-top: 50px;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 45px;
-  }
-}
-
   
+
+
+    
