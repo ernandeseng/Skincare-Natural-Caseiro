@@ -828,3 +828,364 @@ section:nth-child(odd) {
     padding: 40px 25px;
   }
 }
+
+/* Prevenir scroll horizontal */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+/* Garantir que nenhum elemento ultrapasse a tela */
+* {
+  max-width: 100% !important;
+}
+
+img, video, iframe, embed, object {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 768px) {
+  
+  /* CONTAINER GLOBAL */
+  .container, section, div[class*="container"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    min-height: 100vh !important;
+    padding: 40px 20px !important;
+    background-position: center !important;
+    background-attachment: scroll !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6em, 5vw, 2.2em) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 10px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .hero .subtitle,
+  .hero p {
+    font-size: clamp(0.95em, 3vw, 1.1em) !important;
+    padding: 0 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero ul,
+  .hero .benefits-list {
+    padding: 0 10px !important;
+    margin: 20px 0 !important;
+  }
+
+  .hero li {
+    font-size: 0.9em !important;
+    padding: 10px 12px !important;
+    margin: 8px 5px !important;
+    width: calc(100% - 10px) !important;
+  }
+
+  /* TODOS OS BOTÕES CTA */
+  button,
+  .cta-button,
+  .hero-cta-button,
+  a[class*="button"],
+  [class*="cta"] {
+    width: calc(100% - 30px) !important;
+    max-width: 400px !important;
+    min-width: auto !important;
+    margin: 20px auto !important;
+    padding: 18px 30px !important;
+    font-size: 1.05em !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* PREÇO */
+  .price,
+  .pricing,
+  [class*="price"] {
+    padding: 20px 15px !important;
+    margin: 20px 10px !important;
+    width: calc(100% - 20px) !important;
+  }
+
+  .old-price {
+    font-size: 0.95em !important;
+  }
+
+  .new-price {
+    font-size: 1.8em !important;
+  }
+
+  /* SEÇÕES GERAIS */
+  section {
+    padding: 60px 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  section h2 {
+    font-size: clamp(1.5em, 4.5vw, 1.9em) !important;
+    padding: 0 15px !important;
+    margin: 0 0 30px 0 !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+  }
+
+  section h3 {
+    font-size: clamp(1.2em, 3.5vw, 1.5em) !important;
+    padding: 0 10px !important;
+    word-wrap: break-word !important;
+  }
+
+  section p {
+    font-size: clamp(0.95em, 2.5vw, 1.05em) !important;
+    padding: 0 10px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* GRIDS E CARDS */
+  .grid,
+  .cards-grid,
+  [class*="grid"],
+  .benefits,
+  .modules-list,
+  .testimonial-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 0 15px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .card,
+  .module-item,
+  .benefit-card,
+  .bonus-card,
+  .testimonial-card,
+  [class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    padding: 20px 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* IMAGENS */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .card img,
+  .bonus-card img {
+    max-width: 250px !important;
+    margin: 0 auto 15px auto !important;
+  }
+
+  /* SEÇÃO DE MÓDULOS */
+  .modules-section {
+    padding: 60px 20px !important;
+  }
+
+  .module-item {
+    padding: 20px 15px !important;
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+  }
+
+  /* SEÇÃO DE BÔNUS */
+  .bonus-section {
+    padding: 60px 15px !important;
+  }
+
+  .bonus-grid {
+    padding: 0 10px !important;
+  }
+
+  .bonus-card {
+    width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  /* SEÇÃO DE PRECIFICAÇÃO */
+  .pricing-highlight-section,
+  .offer-box,
+  [class*="pricing"] {
+    width: calc(100% - 30px) !important;
+    max-width: 100% !important;
+    margin: 30px auto !important;
+    padding: 40px 20px !important;
+  }
+
+  .pricing-items {
+    padding: 20px 10px !important;
+  }
+
+  .pricing-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 12px 15px !important;
+    gap: 5px !important;
+  }
+
+  .final-price {
+    font-size: 2.5em !important;
+  }
+
+  /* SEÇÃO DE GARANTIA */
+  .guarantee-section,
+  .guarantee-box {
+    padding: 40px 20px !important;
+    margin: 30px 15px !important;
+    width: calc(100% - 30px) !important;
+  }
+
+  /* FAQ */
+  .faq-section {
+    padding: 60px 20px !important;
+  }
+
+  .faq-list {
+    padding: 0 10px !important;
+  }
+
+  .faq-item {
+    margin: 0 0 15px 0 !important;
+    width: 100% !important;
+  }
+
+  .faq-question,
+  .faq-answer {
+    padding: 18px 15px !important;
+    font-size: 0.95em !important;
+  }
+
+  /* DEPOIMENTOS */
+  .testimonials-section {
+    padding: 60px 20px !important;
+  }
+
+  .testimonial-card {
+    width: 100% !important;
+    padding: 25px 20px !important;
+  }
+
+  /* STORYTELLING */
+  .story-section {
+    padding: 60px 15px !important;
+  }
+
+  .story-step {
+    grid-template-columns: 1fr !important;
+    padding: 0 10px !important;
+    margin-bottom: 50px !important;
+  }
+
+  .story-content {
+    padding: 25px 20px !important;
+    width: 100% !important;
+  }
+
+  .stat-box,
+  .savings-box {
+    min-width: auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 30px 20px !important;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 20px !important;
+    text-align: center !important;
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.9em !important;
+  }
+
+  /* ELEMENTOS ESPECÍFICOS QUE COSTUMAM QUEBRAR */
+  table {
+    width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important;
+  }
+
+  pre, code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+
+  /* TIMER/COUNTDOWN */
+  .countdown,
+  [class*="timer"] {
+    font-size: 0.9em !important;
+    padding: 15px 10px !important;
+  }
+
+  /* BADGES E TRUST ELEMENTS */
+  .trust-badges,
+  .badges {
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 20px 15px !important;
+    justify-content: center !important;
+  }
+
+  .badge {
+    font-size: 0.85em !important;
+    padding: 8px 12px !important;
+  }
+}
+
+/* TELAS MUITO PEQUENAS (< 400px) */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.5em !important;
+  }
+
+  .hero p {
+    font-size: 0.9em !important;
+  }
+
+  section h2 {
+    font-size: 1.4em !important;
+  }
+
+  .final-price {
+    font-size: 2em !important;
+  }
+
+  button,
+  .cta-button {
+    padding: 16px 25px !important;
+    font-size: 1em !important;
+  }
+}
