@@ -1212,7 +1212,7 @@ img, video, iframe, embed, object {
 .announcement-text {
   color: #ffffff;
   font-size: 0.95em;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.3px;
   display: flex;
   align-items: center;
@@ -1250,8 +1250,8 @@ img, video, iframe, embed, object {
 }
 
 .highlight-text {
-  background: #fbbf24;
-  color: #1a1a1a;
+  background: #34d399;
+  color: #064e3b;
   padding: 3px 10px;
   border-radius: 4px;
   font-weight: 700;
@@ -1264,7 +1264,7 @@ img, video, iframe, embed, object {
   padding: 4px 12px;
   border-radius: 6px;
   font-weight: 700;
-  color: #fbbf24;
+  color: #34d399;
   margin-left: 8px;
   font-family: monospace;
   letter-spacing: 1px;
