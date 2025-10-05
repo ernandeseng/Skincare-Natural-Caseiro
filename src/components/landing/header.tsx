@@ -37,7 +37,23 @@ export function Header() {
     const rotationInterval = 4000;
 
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % messages.length);
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % messages.length;
+        const currentMessageEl = document.querySelector(`[data-message="${messages[prevIndex].id}"]`);
+        const nextMessageEl = document.querySelector(`[data-message="${messages[nextIndex].id}"]`);
+
+        if (currentMessageEl) {
+          currentMessageEl.classList.remove('active');
+          currentMessageEl.classList.add('exiting');
+        }
+        
+        setTimeout(() => {
+          if (currentMessageEl) currentMessageEl.classList.remove('exiting');
+          if (nextMessageEl) nextMessageEl.classList.add('active');
+        }, 600);
+
+        return nextIndex;
+      });
     }, rotationInterval);
 
     return () => clearInterval(intervalId);
@@ -78,7 +94,7 @@ export function Header() {
         {messages.map((msg, index) => (
           <p
             key={msg.id}
-            className={`announcement-text ${index === currentIndex ? 'active' : ''}`}
+            className={`announcement-text ${index === 0 ? 'active' : ''}`}
             data-message={msg.id}
           >
             <span className="announcement-icon">{msg.icon}</span>
