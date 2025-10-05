@@ -39,7 +39,7 @@ export function Hero() {
               variant="secondary"
               className="bg-secondary/90 text-secondary-foreground text-sm py-1.5 px-4 rounded-full"
             >
-              ✨ Oferta de Lançamento por Tempo Limitado
+              🔥 Lançamento Exclusivo: Desconto Especial só até domingo!
             </Badge>
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight shadow-2xl">
               A Pele dos Seus Sonhos com Ingredientes da Sua Cozinha
