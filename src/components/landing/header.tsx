@@ -98,8 +98,8 @@ export function Header() {
             data-message={msg.id}
           >
             <span className="announcement-icon">{msg.icon}</span>
-            <span>{msg.text1}</span>
-            <span className="highlight-text">{msg.highlight}</span>
+            <span>{msg.text1}</span>{' '}
+            <span className="highlight-text">{msg.highlight}</span>{' '}
             <span>{msg.text2}</span>
             {msg.showCountdown && <span className="countdown-inline">{countdown}</span>}
           </p>
