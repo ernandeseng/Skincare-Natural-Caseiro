@@ -15,10 +15,10 @@ import { CreditCard } from "lucide-react";
 export function Pricing() {
   const [open, setOpen] = useState(false);
   return (
-    <section id="pricing" className="w-full pb-20 md:pb-32 bonus-section">
+    <section id="pricing" className="w-full pb-20 md:pb-32 bg-primary/5">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-lg offer-box">
-          <Card className="bg-primary/5 p-6 md:p-8 rounded-xl text-center space-y-4 shadow-2xl border-2 border-secondary">
+          <Card className="bg-background p-6 md:p-8 rounded-xl text-center space-y-4 shadow-2xl border-2 border-secondary">
             <h3 className="text-2xl font-headline font-bold text-primary">
               Oferta Especial de Lançamento
             </h3>
