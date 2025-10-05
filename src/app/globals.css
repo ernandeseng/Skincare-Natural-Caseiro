@@ -537,10 +537,7 @@ section:nth-child(odd) {
 }
 
 .highlight-text {
-  background: #10b981;
-  color: #1a1a1a !important;
-  padding: 3px 10px;
-  border-radius: 4px;
+  color: #fbbf24 !important;
   font-weight: 700;
   margin: 0 5px;
   white-space: nowrap;
@@ -551,7 +548,7 @@ section:nth-child(odd) {
   padding: 4px 12px;
   border-radius: 6px;
   font-weight: 700;
-  color: #10b981 !important;
+  color: #fbbf24 !important;
   margin-left: 8px;
   font-family: monospace;
   letter-spacing: 1px;
