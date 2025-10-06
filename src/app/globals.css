@@ -708,6 +708,7 @@ html {
   .highlight-step .story-heading,
   .highlight-step .story-text {
     max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .highlight-step .story-text.large {
@@ -740,3 +741,5 @@ html {
     margin: 0 auto;
   }
 }
+
+    
