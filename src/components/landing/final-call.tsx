@@ -1,4 +1,3 @@
-
 "use client";
 import { Button } from "@/components/ui/button";
 import { Gem } from "lucide-react";
@@ -41,7 +40,7 @@ export function FinalCall() {
             </DialogContent>
           </Dialog>
 
-          <div className="text-sm text-primary-foreground pt-6 space-y-4">
+          <div className="text-sm pt-6 space-y-4 text-primary-foreground">
             <div>
               <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
               <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
