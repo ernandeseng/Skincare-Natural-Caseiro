@@ -358,7 +358,7 @@ section:nth-child(odd) {
 .story-text {
   font-size: 1.15em;
   line-height: 1.7;
-  color: #4b5563;
+  color: #4B5563;
 }
 
 .story-text.large {
@@ -582,7 +582,7 @@ section:nth-child(odd) {
 .testimonial-text {
   flex-grow: 1;
   font-style: italic;
-  color: #4b5563;
+  color: #4B5563;
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -615,7 +615,7 @@ section:nth-child(odd) {
 
 .author-info span {
   font-size: 0.9em;
-  color: #6b7280;
+  color: #6B7280;
 }
 
 

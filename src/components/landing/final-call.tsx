@@ -46,7 +46,7 @@ export function FinalCall() {
               <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
               <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
             </div>
-            <p className="text-xs max-w-2xl mx-auto text-primary-foreground/70">
+            <p className="text-xs max-w-2xl mx-auto text-primary-foreground">
               Aviso legal: Este site não é afiliado ao Meta ou a qualquer entidade do Meta. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.
             </p>
           </div>
