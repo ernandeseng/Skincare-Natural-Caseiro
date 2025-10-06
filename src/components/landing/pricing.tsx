@@ -26,27 +26,27 @@ export function Pricing() {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
+        <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto items-start">
           {/* Card Básico */}
-          <Card className="bg-background/70 p-6 md:p-8 rounded-xl text-center space-y-4 shadow-lg border-2 border-border/50 h-full flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl font-headline font-bold text-primary">Plano Básico</CardTitle>
-               <p className="text-muted-foreground">Acesso essencial.</p>
+          <Card className="bg-background/70 p-4 rounded-xl text-center space-y-2 shadow-lg border-2 border-border/50 h-full flex flex-col">
+            <CardHeader className="p-2">
+              <CardTitle className="text-lg md:text-2xl font-headline font-bold text-primary">Plano Básico</CardTitle>
+               <p className="text-xs md:text-sm text-muted-foreground">Acesso essencial.</p>
             </CardHeader>
-            <CardContent className="space-y-4 flex-grow">
-              <p className="text-5xl font-extrabold text-primary/80">
+            <CardContent className="space-y-3 flex-grow p-2">
+              <p className="text-4xl md:text-5xl font-extrabold text-primary/80">
                 R$ 19,90
               </p>
-              <ul className="space-y-3 text-left text-muted-foreground">
-                <li className="flex items-center gap-3"><Check className="text-primary h-5 w-5"/><span>Protocolo Anti-Indústria</span></li>
-                <li className="flex items-center gap-3"><X className="text-destructive h-5 w-5"/><span>Guia de Compras Inteligente</span></li>
-                <li className="flex items-center gap-3"><X className="text-destructive h-5 w-5"/><span>Receitas SOS para Emergências</span></li>
-                <li className="flex items-center gap-3"><X className="text-destructive h-5 w-5"/><span>Manual de Conservação</span></li>
+              <ul className="space-y-2 text-left text-muted-foreground text-xs md:text-base">
+                <li className="flex items-start gap-2"><Check className="text-primary h-4 w-4 mt-0.5"/><span>Protocolo</span></li>
+                <li className="flex items-start gap-2"><X className="text-destructive h-4 w-4 mt-0.5"/><span>Guia de Compras</span></li>
+                <li className="flex items-start gap-2"><X className="text-destructive h-4 w-4 mt-0.5"/><span>Receitas SOS</span></li>
+                <li className="flex items-start gap-2"><X className="text-destructive h-4 w-4 mt-0.5"/><span>Manual</span></li>
               </ul>
             </CardContent>
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline" size="lg" className="w-full">
+                <Button variant="outline" size="sm" className="w-full text-xs md:text-base">
                   Escolher Básico
                 </Button>
               </DialogTrigger>
@@ -58,37 +58,37 @@ export function Pricing() {
 
           {/* Card Completo (Mais Atraente) */}
            <div className="relative">
-             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
-                <Star className="h-4 w-4"/>
+             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-3 py-0.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                <Star className="h-3 w-3"/>
                 MAIS POPULAR
              </div>
-            <Card className="bg-background p-6 md:p-8 rounded-xl text-center space-y-4 shadow-2xl border-2 border-secondary h-full flex flex-col">
-                 <CardHeader>
-                  <CardTitle className="text-2xl font-headline font-bold text-primary">Plano Completo</CardTitle>
-                  <p className="text-muted-foreground">Todos os bônus inclusos!</p>
+            <Card className="bg-background p-4 rounded-xl text-center space-y-2 shadow-2xl border-2 border-secondary h-full flex flex-col">
+                 <CardHeader className="p-2">
+                  <CardTitle className="text-lg md:text-2xl font-headline font-bold text-primary">Plano Completo</CardTitle>
+                  <p className="text-xs md:text-sm text-muted-foreground">Bônus inclusos!</p>
                 </CardHeader>
-                 <CardContent className="space-y-4 flex-grow">
-                    <p className="text-sm font-semibold text-muted-foreground">
-                        De <span className="line-through">R$ 348,00</span> por apenas:
+                 <CardContent className="space-y-3 flex-grow p-2">
+                    <p className="text-xs font-semibold text-muted-foreground">
+                        De <span className="line-through">R$ 348</span> por:
                     </p>
-                    <p className="text-6xl font-extrabold text-primary">
+                    <p className="text-4xl md:text-6xl font-extrabold text-primary">
                         R$ 27,90
                     </p>
-                    <p className="font-semibold text-md -mt-2">
-                        ou em até 3x no cartão
+                    <p className="font-semibold text-xs md:text-md -mt-2">
+                        ou 3x no cartão
                     </p>
-                    <ul className="space-y-3 text-left text-muted-foreground">
-                        <li className="flex items-center gap-3 font-semibold"><Check className="text-primary h-5 w-5"/><span>Protocolo Anti-Indústria</span></li>
-                        <li className="flex items-center gap-3 font-semibold"><Check className="text-primary h-5 w-5"/><span>Guia de Compras Inteligente</span></li>
-                        <li className="flex items-center gap-3 font-semibold"><Check className="text-primary h-5 w-5"/><span>Receitas SOS para Emergências</span></li>
-                        <li className="flex items-center gap-3 font-semibold"><Check className="text-primary h-5 w-5"/><span>Manual de Conservação</span></li>
+                    <ul className="space-y-2 text-left text-muted-foreground text-xs md:text-base">
+                        <li className="flex items-start gap-2 font-semibold"><Check className="text-primary h-4 w-4 mt-0.5"/><span>Protocolo</span></li>
+                        <li className="flex items-start gap-2 font-semibold"><Check className="text-primary h-4 w-4 mt-0.5"/><span>Guia de Compras</span></li>
+                        <li className="flex items-start gap-2 font-semibold"><Check className="text-primary h-4 w-4 mt-0.5"/><span>Receitas SOS</span></li>
+                        <li className="flex items-start gap-2 font-semibold"><Check className="text-primary h-4 w-4 mt-0.5"/><span>Manual</span></li>
                     </ul>
                 </CardContent>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
-                  <Button variant="cta" size="xl" className="w-full">
-                    <CreditCard className="mr-2 h-6 w-6" />
-                    QUERO MEU KIT COMPLETO
+                  <Button variant="cta" size="lg" className="w-full text-sm md:text-xl md:h-12">
+                    <CreditCard className="mr-2 h-4 w-4 md:h-6 md:w-6" />
+                    KIT COMPLETO
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md md:max-w-lg">
