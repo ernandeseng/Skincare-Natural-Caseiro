@@ -41,9 +41,14 @@ export function FinalCall() {
             </DialogContent>
           </Dialog>
 
-          <div className="text-sm text-primary-foreground pt-6">
-            <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
-            <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
+          <div className="text-sm text-primary-foreground/80 pt-6 space-y-4">
+            <div>
+              <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
+              <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
+            </div>
+            <p className="text-xs max-w-2xl mx-auto">
+              Aviso legal: Este site não é afiliado ao Meta ou a qualquer entidade do Meta. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.
+            </p>
           </div>
         </div>
       </div>
