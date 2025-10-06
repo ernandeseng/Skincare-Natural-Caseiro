@@ -11,10 +11,11 @@ import { Preview } from "@/components/landing/preview";
 import { SalesNotification } from "@/components/landing/sales-notification";
 import { Storytelling } from "@/components/landing/storytelling";
 import { TargetAudience } from "@/components/landing/target-audience";
+import { Testimonials } from "@/components/landing/testimonials";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
         <Hero />
@@ -24,6 +25,7 @@ export default function Home() {
         <TargetAudience />
         <Offer />
         <Pricing />
+        <Testimonials />
         <Guarantee />
         <Faq />
         <FinalCall />

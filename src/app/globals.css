@@ -574,457 +574,156 @@ section:nth-child(odd) {
 
 body {
   padding-top: 50px;
+  overflow-x: hidden;
 }
 
-/* Garantir que nenhum elemento ultrapasse a tela */
-* {
-  max-width: 100%;
+html {
+  overflow-x: hidden;
 }
 
-img, video, iframe, embed, object {
-  max-width: 100%;
-  height: auto;
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #f9fafb;
+  padding: 100px 20px;
 }
+
+.testimonials-section h2 {
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto 0;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card .stars {
+  font-size: 1.2em;
+  color: #f59e0b;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  flex-grow: 1;
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.author-info strong {
+  display: block;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.author-info span {
+  font-size: 0.9em;
+  color: #6b7280;
+}
+
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    padding: 40px 20px;
-    background-position: center;
-    background-attachment: scroll;
-  }
-  .story-section::before {
-    left: 20px;
-  }
-
-  .story-step {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 60px;
-    padding-left: 50px;
-  }
-
-  .story-step:nth-child(even) {
-    direction: ltr; /* Reset direction for mobile */
-  }
-
-  .story-visual {
-    order: 1;
-  }
-
-  .story-content {
-    order: 2;
-    padding: 30px 25px;
-  }
-
-  .story-icon {
-    font-size: 3em;
-  }
-
-  .story-heading {
-    font-size: 1.4em;
-  }
-
-  .story-text {
-    font-size: 1em;
-  }
-
-  .stat-box, .savings-box {
-    min-width: 220px;
-    padding: 30px 20px;
-  }
-
-  .stat-number, .savings-amount {
-    font-size: 2.5em;
-  }
-
-  .highlight-step {
-    padding-left: 20px;
-  }
-
-  .highlight-step .story-content {
-    padding: 40px 25px;
-  }
-  
-  /* CONTAINER GLOBAL */
-  .container, section, div[class*="container"] {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
+  body, html {
+    overflow-x: hidden;
     max-width: 100vw;
   }
-
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px 15px;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.6em, 5vw, 2.2em);
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-    padding: 0 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .hero .subtitle,
-  .hero p {
-    font-size: clamp(0.95em, 3vw, 1.1em);
-    padding: 0 10px;
-    margin-bottom: 20px;
-  }
-
-  .hero ul,
-  .hero .benefits-list {
-    padding: 0 10px;
-    margin: 20px 0;
-  }
-
-  .hero li {
-    font-size: 0.9em;
-    padding: 10px 12px;
-    margin: 8px 5px;
-    width: calc(100% - 10px);
-  }
-
-  /* TODOS OS BOTÕES CTA */
-  button,
-  .cta-button,
-  .hero-cta-button,
-  a[class*="button"],
-  [class*="cta"] {
-    width: calc(100% - 30px);
-    max-width: 400px;
-    min-width: auto;
-    margin: 20px auto;
-    padding: 18px 30px;
-    font-size: 1.05em;
-    display: block;
-    text-align: center;
+  
+  *, *::before, *::after {
     box-sizing: border-box;
   }
 
-  /* PREÇO */
-  .price,
-  .pricing,
-  [class*="price"] {
-    padding: 20px 15px;
-    margin: 20px 10px;
-    width: calc(100% - 20px);
-  }
-
-  .old-price {
-    font-size: 0.95em;
-  }
-
-  .new-price {
-    font-size: 1.8em;
-  }
-
-  /* SEÇÕES GERAIS */
-  section {
-    padding: 60px 20px;
-    margin: 0;
+  .container, section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     width: 100%;
     overflow-x: hidden;
   }
-
-  section h2 {
-    font-size: clamp(1.5em, 4.5vw, 1.9em);
-    padding: 0 15px;
-    margin: 0 0 30px 0;
-    text-align: center;
-    word-wrap: break-word;
+  
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  
+  .story-step, .highlight-step {
+      grid-template-columns: 1fr;
+      padding-left: 0 !important;
+      margin-left: auto;
+      margin-right: auto;
   }
 
-  section h3 {
-    font-size: clamp(1.2em, 3.5vw, 1.5em);
-    padding: 0 10px;
-    word-wrap: break-word;
+  .story-section::before {
+      left: 15px;
   }
-
-  section p {
-    font-size: clamp(0.95em, 2.5vw, 1.05em);
-    padding: 0 10px;
-    line-height: 1.6;
-  }
-
-  /* GRIDS E CARDS */
-  .grid,
-  .cards-grid,
-  [class*="grid"],
-  .benefits,
-  .modules-list,
-  .testimonial-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 15px;
-    grid-template-columns: 1fr;
-  }
-
-  .card,
-  .module-item,
-  .benefit-card,
-  .bonus-card,
-  .testimonial-card,
-  [class*="card"] {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 20px 0;
-    padding: 20px 15px;
-    box-sizing: border-box;
-  }
-
-  /* IMAGENS */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .card img,
-  .bonus-card img {
-    max-width: 250px;
-    margin: 0 auto 15px auto;
-  }
-
-  /* SEÇÃO DE MÓDULOS */
-  .modules-section {
-    padding: 60px 20px;
-  }
-
-  .module-item {
-    padding: 20px 15px;
-    margin: 0 0 15px 0;
-    width: 100%;
-  }
-
-  /* SEÇÃO DE BÔNUS */
-  .bonus-section {
-    padding: 60px 15px;
-  }
-
-  .bonus-grid {
-    padding: 0 10px;
-  }
-
-  .bonus-card {
-    width: 100%;
-    padding: 20px 15px;
-  }
-
-  /* SEÇÃO DE PRECIFICAÇÃO */
-  .pricing-highlight-section,
-  .offer-box,
-  [class*="pricing"] {
-    width: calc(100% - 30px);
-    max-width: 100%;
-    margin: 30px auto;
-    padding: 40px 20px;
-  }
-
-  .pricing-items {
-    padding: 20px 10px;
-  }
-
-  .pricing-item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 15px;
-    gap: 5px;
-  }
-
-  .final-price {
-    font-size: 2.5em;
-  }
-
-  /* SEÇÃO DE GARANTIA */
-  .guarantee-section,
-  .guarantee-box {
-    padding: 40px 20px;
-    margin: 30px 15px;
-    width: calc(100% - 30px);
-  }
-
-  /* FAQ */
-  .faq-section {
-    padding: 60px 20px;
-  }
-
-  .faq-list {
-    padding: 0 10px;
-  }
-
-  .faq-item {
-    margin: 0 0 15px 0;
-    width: 100%;
-  }
-
-  .faq-question,
-  .faq-answer {
-    padding: 18px 15px;
-    font-size: 0.95em;
-  }
-
-  /* DEPOIMENTOS */
-  .testimonials-section {
-    padding: 60px 20px;
-  }
-
-  .testimonial-card {
-    width: 100%;
-    padding: 25px 20px;
-  }
-
-  /* STORYTELLING */
-  .story-section {
-    padding: 60px 15px;
-  }
-
-  .story-step {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-    margin-bottom: 50px;
+  
+  .story-step:nth-child(even) {
+    direction: ltr;
   }
 
   .story-content {
-    padding: 25px 20px;
-    width: 100%;
+      margin: 0 1rem;
+      max-width: calc(100% - 2rem);
   }
 
-  .stat-box,
-  .savings-box {
-    min-width: auto;
-    width: 100%;
-    max-width: 300px;
-    padding: 30px 20px;
+  .highlight-step .story-content {
+    margin: 0 auto;
   }
 
-  /* FOOTER */
-  footer {
-    padding: 40px 20px;
-    text-align: center;
+  .story-visual {
+      margin-left: auto;
+      margin-right: auto;
   }
 
-  footer p,
-  footer a {
-    font-size: 0.9em;
+  /* Universal CTA Button Fix */
+  .button-cta, .btn-cta, button[class*="cta"], a[class*="cta"] {
+      width: 100% !important;
+      max-width: 450px !important;
+      min-height: 56px !important;
+      padding: 16px 24px !important;
+      font-size: clamp(1rem, 4.5vw, 1.125rem) !important;
+      white-space: normal !important;
+      line-height: 1.4 !important;
+      text-align: center;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
   }
 
-  /* ELEMENTOS ESPECÍFICOS QUE COSTUMAM QUEBRAR */
-  table {
-    width: 100%;
-    display: block;
-    overflow-x: auto;
-  }
-
-  pre, code {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  /* TIMER/COUNTDOWN */
-  .countdown,
-  [class*="timer"] {
-    font-size: 0.9em;
-    padding: 15px 10px;
-  }
-
-  /* BADGES E TRUST ELEMENTS */
-  .trust-badges,
-  .badges {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 15px;
-    justify-content: center;
-  }
-
-  .badge {
-    font-size: 0.85em;
-    padding: 8px 12px;
-  }
-
-  .announcement-bar {
-    padding: 10px 15px;
-    font-size: 0.85em;
-  }
-
-  .announcement-content {
-    height: auto;
-    min-height: 25px;
-  }
-
-  .announcement-text {
-    flex-wrap: wrap;
-    font-size: 0.9em;
-    gap: 5px;
-  }
-
-  .announcement-icon {
-    font-size: 1.2em;
-  }
-
-  .highlight-text {
-    padding: 2px 8px;
-    font-size: 0.95em;
-  }
-
-  .countdown-inline {
-    padding: 3px 8px;
-    font-size: 0.85em;
-    margin: 5px auto 0 auto;
-    display: block;
-    width: fit-content;
-  }
-   body {
-    padding-top: 45px;
+  .hero .animate-pulse-glow {
+    width: 90% !important;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5em;
-  }
-
-  .hero p {
-    font-size: 0.9em;
-  }
-
-  section h2 {
-    font-size: 1.4em;
-  }
-
-  .final-price {
-    font-size: 2em;
-  }
-
-  button,
-  .cta-button {
-    padding: 16px 25px;
-    font-size: 1em;
-  }
-  .announcement-bar {
-    padding: 8px 10px;
-  }
-
-  .announcement-text {
-    font-size: 0.8em;
-    line-height: 1.3;
-  }
-
-  .announcement-text span:not(.announcement-icon):not(.highlight-text) {
-    display: inline;
-  }
-}
-  
-
-
-    
-
-    
