@@ -703,6 +703,10 @@ html {
     max-width: calc(100% - 2rem);
     padding: 40px 20px;
   }
+
+  .highlight-step .story-heading {
+    padding: 0 1rem;
+  }
   
   .story-visual {
       margin-left: auto;
