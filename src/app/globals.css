@@ -81,6 +81,7 @@
 @layer base {
   * {
     @apply border-border;
+    max-width: 100%;
   }
   body {
     @apply bg-background text-foreground;
@@ -677,11 +678,11 @@ html {
     font-size: clamp(2rem, 8vw, 2.5rem);
   }
   
-  .story-step, .highlight-step {
-      grid-template-columns: 1fr;
-      padding-left: 0 !important;
-      margin-left: auto;
-      margin-right: auto;
+  .story-step {
+    grid-template-columns: 1fr;
+    padding-left: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .story-section::before {
@@ -693,14 +694,15 @@ html {
   }
 
   .story-content {
-      margin: 0 1rem;
-      max-width: calc(100% - 2rem);
+      margin: 0;
   }
 
   .highlight-step .story-content {
-    margin: 0 auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: calc(100% - 2rem);
   }
-
+  
   .story-visual {
       margin-left: auto;
       margin-right: auto;
