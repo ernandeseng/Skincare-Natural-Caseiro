@@ -701,6 +701,7 @@ html {
     margin-left: 1rem;
     margin-right: 1rem;
     max-width: calc(100% - 2rem);
+    padding: 40px 20px;
   }
   
   .story-visual {
