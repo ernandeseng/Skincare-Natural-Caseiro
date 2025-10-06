@@ -89,10 +89,6 @@
   html {
     scroll-behavior: smooth;
   }
-
-  html, body {
-    overflow-x: hidden !important;
-  }
 }
 
 @layer utilities {
@@ -450,9 +446,6 @@ section:nth-child(odd) {
 .highlight-step .story-content {
   background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
   border: 2px solid #ef4444;
-  padding: 60px 40px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .highlight-step .story-content.centered {
@@ -494,67 +487,44 @@ section:nth-child(odd) {
 
 .announcement-content {
   position: relative;
-  height: 30px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
 }
 
 .announcement-text * {
   color: #ffffff !important;
+  text-align: center;
 }
 
 .announcement-text {
-  font-size: 0.95em;
+  font-size: 0.9em;
   font-weight: 700;
   letter-spacing: 0.3px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin: 0;
   line-height: 1.4;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%) translateY(100%);
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.announcement-text.active {
-  transform: translateX(-50%) translateY(0);
   opacity: 1;
-}
-
-.announcement-text.exiting {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 0;
-}
-
-.announcement-icon {
-  font-size: 1.3em;
-  animation: pulse-icon 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse-icon {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .highlight-text {
   color: #fbbf24 !important;
   font-weight: 700;
-  margin: 0 5px;
   white-space: nowrap;
 }
 
 .countdown-inline {
   background: rgba(255, 255, 255, 0.2);
-  padding: 4px 12px;
+  padding: 2px 8px;
   border-radius: 6px;
   font-weight: 700;
   color: #fbbf24 !important;
-  margin-left: 8px;
   font-family: monospace;
   letter-spacing: 1px;
 }
@@ -657,8 +627,8 @@ body {
 
 /* Pricing Section Improvements */
 .pricing-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 24px;
   padding: 20px 16px;
   max-width: 500px;
@@ -924,32 +894,21 @@ body {
   border: 1px solid #BBDEFB;
 }
 
+@media (min-width: 640px) {
+  .pricing-container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 768px;
+  }
+}
+
 @media (min-width: 768px) {
   .pricing-container {
-    flex-direction: row;
     align-items: flex-end;
   }
 }
 
 
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    height: auto !important;
-    max-height: none !important;
-    position: relative !important;
-  }
-
-  body {
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-y !important;
-  }
-  
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
   .container, section {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -976,16 +935,16 @@ body {
   }
 
   .story-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 16px;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      width: 100%;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
   .highlight-step .story-content {
     background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
@@ -1012,14 +971,14 @@ body {
     max-width: 100%;
   }
   .story-heading {
-    white-space: normal !important;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    line-height: 1.4;
-    max-width: 100%;
-    text-align: center;
-  }
+  white-space: normal !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.4;
+  max-width: 100%;
+  text-align: center;
+}
 
   .highlight-step .story-text.large {
     font-size: 1.2em;
@@ -1057,6 +1016,7 @@ html, body {
   height: auto !important;
   max-height: none !important;
   position: relative !important;
+  overflow-x: hidden !important;
 }
 
 body {
