@@ -707,6 +707,10 @@ html {
   .highlight-step .story-heading {
     padding: 0 1rem;
   }
+
+  .highlight-step .story-text.large {
+    font-size: 1.2em;
+  }
   
   .story-visual {
       margin-left: auto;
