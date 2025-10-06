@@ -576,13 +576,7 @@ section:nth-child(odd) {
 
 body {
   padding-top: 50px;
-  overflow-x: hidden;
 }
-
-html {
-  overflow-x: hidden;
-}
-
 
 /* Testimonials Section */
 .testimonials-section {
@@ -659,9 +653,8 @@ html {
 
 
 @media (max-width: 768px) {
-  body, html {
+  body {
     overflow-x: hidden;
-    max-width: 100vw;
   }
   
   *, *::before, *::after {
