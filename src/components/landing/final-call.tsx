@@ -20,7 +20,7 @@ export function FinalCall() {
           <h2 className="text-3xl md:text-5xl font-headline font-bold">
             Sua Última Chance de Garantir o Acesso
           </h2>
-          <p className="max-w-3xl text-lg md:text-xl text-primary-foreground/80">
+          <p className="max-w-3xl text-lg md:text-xl text-white/90">
             A decisão de transformar sua pele, seu
             bolso e sua vida está a um clique de distância. Não deixe para
             depois.
@@ -41,7 +41,7 @@ export function FinalCall() {
             </DialogContent>
           </Dialog>
 
-          <div className="text-sm text-primary-foreground/80 pt-6 space-y-4">
+          <div className="text-sm text-white/90 pt-6 space-y-4">
             <div>
               <p>Pagamento Seguro | Acesso Imediato | Garantia de 30 Dias</p>
               <p className="mt-2">© 2025 Protocolo Anti-Indústria. Todos os direitos reservados.</p>
