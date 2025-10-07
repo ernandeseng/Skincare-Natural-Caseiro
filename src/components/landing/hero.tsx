@@ -2,13 +2,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { useState } from "react";
-import { SkinDiagnosticForm } from "./skin-diagnostic-form";
 
 const features = [
   "Economia de até R$ 2.400 por ano",
@@ -18,7 +11,6 @@ const features = [
 ];
 
 export function Hero() {
-  const [open, setOpen] = useState(false);
 
   return (
     <section
@@ -55,8 +47,7 @@ export function Hero() {
             </div>
 
              <div className="w-full flex justify-center md:justify-start pt-10">
-               <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger asChild>
+                <a href="#offer">
                   <Button
                     variant="cta"
                     size="xl"
@@ -65,11 +56,7 @@ export function Hero() {
                     QUERO TRANSFORMAR MINHA PELE
                     <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
                   </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md md:max-w-lg">
-                  <SkinDiagnosticForm setOpen={setOpen} />
-                </DialogContent>
-              </Dialog>
+                </a>
             </div>
           </div>
       </div>
