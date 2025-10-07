@@ -1,7 +1,8 @@
+"use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { UserCheck, CheckCircle } from "lucide-react";
-import Image from "next/image";
+import { UserCheck, CheckCircle, Volume2, VolumeX } from "lucide-react";
+import { useRef, useState } from "react";
 
 const targetAudienceItems = [
   "Cansada de gastar fortunas em produtos que não funcionam.",
@@ -13,19 +14,44 @@ const targetAudienceItems = [
 ];
 
 export function TargetAudience() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [userInteracted, setUserInteracted] = useState(false);
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      const newMutedState = !isMuted;
+      videoRef.current.muted = newMutedState;
+      setIsMuted(newMutedState);
+      setUserInteracted(true);
+    }
+  };
+
   return (
     <section id="target-audience" className="w-full py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-           <div className="flex justify-center lg:order-last">
+          <div className="relative flex justify-center lg:order-last">
             <video
+              ref={videoRef}
               src="https://www.dropbox.com/scl/fi/mmmy4wdzcd9wqi8posuzt/V-deo-do-WhatsApp-de-2025-10-06-s-21.59.08_68b06cc4.mp4?rlkey=hz5mxff1gq3uqr8afnzlc6q8g&st=h069sb7j&dl=1"
-              controls
+              controls={userInteracted}
               autoPlay
               muted
               loop
+              playsInline
               className="rounded-lg shadow-2xl object-cover aspect-[2/3] w-full max-w-sm mx-auto drop-shadow-xl"
+              onClick={userInteracted ? undefined : handleVideoClick}
             />
+            {!userInteracted && (
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white cursor-pointer rounded-lg"
+                onClick={handleVideoClick}
+              >
+                <VolumeX className="h-12 w-12 mb-2" />
+                <span className="font-semibold">Clique para ouvir</span>
+              </div>
+            )}
           </div>
           <div className="space-y-8 text-center lg:text-left">
             <div className="inline-block rounded-lg bg-primary/10 p-4 border-2 border-primary/20">
