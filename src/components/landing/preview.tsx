@@ -5,23 +5,23 @@ import Image from "next/image";
 const modules = [
   {
     icon: FlaskConical,
-    title: "Módulo 1: O Diagnóstico Preciso",
-    description: "Aprenda a identificar seu tipo de pele e suas necessidades reais com um teste simples de 3 minutos.",
+    title: "Módulo 1: O Diagnóstico Caseiro",
+    description: " Como identificar seu tipo de pele em casa e escolher as receitas certas para sua situação específica, sem precisar gastar R$ 300+ em consulta dermatológica.",
   },
   {
     icon: BookOpen,
     title: "Módulo 2: O Arsenal da Cozinha",
-    description: "Acesso a 15 receitas detalhadas com o passo a passo exato para cada objetivo.",
+    description: "15 receitas organizadas por problema (oleosidade, cravos, manchas, hidratação) usando apenas ingredientes disponíveis em qualquer supermercado.",
   },
   {
     icon: CalendarClock,
     title: "Módulo 3: O Cronograma Inteligente",
-    description: "Um plano de 30 dias, com rotinas de 5 minutos, desenhado para quem não tem tempo a perder.",
+    description: "Um plano de 30 dias, com rotinas de 5 minutos, desenhado para quem acorda cedo e chega em casa exausta do trabalho.",
   },
   {
     icon: Coins,
     title: "Módulo 4: A Estratégia da Economia",
-    description: "Descubra como conservar suas receitas e a lista de compras ideal para economizar.",
+    description: "Como preparar, conservar e maximizar cada ingrediente para garantir que você gaste exatamente R$ 50 por mês no mercado, nem um centavo a mais.",
   },
 ]
 

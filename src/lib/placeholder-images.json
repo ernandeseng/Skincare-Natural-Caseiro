@@ -32,7 +32,7 @@
     },
     {
       "id": "bonus-guide",
-      "description": "A mockup for the bonus guide 'Guia de Compras Inteligente'.",
+      "description": "A mockup for the bonus guide 'Lista de Compras Mensal'.",
       "imageUrl": "https://i.imgur.com/CRVyCVP.png",
       "imageHint": "guide mockup"
     },
@@ -44,7 +44,7 @@
     },
     {
       "id": "bonus-manual",
-      "description": "A mockup for the bonus guide 'Manual de Conservação'.",
+      "description": "A mockup for the bonus guide 'Guia de Conservação'.",
       "imageUrl": "https://i.imgur.com/TnavInL.png",
       "imageHint": "guide mockup"
     },

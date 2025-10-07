@@ -1,8 +1,7 @@
 
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { UserCheck, ArrowLeft, ArrowRight, VolumeX, Volume2, Play } from "lucide-react";
+import { UserCheck } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import {
   Carousel,
@@ -12,6 +11,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import { Play, VolumeX } from "lucide-react";
 
 const testimonials = [
   {
@@ -44,6 +44,7 @@ export function TargetAudience() {
 
     if (isMuted) {
       setIsMuted(false);
+      currentVideo.currentTime = 0; // Reinicia o vídeo
       videoRefs.current.forEach(video => {
         if (video) video.muted = false;
       });
@@ -60,33 +61,33 @@ export function TargetAudience() {
 
   useEffect(() => {
     if (!api) return;
-
-    const onSelect = () => {
-      const newIndex = api.selectedScrollSnap();
+  
+    const onSelect = (carouselApi: CarouselApi) => {
+      const newIndex = carouselApi.selectedScrollSnap();
       setCurrent(newIndex);
-      
+  
       videoRefs.current.forEach((video, index) => {
-        if (video && index !== newIndex) {
-          video.pause();
+        if (video) {
+          if (index !== newIndex) {
+            video.pause();
+          } else {
+            // Garante que o vídeo atual comece a tocar
+            video.play().catch(error => console.error("Error trying to play video:", error));
+            setIsPlaying(true);
+          }
         }
       });
-      
-      const currentVideo = videoRefs.current[newIndex];
-      if (currentVideo) {
-         currentVideo.play().catch(error => console.error("Error trying to play video:", error));
-         setIsPlaying(true);
-      }
     };
-
-    api.on("select", onSelect)
+  
+    api.on("select", onSelect);
     
-    // Initial play
-    onSelect();
-
+    // Força a execução inicial para o primeiro vídeo
+    onSelect(api);
+  
     return () => {
-      api.off("select", onSelect)
-    }
-  }, [api])
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <section id="target-audience" className="video-carousel-section w-full py-20 md:py-32">
@@ -126,7 +127,7 @@ export function TargetAudience() {
                       src={testimonial.videoUrl}
                       playsInline
                       autoPlay
-                      muted={isMuted}
+                      muted
                       loop
                       className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
                     >
