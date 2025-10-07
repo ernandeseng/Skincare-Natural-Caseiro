@@ -2,7 +2,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { UserCheck, ArrowLeft, ArrowRight, VolumeX, Volume2 } from "lucide-react";
+import { UserCheck, ArrowLeft, ArrowRight, VolumeX, Volume2, Play } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import {
   Carousel,
@@ -35,28 +35,46 @@ export function TargetAudience() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  useEffect(() => {
-    if (!api) {
-      return
+  const togglePlayPause = () => {
+    const currentVideo = videoRefs.current[current];
+    if (!currentVideo) return;
+
+    if (isMuted) {
+      setIsMuted(false);
+      videoRefs.current.forEach(video => {
+        if (video) video.muted = false;
+      });
     }
+
+    if (currentVideo.paused) {
+      currentVideo.play();
+      setIsPlaying(true);
+    } else {
+      currentVideo.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!api) return;
 
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
       
-      // Pause all videos except the current one
       videoRefs.current.forEach((video, index) => {
         if (video && index !== newIndex) {
           video.pause();
         }
       });
       
-      // Play the current video if it exists
       const currentVideo = videoRefs.current[newIndex];
       if (currentVideo) {
          currentVideo.play().catch(error => console.error("Error trying to play video:", error));
+         setIsPlaying(true);
       }
     };
 
@@ -69,16 +87,6 @@ export function TargetAudience() {
       api.off("select", onSelect)
     }
   }, [api])
-
-  const toggleMute = () => {
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
-    videoRefs.current.forEach(video => {
-      if (video) {
-        video.muted = newMutedState;
-      }
-    });
-  };
 
   return (
     <section id="target-audience" className="video-carousel-section w-full py-20 md:py-32">
@@ -99,7 +107,7 @@ export function TargetAudience() {
           <CarouselContent className="carousel-wrapper">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="carousel-slide">
-                 <div className="video-container" onClick={isMuted ? toggleMute : undefined}>
+                 <div className="video-container" onClick={togglePlayPause}>
                     {isMuted && (
                       <div className="video-overlay">
                         <div className="text-center">
@@ -108,12 +116,17 @@ export function TargetAudience() {
                         </div>
                       </div>
                     )}
+                    {!isPlaying && !isMuted && (
+                      <div className="video-play-icon">
+                        <Play className="h-16 w-16 text-white" />
+                      </div>
+                    )}
                     <video
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
                       playsInline
                       autoPlay
-                      muted
+                      muted={isMuted}
                       loop
                       className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
                     >

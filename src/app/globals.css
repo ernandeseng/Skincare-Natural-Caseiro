@@ -1084,6 +1084,17 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.video-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+  pointer-events: none; /* Pass through clicks to container */
+}
 
 /* ===== INFO DO VÍDEO ===== */
 .video-info {
