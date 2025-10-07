@@ -23,6 +23,11 @@ const testimonials = [
     name: "Ana P.",
     location: "São Paulo, SP",
   },
+  {
+    videoUrl: "https://www.dropbox.com/scl/fi/f7w9rvuhfy6htv7f7qv8j/WhatsApp-Video-2025-10-07-at-10.26.46.mp4?rlkey=jxca9m3qh3289bw8nluzfzucw&st=qyslepsy&dl=1",
+    name: "Julia M.",
+    location: "Rio de Janeiro, RJ",
+  },
 ];
 
 export function TargetAudience() {
