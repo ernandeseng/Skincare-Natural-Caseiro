@@ -44,10 +44,13 @@ export function TargetAudience() {
 
     if (isMuted) {
       setIsMuted(false);
-      currentVideo.currentTime = 0; // Reinicia o vídeo
+      currentVideo.currentTime = 0; 
       videoRefs.current.forEach(video => {
         if (video) video.muted = false;
       });
+      currentVideo.play();
+      setIsPlaying(true);
+      return;
     }
 
     if (currentVideo.paused) {
@@ -61,33 +64,36 @@ export function TargetAudience() {
 
   useEffect(() => {
     if (!api) return;
-  
-    const onSelect = (carouselApi: CarouselApi) => {
-      const newIndex = carouselApi.selectedScrollSnap();
+
+    const onSelect = () => {
+      const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-  
+      setIsPlaying(true); // Always assume playing when slide changes
+
       videoRefs.current.forEach((video, index) => {
         if (video) {
-          if (index !== newIndex) {
-            video.pause();
+          if (index === newIndex) {
+            video.currentTime = 0; // Reset video to start
+            video.play().catch(error => console.error("Error trying to play video on select:", error));
           } else {
-            // Garante que o vídeo atual comece a tocar
-            video.play().catch(error => console.error("Error trying to play video:", error));
-            setIsPlaying(true);
+            video.pause();
           }
         }
       });
     };
-  
-    api.on("select", onSelect);
     
-    // Força a execução inicial para o primeiro vídeo
-    onSelect(api);
+    api.on("select", onSelect);
+    // Initial play for the first video
+    const firstVideo = videoRefs.current[0];
+    if(firstVideo) {
+      firstVideo.play().catch(error => console.error("Error playing first video:", error));
+    }
   
     return () => {
       api.off("select", onSelect);
     };
   }, [api]);
+
 
   return (
     <section id="target-audience" className="video-carousel-section w-full py-20 md:py-32">
