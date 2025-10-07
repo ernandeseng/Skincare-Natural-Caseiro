@@ -2,7 +2,7 @@
 "use client";
 
 import { ShoppingCart } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const salesData = [
   { name: "Ana P.", location: "São Paulo, SP" },
@@ -17,22 +17,41 @@ const salesData = [
   { name: "Ricardo G.", location: "Manaus, AM" },
   { name: "Larissa T.", location: "Goiânia, GO" },
   { name: "Thiago B.", location: "Belém, PA" },
+  { name: "Camila V.", location: "Florianópolis, SC" },
+  { name: "Rodrigo N.", location: "Vitória, ES" },
+  { name: "Patrícia O.", location: "Campo Grande, MS" },
+  { name: "Marcos E.", location: "João Pessoa, PB" },
 ];
 
 export function SalesNotification() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSale, setCurrentSale] = useState(salesData[0]);
-  const [lastIndex, setLastIndex] = useState(0);
+  const lastIndexRef = useRef(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    const scheduleNextNotification = () => {
+      // Gera um tempo aleatório entre 8 e 15 segundos
+      const randomInterval = Math.floor(Math.random() * (15000 - 8000 + 1)) + 8000;
+
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        showNotification();
+        scheduleNextNotification();
+      }, randomInterval);
+    };
+
     const showNotification = () => {
-      let randomIndex = lastIndex;
+      let randomIndex = lastIndexRef.current;
       // Garante que o próximo índice seja diferente do anterior
-      while (randomIndex === lastIndex) {
+      while (randomIndex === lastIndexRef.current) {
         randomIndex = Math.floor(Math.random() * salesData.length);
       }
       
-      setLastIndex(randomIndex);
+      lastIndexRef.current = randomIndex;
       setCurrentSale(salesData[randomIndex]);
       setIsVisible(true);
 
@@ -41,17 +60,19 @@ export function SalesNotification() {
       }, 5000); // A notificação fica visível por 5 segundos
     };
 
-    // Mostra a primeira notificação após um pequeno atraso
-    const initialTimeout = setTimeout(showNotification, 5000);
+    // Mostra a primeira notificação após um pequeno atraso e agenda a próxima
+    setTimeout(() => {
+      showNotification();
+      scheduleNextNotification();
+    }, 5000);
 
-    // Em seguida, mostra as notificações periodicamente
-    const interval = setInterval(showNotification, 10000); // Mostra uma nova notificação a cada 10 segundos
-
+    // Limpa o timeout quando o componente é desmontado
     return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
-  }, [lastIndex]);
+  }, []); // Executa apenas uma vez
 
   return (
     <div
