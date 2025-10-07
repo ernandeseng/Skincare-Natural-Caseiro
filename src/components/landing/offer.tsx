@@ -6,29 +6,31 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 
-const bonusImage = PlaceHolderImages.find(p => p.id === 'bonus-mockup')!;
+const bonusGuide = PlaceHolderImages.find(p => p.id === 'bonus-guide')!;
+const bonusSOS = PlaceHolderImages.find(p => p.id === 'bonus-sos')!;
+const bonusManual = PlaceHolderImages.find(p => p.id === 'bonus-manual')!;
 
 const bonuses = [
   {
     title: "Guia de Compras Inteligente",
     value: "R$ 47,00",
     description: "Uma lista de compras otimizada para gastar o mínimo possível no supermercado.",
-    image: bonusImage.imageUrl,
-    imageHint: bonusImage.imageHint,
+    image: bonusGuide.imageUrl,
+    imageHint: bonusGuide.imageHint,
   },
   {
     title: "Receitas SOS para Emergências",
     value: "R$ 67,00",
     description: "Soluções rápidas para uma espinha inesperada ou pele ressecada antes de um evento.",
-    image: bonusImage.imageUrl,
-    imageHint: bonusImage.imageHint,
+    image: bonusSOS.imageUrl,
+    imageHint: bonusSOS.imageHint,
   },
   {
     title: "Manual de Conservação e Durabilidade",
     value: "R$ 37,00",
     description: "Aprenda a fazer seus produtos durarem mais, economizando ainda mais tempo e dinheiro.",
-    image: bonusImage.imageUrl,
-    imageHint: bonusImage.imageHint,
+    image: bonusManual.imageUrl,
+    imageHint: bonusManual.imageHint,
   },
 ];
 

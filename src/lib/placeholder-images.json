@@ -31,8 +31,20 @@
       "imageHint": "guarantee seal"
     },
     {
-      "id": "bonus-mockup",
-      "description": "A mockup for the bonus guides.",
+      "id": "bonus-guide",
+      "description": "A mockup for the bonus guide 'Guia de Compras Inteligente'.",
+      "imageUrl": "https://i.imgur.com/CRVyCVP.png",
+      "imageHint": "guide mockup"
+    },
+    {
+      "id": "bonus-sos",
+      "description": "A mockup for the bonus guide 'Receitas SOS'.",
+      "imageUrl": "https://i.imgur.com/KxS3ALz.png",
+      "imageHint": "guide mockup"
+    },
+    {
+      "id": "bonus-manual",
+      "description": "A mockup for the bonus guide 'Manual de Conservação'.",
       "imageUrl": "https://i.imgur.com/KxS3ALz.png",
       "imageHint": "guide mockup"
     },
