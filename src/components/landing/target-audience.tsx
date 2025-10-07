@@ -23,11 +23,6 @@ const testimonials = [
     name: "Ana P.",
     location: "São Paulo, SP",
   },
-   {
-    videoUrl: "https://www.dropbox.com/scl/fi/mmmy4wdzcd9wqi8posuzt/V-deo-do-WhatsApp-de-2025-10-06-s-21.59.08_68b06cc4.mp4?rlkey=hz5mxff1gq3uqr8afnzlc6q8g&st=h069sb7j&dl=1",
-    name: "Julia M.",
-    location: "Rio de Janeiro, RJ",
-  }
 ];
 
 export function TargetAudience() {
