@@ -32,7 +32,7 @@ export function Preview() {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="flex justify-center lg:order-last">
             <Image
-              src="https://i.imgur.com/8aAfb2n.png"
+              src="https://i.imgur.com/HwWlN96.jpeg"
               alt="Páginas internas do ebook Protocolo Anti-Indústria"
               width={600}
               height={700}
