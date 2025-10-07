@@ -125,7 +125,7 @@ export function Storytelling() {
               Eu vivi isso na pele até descobrir o Método Sinergia Doméstica™
             </h3>
             <p className="story-text">
-             Foi o ponto de virada. Descobri que dá pra conquistar uma pele limpa e saudável com ingredientes simples da cozinha — gastando menos de R$ 50 por mês. E o melhor: com resultados visíveis em 15 dias.
+             Foi o ponto de virada. Descobri que dá pra conquistar uma pele limpa e saudável com ingredientes simples da cozinha — gastando menos de R$ 50 por mês no mercado. E o melhor: com resultados visíveis em 15 dias.
             </p>
           </div>
           <div className="story-visual">

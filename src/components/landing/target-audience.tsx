@@ -18,13 +18,13 @@ export function TargetAudience() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
            <div className="flex justify-center lg:order-last">
-            <Image
-              src="https://images.unsplash.com/photo-1552693673-1bf95829b54b?w=800&h=1200&fit=crop"
-              alt="Mulher sorrindo, representando o público-alvo"
-              width={500}
-              height={750}
+            <video
+              src="https://www.dropbox.com/scl/fi/mmmy4wdzcd9wqi8posuzt/V-deo-do-WhatsApp-de-2025-10-06-s-21.59.08_68b06cc4.mp4?rlkey=hz5mxff1gq3uqr8afnzlc6q8g&st=h069sb7j&dl=1"
+              controls
+              autoPlay
+              muted
+              loop
               className="rounded-lg shadow-2xl object-cover aspect-[2/3] w-full max-w-sm mx-auto drop-shadow-xl"
-              data-ai-hint="happy woman"
             />
           </div>
           <div className="space-y-8 text-center lg:text-left">
