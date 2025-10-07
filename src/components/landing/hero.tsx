@@ -47,7 +47,7 @@ export function Hero() {
             </div>
 
              <div className="w-full flex justify-center md:justify-start pt-10">
-                <a href="#offer">
+                <a href="#pricing">
                   <Button
                     variant="cta"
                     size="xl"

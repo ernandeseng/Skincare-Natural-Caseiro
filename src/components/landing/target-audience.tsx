@@ -137,7 +137,7 @@ export function TargetAudience() {
                     <div className="compra-recente">
                       <span className="badge-compra">🛍️ Compra Recente!</span>
                       <p className="cliente-nome">{testimonial.name} de {testimonial.location}</p>
-                      <p className="cliente-acao">acabou de comprar o protocolo.</p>
+                      <p className="cliente-acao">Uma de nossas clientes satisfeitas!.</p>
                     </div>
                   </div>
               </CarouselItem>

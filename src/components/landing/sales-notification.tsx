@@ -88,7 +88,7 @@ export function SalesNotification() {
             Compra Recente!
           </p>
           <p className="text-sm text-muted-foreground">
-            {currentSale.name} de {currentSale.location} acabou de comprar o protocolo.
+            {currentSale.name} de {currentSale.location} acabou de comprar.
           </p>
         </div>
       </div>
