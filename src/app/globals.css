@@ -1067,6 +1067,24 @@ body {
   object-fit: cover;
 }
 
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.video-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
 /* ===== INFO DO VÍDEO ===== */
 .video-info {
   background: white;

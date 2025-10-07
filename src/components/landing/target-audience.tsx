@@ -1,7 +1,8 @@
+
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { UserCheck, ArrowLeft, ArrowRight } from "lucide-react";
+import { UserCheck, ArrowLeft, ArrowRight, VolumeX, Volume2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import {
   Carousel,
@@ -33,6 +34,7 @@ const testimonials = [
 export function TargetAudience() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
+  const [isMuted, setIsMuted] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
@@ -40,15 +42,13 @@ export function TargetAudience() {
       return
     }
 
-    setCurrent(api.selectedScrollSnap())
-
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
       
-      // Pause all videos
-      videoRefs.current.forEach((video) => {
-        if (video) {
+      // Pause all videos except the current one
+      videoRefs.current.forEach((video, index) => {
+        if (video && index !== newIndex) {
           video.pause();
         }
       });
@@ -56,17 +56,29 @@ export function TargetAudience() {
       // Play the current video if it exists
       const currentVideo = videoRefs.current[newIndex];
       if (currentVideo) {
-         // currentVideo.play();
+         currentVideo.play().catch(error => console.error("Error trying to play video:", error));
       }
     };
 
     api.on("select", onSelect)
     
+    // Initial play
+    onSelect();
+
     return () => {
       api.off("select", onSelect)
     }
   }, [api])
 
+  const toggleMute = () => {
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    videoRefs.current.forEach(video => {
+      if (video) {
+        video.muted = newMutedState;
+      }
+    });
+  };
 
   return (
     <section id="target-audience" className="video-carousel-section w-full py-20 md:py-32">
@@ -87,12 +99,22 @@ export function TargetAudience() {
           <CarouselContent className="carousel-wrapper">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="carousel-slide">
-                 <div className="video-container">
+                 <div className="video-container" onClick={isMuted ? toggleMute : undefined}>
+                    {isMuted && (
+                      <div className="video-overlay">
+                        <div className="text-center">
+                          <VolumeX className="h-10 w-10 mx-auto" />
+                          <p className="font-semibold mt-2">Clique para ouvir</p>
+                        </div>
+                      </div>
+                    )}
                     <video
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
-                      controls
                       playsInline
+                      autoPlay
+                      muted
+                      loop
                       className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
                     >
                       Your browser does not support the video tag.
