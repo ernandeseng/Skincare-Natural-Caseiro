@@ -26,7 +26,7 @@ export function Pricing() {
     { text: "Protocolo", included: true },
     { text: "Guia de Compras", included: true },
     { text: "Receitas SOS", included: true },
-    { text: "Manual", included: true },
+    { text: "Manual de Conservação", included: true },
   ];
 
   return (
