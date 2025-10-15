@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -107,16 +108,11 @@ export function Pricing() {
               </div>
             </CardContent>
             <div className="card-footer">
-              <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger asChild>
-                  <button className="btn-completo">
-                    QUERO MEU KIT COMPLETO
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md md:max-w-lg">
-                  <SkinDiagnosticForm setOpen={setOpen} />
-                </DialogContent>
-              </Dialog>
+              <a href="https://www.ggcheckout.com/checkout/v2/30wAKDKIxVLqpbUF4sUH" target="_blank" rel="noopener noreferrer" className="w-full">
+                <button className="btn-completo">
+                  QUERO MEU KIT COMPLETO
+                </button>
+              </a>
             </div>
           </Card>
         </div>
