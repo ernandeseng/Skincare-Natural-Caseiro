@@ -63,16 +63,11 @@ export function Pricing() {
               </ul>
             </CardContent>
             <div className="card-footer">
-              <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger asChild>
-                  <button className="btn-basico">
-                    Escolher Básico
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md md:max-w-lg">
-                  <SkinDiagnosticForm setOpen={setOpen} />
-                </DialogContent>
-              </Dialog>
+              <a href="https://www.ggcheckout.com/checkout/v2/0lolkNve678UBB9pTplo" target="_blank" rel="noopener noreferrer" className="w-full">
+                <button className="btn-basico">
+                  Escolher Básico
+                </button>
+              </a>
             </div>
           </Card>
 
