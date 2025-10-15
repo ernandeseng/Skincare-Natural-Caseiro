@@ -25,8 +25,7 @@ export function FinalCall() {
             bolso e sua vida está a um clique de distância. Não deixe para
             depois.
           </p>
-           <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
+           <a href="#pricing">
               <Button
                 variant="cta"
                 size="xl"
@@ -35,11 +34,7 @@ export function FinalCall() {
                 <Gem className="mr-3 h-6 w-6" />
                 SIM, EU QUERO O PROTOCOLO!
               </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-md md:max-w-lg">
-              <SkinDiagnosticForm setOpen={setOpen} />
-            </DialogContent>
-          </Dialog>
+            </a>
 
           <div className="text-sm pt-6 space-y-4 text-primary-foreground">
             <div>

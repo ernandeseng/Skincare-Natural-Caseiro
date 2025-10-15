@@ -100,8 +100,7 @@ export function Faq() {
           </Accordion>
         </div>
         <div className="flex justify-center mt-12">
-           <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
+           <a href="#pricing">
               <Button
                 variant="cta"
                 size="xl"
@@ -110,11 +109,7 @@ export function Faq() {
                 Quero Começar Minha Transformação
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-md md:max-w-lg">
-              <SkinDiagnosticForm setOpen={setOpen} />
-            </DialogContent>
-          </Dialog>
+            </a>
         </div>
       </div>
     </section>

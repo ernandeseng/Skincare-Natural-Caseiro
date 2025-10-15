@@ -46,21 +46,16 @@ export function Guarantee() {
               Você pode testar todo o método, aplicar as receitas e ver os resultados. Se não for o que você esperava, o prejuízo é nosso.
             </p>
 
-            <Dialog open={open} onOpenChange={setOpen}>
-              <DialogTrigger asChild>
-                 <Button
-                  variant="cta"
-                  size="xl"
-                  className="w-full max-w-md mx-auto lg:mx-0"
-                >
-                  <ShieldCheck className="mr-2 h-5 w-5" />
-                  QUERO TESTAR SEM RISCO
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md md:max-w-lg">
-                <SkinDiagnosticForm setOpen={setOpen} />
-              </DialogContent>
-            </Dialog>
+            <a href="#pricing">
+               <Button
+                variant="cta"
+                size="xl"
+                className="w-full max-w-md mx-auto lg:mx-0"
+              >
+                <ShieldCheck className="mr-2 h-5 w-5" />
+                QUERO TESTAR SEM RISCO
+              </Button>
+            </a>
 
           </div>
         </div>
