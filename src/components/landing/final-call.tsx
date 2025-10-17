@@ -23,9 +23,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export function FinalCall() {
-  const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(
-    "Olá! Tenho uma dúvida sobre o Protocolo Anti-Indústria."
-  )}`;
+  const whatsappUrl = "https://wa.me/message/LYE53KRZF34SE1";
 
   return (
     <footer className="w-full py-16 md:py-24 bg-primary text-primary-foreground">
@@ -71,4 +69,3 @@ export function FinalCall() {
     </footer>
   );
 }
-
