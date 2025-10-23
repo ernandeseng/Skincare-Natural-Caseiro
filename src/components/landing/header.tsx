@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -9,15 +8,11 @@ export function Header() {
   useEffect(() => {
     function updateCountdown() {
       const now = new Date();
-      const sunday = new Date();
+      const endOfDay = new Date();
       
-      const dayOfWeek = sunday.getDay();
-      const daysUntilSunday = 7 - dayOfWeek;
-      sunday.setDate(sunday.getDate() + (dayOfWeek === 0 ? 0 : daysUntilSunday));
-      
-      sunday.setHours(23, 59, 59, 999);
+      endOfDay.setHours(23, 59, 59, 999); // Define o fim do dia atual
 
-      const diff = sunday.getTime() - now.getTime();
+      const diff = endOfDay.getTime() - now.getTime();
       
       if (diff > 0) {
         const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -42,7 +37,7 @@ export function Header() {
           <span className="announcement-icon">🔥</span>
           <span>Lançamento Exclusivo:</span>{' '}
           <span className="highlight-text">76% OFF</span>{' '}
-          <span>só até Domingo!</span>
+          <span>somente hoje!</span>
           <span className="countdown-inline">{countdown}</span>
         </p>
       </div>
