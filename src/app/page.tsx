@@ -9,7 +9,6 @@ import { Offer } from "@/components/landing/offer";
 import { Pricing } from "@/components/landing/pricing";
 import { Preview } from "@/components/landing/preview";
 import { SalesNotification } from "@/components/landing/sales-notification";
-import { Storytelling } from "@/components/landing/storytelling";
 import { TargetAudience } from "@/components/landing/target-audience";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Storytelling />
         <Preview />
         <Benefits />
         <TargetAudience />
