@@ -19,9 +19,7 @@ export function Hero() {
         <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
           
           <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight drop-shadow-sm max-w-3xl text-balance">
-            <span className="text-primary">A Pele dos Seus Sonhos</span>
-            <br />
-            com Ingredientes da Sua Cozinha
+            Pare de Gastar R$500/Mês em Produtos de Pele que Não Funcionam
           </h1>
 
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground/90">
