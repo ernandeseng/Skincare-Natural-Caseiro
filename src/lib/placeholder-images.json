@@ -53,6 +53,12 @@
       "description": "A happy woman representing the target audience.",
       "imageUrl": "https://images.unsplash.com/photo-1552693673-1bf95829b54b?w=800&h=1200&fit=crop",
       "imageHint": "happy woman"
+    },
+    {
+      "id": "ebook-mockup-new",
+      "description": "A 3D mockup of the Protocolo Anti-Indústria ebook.",
+      "imageUrl": "https://i.imgur.com/5jt8Fml.png",
+      "imageHint": "ebook mockup"
     }
   ]
 }

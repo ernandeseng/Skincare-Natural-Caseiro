@@ -6,7 +6,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Hero() {
-  const ebookMockup = PlaceHolderImages.find((p) => p.id === "ebook-mockup")!;
+  const ebookMockup = PlaceHolderImages.find((p) => p.id === "ebook-mockup-new")!;
 
   return (
     <section
