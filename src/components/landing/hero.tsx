@@ -23,7 +23,7 @@ export function Hero() {
           </h1>
 
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground/90">
-            Descubra o <strong className="font-semibold text-primary">Protocolo Anti-Indústria</strong>: o <strong className="font-semibold text-primary">único sistema</strong> que <strong className="font-semibold text-primary">liberta você</strong> dos cosméticos caros e ineficazes, entregando uma <strong className="font-semibold text-primary">pele saudável e radiante</strong>.
+            Descubra receitas naturais caseiras que transformam sua pele em 30 dias - sem químicas agressivas, sem gastar fortunas, apenas ingredientes que você já tem em casa.
           </p>
 
           <div className="pt-4 pb-4">
