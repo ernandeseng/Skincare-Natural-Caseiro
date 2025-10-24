@@ -14,7 +14,7 @@ export function Hero() {
       id="hero"
       className="relative w-full py-20 md:py-32"
       style={{
-        backgroundColor: '#F0F9F4',
+        background: 'radial-gradient(ellipse at top, #E8F5E9 0%, #FFFFFF 50%, #F0F9F4 100%)',
       }}
     >
       <div className="container mx-auto px-4 md:px-6">
