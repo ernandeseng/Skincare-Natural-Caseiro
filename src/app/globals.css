@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -79,4 +79,61 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Custom styles for the new navbar */
+.new-navbar {
+  background: linear-gradient(90deg, #E8F5E9 0%, #F0F9F4 100%);
+  padding: 12px 24px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+.new-navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px; /* or your desired max-width */
+  margin: 0 auto;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* SemiBold */
+  font-size: 18px;
+  color: #15803D;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-container {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 8px 20px;
+  box-shadow: 0px 4px 12px rgba(22, 163, 74, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 13px;
+  color: #DC2626;
+}
+
+.timer-digits {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 16px;
+  color: #1F2937;
+  letter-spacing: 0.05em; /* For a mono-like feel */
+  display: flex;
+  gap: 2px;
 }

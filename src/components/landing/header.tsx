@@ -1,26 +1,34 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { Leaf } from 'lucide-react';
 
 export function Header() {
-  const [countdown, setCountdown] = useState('');
+  const [countdown, setCountdown] = useState({ hours: '00', minutes: '00', seconds: '00' });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     function updateCountdown() {
       const now = new Date();
       const endOfDay = new Date();
       
-      endOfDay.setHours(23, 59, 59, 999); // Define o fim do dia atual
+      endOfDay.setHours(23, 59, 59, 999);
 
       const diff = endOfDay.getTime() - now.getTime();
       
       if (diff > 0) {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        setCountdown(`${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`);
+        const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+        const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        setCountdown({ hours, minutes, seconds });
       } else {
-        setCountdown("Oferta Encerrada");
+        setCountdown({ hours: '00', minutes: '00', seconds: '00' });
       }
     }
 
@@ -28,19 +36,39 @@ export function Header() {
     updateCountdown();
 
     return () => clearInterval(countdownInterval);
-  }, []);
+  }, [isClient]);
+
+  if (!isClient) {
+    return (
+      <header className="new-navbar">
+        <div className="new-navbar-content">
+           <div className="logo-text">
+            🌿 Protocolo Anti-Indústria
+          </div>
+           <div className="timer-container">
+            <span className="timer-label">Oferta termina em:</span>
+            <div className="timer-digits">
+              <span>00:00:00</span>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
-    <div className="announcement-bar">
-      <div className="announcement-content">
-        <p className="announcement-text active">
-          <span className="announcement-icon">🔥</span>
-          <span>Lançamento Exclusivo:</span>{' '}
-          <span className="highlight-text">76% OFF</span>{' '}
-          <span>somente hoje!</span>
-          <span className="countdown-inline">{countdown}</span>
-        </p>
+    <header className="new-navbar">
+      <div className="new-navbar-content">
+        <div className="logo-text">
+          🌿 Protocolo Anti-Indústria
+        </div>
+        <div className="timer-container">
+          <span className="timer-label">Oferta termina em:</span>
+          <div className="timer-digits">
+            <span>{countdown.hours}</span>:<span>{countdown.minutes}</span>:<span>{countdown.seconds}</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
