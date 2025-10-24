@@ -30,8 +30,8 @@ export function Hero() {
             <Image
               src={ebookMockup.imageUrl}
               alt={ebookMockup.description}
-              width={350}
-              height={350}
+              width={300}
+              height={300}
               className="object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
               data-ai-hint={ebookMockup.imageHint}
               priority
