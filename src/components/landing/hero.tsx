@@ -11,27 +11,29 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero relative w-full min-h-[95vh] md:min-h-screen flex items-center justify-center py-16 md:py-24"
+      className="hero relative w-full flex items-center justify-center py-20 md:py-32"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-secondary/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E8F5E3] to-[#FAF7F5]"></div>
 
       <div className="relative container mx-auto px-4 md:px-6 w-full">
         <div className="flex flex-col items-center text-center space-y-6 md:space-y-8">
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight shadow-2xl max-w-3xl">
-            A Pele dos Seus Sonhos com Ingredientes da Sua Cozinha
+          
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight drop-shadow-sm max-w-3xl text-balance">
+            <span className="text-primary">A Pele dos Seus Sonhos</span>
+            <br />
+            com Ingredientes da Sua Cozinha
           </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-white/90 shadow-lg">
-            Descubra o Protocolo Anti-Indústria: o único sistema que liberta
-            você dos cosméticos caros e ineficazes, entregando uma pele
-            saudável e radiante.
+
+          <p className="max-w-2xl text-lg md:text-xl text-muted-foreground/90">
+            Descubra o <strong className="font-semibold text-primary">Protocolo Anti-Indústria</strong>: o <strong className="font-semibold text-primary">único sistema</strong> que <strong className="font-semibold text-primary">liberta você</strong> dos cosméticos caros e ineficazes, entregando uma <strong className="font-semibold text-primary">pele saudável e radiante</strong>.
           </p>
 
           <div className="pt-4 pb-4">
             <Image
               src={ebookMockup.imageUrl}
               alt={ebookMockup.description}
-              width={300}
-              height={300}
+              width={250}
+              height={250}
               className="object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
               data-ai-hint={ebookMockup.imageHint}
               priority
@@ -43,7 +45,10 @@ export function Hero() {
               <Button
                 variant="cta"
                 size="xl"
-                className="animate-pulse-glow w-full max-w-md md:w-auto"
+                className="w-full max-w-md md:w-auto"
+                style={{
+                  backgroundColor: '#E07856'
+                }}
               >
                 QUERO TRANSFORMAR MINHA PELE
                 <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
