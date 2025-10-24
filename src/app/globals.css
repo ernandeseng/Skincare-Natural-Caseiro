@@ -83,7 +83,7 @@
 
 /* Custom styles for the new navbar */
 .new-navbar {
-  background: linear-gradient(90deg, #E8F5E9 0%, #F0F9F4 100%);
+  background: linear-gradient(90deg, #D9E8DC 0%, #E6F0EA 100%);
   padding: 12px 24px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
   position: sticky;
