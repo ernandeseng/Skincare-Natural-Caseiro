@@ -2,7 +2,6 @@
 import { Benefits } from "@/components/landing/benefits";
 import { Faq } from "@/components/landing/faq";
 import { FinalCall } from "@/components/landing/final-call";
-import { Guarantee } from "@/components/landing/guarantee";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { Pricing } from "@/components/landing/pricing";
@@ -20,7 +19,6 @@ export default function Home() {
         <Benefits />
         <TargetAudience />
         <Pricing />
-        <Guarantee />
         <Faq />
         <FinalCall />
       </main>
