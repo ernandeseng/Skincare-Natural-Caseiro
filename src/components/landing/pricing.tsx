@@ -1,120 +1,320 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { SkinDiagnosticForm } from "./skin-diagnostic-form";
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CreditCard, Star } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export function Pricing() {
-  const [open, setOpen] = useState(false);
+  const [countdown, setCountdown] = useState({
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
+  const [vacancies, setVacancies] = useState(47);
+  const ebookMockup = PlaceHolderImages.find((p) => p.id === "ebook-mockup-new")!;
 
-  const basicPlanFeatures = [
-    { text: "Protocolo", included: true },
-    { text: "Guia de Compras", included: false },
-    { text: "Receitas SOS", included: false },
-    { text: "Manual", included: false },
-  ];
+  useEffect(() => {
+    const vacancyInterval = setInterval(() => {
+      setVacancies((prev) => (prev > 15 ? prev - 1 : prev));
+    }, 120000); // Decrement every 2 minutes
 
-  const completePlanFeatures = [
-    { text: "Protocolo", included: true },
-    { text: "Guia de Compras", included: true },
-    { text: "Receitas SOS", included: true },
-    { text: "Manual de Conservação", included: true },
-  ];
+    return () => clearInterval(vacancyInterval);
+  }, []);
+
+  useEffect(() => {
+    let offerEndTime = localStorage.getItem("offerEndTime");
+    if (!offerEndTime || new Date().getTime() > parseInt(offerEndTime)) {
+      offerEndTime = (new Date().getTime() + 14 * 3600 * 1000 + 23 * 60 * 1000 + 45 * 1000).toString();
+      localStorage.setItem("offerEndTime", offerEndTime);
+    }
+
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = parseInt(offerEndTime!) - now;
+
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        // Reset timer for another 24 hours
+        const newEndTime = (new Date().getTime() + 24 * 3600 * 1000).toString();
+        localStorage.setItem("offerEndTime", newEndTime);
+        // This will trigger a re-render and restart the countdown.
+        // For simplicity, we'll just let it go to 00. A full restart would require another effect.
+        setCountdown({ hours: "00", minutes: "00", seconds: "00" });
+        return;
+      }
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      setCountdown({
+        hours: hours < 10 ? "0" + hours : hours.toString(),
+        minutes: minutes < 10 ? "0" + minutes : minutes.toString(),
+        seconds: seconds < 10 ? "0" + seconds : seconds.toString(),
+      });
+    }, 1000);
+
+    return () => clearInterval(countdownInterval);
+  }, []);
+
 
   return (
-    <section id="pricing" className="w-full pb-20 md:pb-32 bg-primary/5">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
-            Escolha o Plano Perfeito Para Você
-          </h2>
-          <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
-            Temos duas opções para você começar sua jornada rumo a uma pele incrível.
-          </p>
+    <section id="pricing" className="offer-section">
+      <div className="offer-container">
+        <div className="flex justify-center">
+            <div className="offer-badge">
+                <span className="fire-icon">🔥</span>
+                <span>OFERTA EXCLUSIVA POR TEMPO LIMITADO</span>
+            </div>
         </div>
 
-        <div className="pricing-container md:grid md:grid-cols-2 md:gap-8 md:max-w-4xl md:items-start">
-          {/* Card Básico */}
-          <Card className="pricing-card plano-basico">
-            <CardHeader className="card-header">
-              <h3 className="titulo-plano">Plano Básico</h3>
-              <p className="descricao-plano">Acesso essencial ao método.</p>
-            </CardHeader>
-            <CardContent className="card-body">
-              <div className="preco-container">
-                <p className="preco-valor">
-                  <span className="preco-simbolo">R$</span>19
-                  <span className="preco-centavos">,90</span>
-                </p>
-              </div>
-              <ul className="lista-beneficios">
-                {basicPlanFeatures.map((feature, index) => (
-                  <li key={index} className={`beneficio-item ${feature.included ? 'incluido' : 'nao-incluido'}`}>
-                    <span className="beneficio-texto">{feature.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <div className="card-footer">
-              <a href="https://www.ggcheckout.com/checkout/v2/0lolkNve678UBB9pTplo" target="_blank" rel="noopener noreferrer" className="w-full">
-                <button className="btn-basico">
-                  Escolher Básico
-                </button>
-              </a>
-            </div>
-          </Card>
+        <h2 className="offer-headline">
+          Transforme Sua Pele Investindo Apenas{" "}
+          <span className="highlight">o Preço de Um Café Por Dia</span>
+        </h2>
 
-          {/* Card Completo (Mais Atraente) */}
-          <Card className="pricing-card plano-completo">
-            <div className="badge-popular">
-              ⭐ MAIS POPULAR
-            </div>
-            <CardHeader className="card-header">
-              <h3 className="titulo-plano">Plano Completo</h3>
-              <p className="descricao-plano">Acesso total com todos os bônus!</p>
-            </CardHeader>
-            <CardContent className="card-body">
-              <p className="preco-antigo">De R$ 348,00 por apenas:</p>
-              <div className="preco-container">
-                <p className="preco-valor">
-                  <span className="preco-simbolo">R$</span>27
-                  <span className="preco-centavos">,90</span>
-                </p>
-              </div>
-              <p className="preco-parcelas">ou em até 3x no cartão</p>
+        <p className="offer-subheadline">
+          Acesso completo + 3 bônus exclusivos por um valor único e acessível
+        </p>
 
-              <div className="urgencia-badge">
-                ⚡ Últimas 47 vagas com bônus!
+        <div className="offer-card">
+          <div className="discount-badge">
+            <div className="discount-badge-percent">76%</div>
+            <div className="discount-badge-text">OFF</div>
+          </div>
+
+          <div className="product-title">
+            <h3 className="product-name">⭐ Protocolo Anti-Indústria</h3>
+            <p className="product-subtitle">
+              O único sistema completo de skincare natural caseiro
+            </p>
+          </div>
+
+          <div className="product-preview">
+            <Image
+              src={ebookMockup.imageUrl}
+              alt="Protocolo Anti-Indústria"
+              width={500}
+              height={313}
+              className="product-mockup"
+              data-ai-hint={ebookMockup.imageHint}
+            />
+          </div>
+
+          <div className="modules-list">
+            <div className="module-item">
+              <div className="module-icon">✅</div>
+              <div className="module-content">
+                <div className="module-title">
+                  MÓDULO 1: Descubra Seu Tipo de Pele em 10 Minutos
+                </div>
+                <div className="module-description">
+                  Quiz interativo que identifica seu tipo e indica as receitas
+                  perfeitas
+                </div>
+              </div>
+            </div>
+
+            <div className="module-item">
+              <div className="module-icon">✅</div>
+              <div className="module-content">
+                <div className="module-title">
+                  MÓDULO 2: Receitas Para Problemas Específicos
+                </div>
+                <div className="module-description">
+                  Soluções naturais para manchas, acne, oleosidade e
+                  ressecamento
+                </div>
+              </div>
+            </div>
+
+            <div className="module-item">
+              <div className="module-icon">✅</div>
+              <div className="module-content">
+                <div className="module-title">
+                  MÓDULO 3: As 15 Receitas Que Vão Revolucionar Sua Pele
+                </div>
+                <div className="module-description">
+                  Receitas comprovadas gastando menos de R$50 no mercado
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bonus-section">
+            <div className="bonus-header">
+              <h4 className="bonus-title">🎁 Bônus Exclusivos Inclusos</h4>
+              <p className="bonus-subtitle">
+                Valor total de R$ 141 - GRÁTIS hoje
+              </p>
+            </div>
+
+            <div className="bonus-list">
+              <div className="bonus-item">
+                <div className="bonus-icon">🎁</div>
+                <div className="bonus-content">
+                  <div className="bonus-name">
+                    BÔNUS 1: O Método dos 5 Minutos Dourados
+                  </div>
+                  <div className="bonus-desc">
+                    Rotina express que transforma sua pele mesmo com agenda
+                    lotada
+                  </div>
+                </div>
+                <div className="bonus-value">
+                  <span className="bonus-value-original">R$ 47</span>
+                  GRÁTIS
+                </div>
               </div>
 
-              <ul className="lista-beneficios">
-                {completePlanFeatures.map((feature, index) => (
-                  <li key={index} className={`beneficio-item ${feature.included ? 'incluido' : 'nao-incluido'}`}>
-                    <span className="beneficio-texto">{feature.text}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="social-proof-mini">
-                👥 <strong>2.847 pessoas</strong> já compraram
+              <div className="bonus-item">
+                <div className="bonus-icon">🎁</div>
+                <div className="bonus-content">
+                  <div className="bonus-name">
+                    BÔNUS 2: Truques Para Mulheres Ocupadas
+                  </div>
+                  <div className="bonus-desc">
+                    Hacks rápidos para cuidar da pele em meio à rotina corrida
+                  </div>
+                </div>
+                <div className="bonus-value">
+                  <span className="bonus-value-original">R$ 47</span>
+                  GRÁTIS
+                </div>
               </div>
-            </CardContent>
-            <div className="card-footer">
-              <a href="https://www.ggcheckout.com/checkout/v2/30wAKDKIxVLqpbUF4sUH" target="_blank" rel="noopener noreferrer" className="w-full">
-                <button className="btn-completo">
-                  QUERO MEU KIT COMPLETO
-                </button>
-              </a>
+
+              <div className="bonus-item">
+                <div className="bonus-icon">🎁</div>
+                <div className="bonus-content">
+                  <div className="bonus-name">
+                    BÔNUS 3: Os Segredos Que Ninguém Te Conta
+                  </div>
+                  <div className="bonus-desc">
+                    Ingredientes &apos;secretos&apos; e combinações poderosas
+                  </div>
+                </div>
+                <div className="bonus-value">
+                  <span className="bonus-value-original">R$ 47</span>
+                  GRÁTIS
+                </div>
+              </div>
             </div>
-          </Card>
+          </div>
+
+          <div className="pricing-section">
+            <div className="pricing-header">
+              <p className="total-value-label">
+                Valor total de tudo que você recebe:
+              </p>
+              <div className="original-price">R$ 348,00</div>
+              <div className="divider"></div>
+            </div>
+
+            <p className="price-today-label">Investimento de hoje:</p>
+            <div className="current-price">
+              <span className="currency">R$</span>19,90
+            </div>
+
+            <p className="installments">
+              Ou{" "}
+              <span className="installments-highlight">3x de R$ 6,63</span> sem
+              juros
+            </p>
+          </div>
+
+          <div className="urgency-section">
+            <div className="urgency-item">
+              <div className="urgency-icon">⚡</div>
+              <div className="urgency-text">
+                Últimas <span className="urgency-number">{vacancies}</span> vagas
+              </div>
+            </div>
+
+            <div className="urgency-item">
+              <div className="urgency-icon">⏰</div>
+              <div className="urgency-text">Oferta expira em:</div>
+            </div>
+          </div>
+
+          <div className="countdown-timer">
+            <div className="timer-block">
+              <div className="timer-number">{countdown.hours}</div>
+              <div className="timer-label">Horas</div>
+            </div>
+            <div className="timer-block">
+              <div className="timer-number">{countdown.minutes}</div>
+              <div className="timer-label">Minutos</div>
+            </div>
+            <div className="timer-block">
+              <div className="timer-number">{countdown.seconds}</div>
+              <div className="timer-label">Segundos</div>
+            </div>
+          </div>
+
+          <a href="#" className="block">
+            <button className="cta-button">
+              GARANTIR MEU ACESSO AGORA
+              <span className="cta-icon">→</span>
+            </button>
+          </a>
+
+          <p className="cta-subtext">
+            ⚡ Você será redirecionado para a área de pagamento seguro
+          </p>
+
+          <div className="trust-section">
+            <div className="trust-item">
+              <div className="trust-icon">✅</div>
+              <div className="trust-title">Acesso Imediato</div>
+              <div className="trust-description">
+                Receba tudo na hora, direto no seu e-mail
+              </div>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">🔒</div>
+              <div className="trust-title">Pagamento 100% Seguro</div>
+              <div className="trust-description">
+                Criptografia SSL e checkout protegido
+              </div>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">⭐</div>
+              <div className="trust-title">+5.000 Alunas</div>
+              <div className="trust-description">
+                Satisfeitas com o protocolo
+              </div>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">🌿</div>
+              <div className="trust-title">100% Natural</div>
+              <div className="trust-description">
+                Ingredientes acessíveis e seguros
+              </div>
+            </div>
+          </div>
+
+          <div className="guarantee-box">
+            <div className="guarantee-badge">
+              <span className="guarantee-icon">🛡️</span>
+              <span style={{ fontWeight: 800, color: "#1E3A8A" }}>
+                GARANTIA INCONDICIONAL
+              </span>
+            </div>
+            <h4 className="guarantee-title">
+              Garantia de 7 Dias ou Seu Dinheiro de Volta
+            </h4>
+            <p className="guarantee-text">
+              Você tem <strong>7 dias completos</strong> para testar o Protocolo
+              Anti-Indústria. Se por qualquer motivo você não ficar
+              satisfeita, devolvemos{" "}
+              <strong>100% do seu investimento</strong>. Sem perguntas, sem
+              burocracia. O risco é todo nosso!
+            </p>
+          </div>
         </div>
       </div>
     </section>
