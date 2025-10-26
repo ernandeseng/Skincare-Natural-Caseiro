@@ -38,29 +38,35 @@ export function TargetAudience() {
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const togglePlayPause = () => {
-    const currentVideo = videoRefs.current[current];
+  const togglePlayPause = (index: number) => {
+    const currentVideo = videoRefs.current[index];
     if (!currentVideo) return;
 
-    if (isMuted) {
-      setIsMuted(false);
-      currentVideo.currentTime = 0; 
-      videoRefs.current.forEach(video => {
-        if (video) video.muted = false;
-      });
-      currentVideo.play();
-      setIsPlaying(true);
-      return;
-    }
-
     if (currentVideo.paused) {
-      currentVideo.play();
-      setIsPlaying(true);
+        currentVideo.play();
+        setIsPlaying(true);
     } else {
-      currentVideo.pause();
-      setIsPlaying(false);
+        currentVideo.pause();
+        setIsPlaying(false);
     }
   };
+  
+  const handleVideoClick = (index: number) => {
+    const currentVideo = videoRefs.current[index];
+    if (!currentVideo) return;
+
+    if(isMuted) {
+        videoRefs.current.forEach(video => {
+            if(video) video.muted = false;
+        });
+        setIsMuted(false);
+        currentVideo.currentTime = 0;
+        currentVideo.play();
+        setIsPlaying(true);
+    } else {
+        togglePlayPause(index);
+    }
+  }
 
   useEffect(() => {
     if (!api) return;
@@ -68,12 +74,12 @@ export function TargetAudience() {
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-      setIsPlaying(true); // Always assume playing when slide changes
+      setIsPlaying(true); // Assume playing when slide changes
 
       videoRefs.current.forEach((video, index) => {
         if (video) {
           if (index === newIndex) {
-            video.currentTime = 0; // Reset video to start
+            video.currentTime = 0;
             video.play().catch(error => console.error("Error trying to play video on select:", error));
           } else {
             video.pause();
@@ -83,7 +89,7 @@ export function TargetAudience() {
     };
     
     api.on("select", onSelect);
-    // Initial play for the first video
+    
     const firstVideo = videoRefs.current[0];
     if(firstVideo) {
       firstVideo.play().catch(error => console.error("Error playing first video:", error));
@@ -98,23 +104,23 @@ export function TargetAudience() {
   return (
     <section id="target-audience" className="video-carousel-section w-full py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="section-header text-center mb-12">
-          <div className="inline-block rounded-lg bg-primary/10 p-4 border-2 border-primary/20 mb-4">
-            <UserCheck className="h-8 w-8 text-primary" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
-            O Que Nossas Clientes Estão Dizendo
+        <div className="text-center mb-12 md:mb-16">
+          <h2 
+            className="text-3xl md:text-5xl font-extrabold text-primary mb-4"
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
+          >
+            O Que Nossas <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-[#15803D]">Clientes Estão</span> Dizendo
           </h2>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mt-4">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Veja os resultados reais de quem já se libertou da indústria.
           </p>
         </div>
 
-        <Carousel setApi={setApi} className="carousel-container relative max-w-lg mx-auto">
-          <CarouselContent className="carousel-wrapper">
+        <Carousel setApi={setApi} className="relative max-w-lg mx-auto">
+          <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="carousel-slide">
-                 <div className="video-container" onClick={togglePlayPause}>
+              <CarouselItem key={index}>
+                 <div className="video-container" onClick={() => handleVideoClick(index)}>
                     {isMuted && (
                       <div className="video-overlay">
                         <div className="text-center">
@@ -123,9 +129,9 @@ export function TargetAudience() {
                         </div>
                       </div>
                     )}
-                    {!isPlaying && !isMuted && (
+                    {(!isPlaying && !isMuted && current === index) && (
                       <div className="video-play-icon">
-                        <Play className="h-16 w-16 text-white" />
+                        <Play className="h-16 w-16 text-white fill-white" />
                       </div>
                     )}
                     <video
@@ -142,9 +148,11 @@ export function TargetAudience() {
                   </div>
                   <div className="video-info">
                     <div className="compra-recente">
-                      <span className="badge-compra">🛍️ Compra Recente!</span>
-                      <p className="cliente-nome">{testimonial.name} de {testimonial.location}</p>
-                      <p className="cliente-acao">Uma de nossas clientes satisfeitas!.</p>
+                      <p>
+                        <span className="badge-compra">🛍️ Compra Recente!</span>
+                        {' '}
+                        <span className="cliente-nome">{testimonial.name}</span> de {testimonial.location}
+                      </p>
                     </div>
                   </div>
               </CarouselItem>
@@ -158,7 +166,7 @@ export function TargetAudience() {
           {testimonials.map((_, index) => (
             <button
               key={index}
-              className={`indicator ${index === current ? "active" : ""}`}
+              className={`indicator-dot ${index === current ? "active" : ""}`}
               onClick={() => api?.scrollTo(index)}
               aria-label={`Ir para vídeo ${index + 1}`}
             />
