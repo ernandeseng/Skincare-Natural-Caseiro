@@ -1,4 +1,3 @@
-
 "use client";
 
 import { UserCheck } from "lucide-react";
@@ -112,7 +111,7 @@ export function TargetAudience() {
             Elas Pararam de Gastar R$500/Mês e Conseguiram Pele Perfeita — Veja Como
           </h2>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-            Veja os resultados reais de quem já se libertou da indústria.
+            Resultados reais, transformações comprovadas. Veja o que acontece
           </p>
         </div>
 
