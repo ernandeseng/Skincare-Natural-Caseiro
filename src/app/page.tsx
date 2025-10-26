@@ -5,7 +5,6 @@ import { FinalCall } from "@/components/landing/final-call";
 import { Guarantee } from "@/components/landing/guarantee";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
-import { Offer } from "@/components/landing/offer";
 import { Pricing } from "@/components/landing/pricing";
 import { Preview } from "@/components/landing/preview";
 import { SalesNotification } from "@/components/landing/sales-notification";
@@ -20,7 +19,6 @@ export default function Home() {
         <Preview />
         <Benefits />
         <TargetAudience />
-        <Offer />
         <Pricing />
         <Guarantee />
         <Faq />
