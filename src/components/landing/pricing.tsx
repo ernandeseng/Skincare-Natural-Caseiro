@@ -140,6 +140,17 @@ export function Pricing() {
                 </div>
               </div>
             </div>
+            <div className="module-item">
+              <div className="module-icon">✅</div>
+              <div className="module-content">
+                <div className="module-title">
+                  MÓDULO 4: ECONOMIA MÁXIMA
+                </div>
+                <div className="module-description">
+                  Como Preparar, Conservar e Maximizar Cada Ingrediente
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bonus-section">
