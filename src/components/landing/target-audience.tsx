@@ -109,7 +109,7 @@ export function TargetAudience() {
             className="text-3xl md:text-5xl font-extrabold text-primary mb-4"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            O Que Nossas <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-[#15803D]">Clientes Estão</span> Dizendo
+            Elas Pararam de Gastar R$500/Mês e Conseguiram Pele Perfeita — Veja Como
           </h2>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Veja os resultados reais de quem já se libertou da indústria.
