@@ -1,6 +1,7 @@
+
 "use client";
 
-import { UserCheck } from "lucide-react";
+import { UserCheck, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import {
   Carousel,
@@ -11,6 +12,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { Play, VolumeX } from "lucide-react";
+import { Button } from "../ui/button";
 
 const testimonials = [
   {
@@ -171,7 +173,23 @@ export function TargetAudience() {
             />
           ))}
         </div>
+
+        <div className="testimonials-cta-container">
+            <h3 className="testimonials-cta-headline">Sua Transformação Começa Agora</h3>
+            <p className="testimonials-cta-subtext">
+                Junte-se a mais de 5.000 mulheres que já transformaram 
+                sua pele com o Protocolo Anti-Indústria
+            </p>
+            <a href="#pricing" className="w-full flex justify-center">
+                <Button size="xl" className="testimonials-cta-button group">
+                    QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+                    <ArrowRight className="ml-2 transition-transform group-hover:translate-x-2" />
+                </Button>
+            </a>
+        </div>
+
       </div>
     </section>
   );
 }
+
