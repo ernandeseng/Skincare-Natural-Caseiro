@@ -69,31 +69,31 @@
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://images.unsplash.com/photo-1588561181397-fed38f837e17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1698780537000-c0bf896f736a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe page layout"
     },
     {
       "id": "preview-shopping",
       "description": "A grid layout of recipe cards with ingredient photos and cost breakdowns, under the title '15 Revolutionary Recipes Under R$50'.",
-      "imageUrl": "https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZWNpcGUlMjBncmlkJTIwZWJvb2t8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1622535785905-ea8f0b3b72bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVjaXBlJTIwZ3JpZCUyMGVib29rfGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe grid ebook"
     },
     {
       "id": "preview-routine",
       "description": "A step-by-step visual guide of a quick morning skincare routine, titled 'The 5 Golden Minutes Method', with timer icons.",
-      "imageUrl": "https://images.unsplash.com/photo-1679517354337-6037a4cdeda1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1613223026022-afda5c1c95b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "skincare routine timeline"
     },
     {
       "id": "preview-hacks",
       "description": "A digital planner page with quick skincare tips and hacks for busy women, titled 'Tricks for Busy Working Women'.",
-      "imageUrl": "https://images.unsplash.com/photo-1657040298726-7189d3090d5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwcGxhbm5lciUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1659035260002-11d486d6e9f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaWdpdGFsJTIwcGxhbm5lciUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "digital planner page"
     },
     {
       "id": "preview-secrets",
       "description": "An exclusive-looking page from a guide titled 'Secrets Nobody Tells You', featuring 'hidden' ingredients with a premium, mysterious aesthetic.",
-      "imageUrl": "https://images.unsplash.com/photo-1633963793294-4a7e34d6a9af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzZWNyZXQlMjBndWlkZSUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1697301439928-7c60326ff1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VjcmV0JTIwZ3VpZGUlMjBwYWdlfGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "secret guide page"
     },
     {
