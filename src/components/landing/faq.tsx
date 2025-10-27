@@ -1,20 +1,13 @@
 
 "use client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Plus, Minus } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { SkinDiagnosticForm } from "./skin-diagnostic-form";
+import { cn } from "@/lib/utils";
 
 const faqs = [
   {
@@ -30,7 +23,7 @@ const faqs = [
   {
     question: "E se minha pele for sensível?",
     answer:
-      "A beleza do método natural é que ele é gentil com a pele. Usamos ingredientes puros, sem os aditivos que geralmente causam irritação. Além disso, você tem nossa Garantia Incondicional de 30 dias. Se sua pele não amar o protocolo, devolvemos seu dinheiro.",
+      "A beleza do método natural é que ele é gentil com a pele. Usamos ingredientes puros, sem os aditivos que geralmente causam irritação. Além disso, você tem nossa Garantia Incondicional de 7 dias. Se sua pele não amar o protocolo, devolvemos seu dinheiro.",
   },
   {
     question: "Como saber se vai funcionar para mim?",
@@ -49,69 +42,131 @@ const faqs = [
   },
 ];
 
-export function Faq() {
+const FaqItem = ({
+  faq,
+  isActive,
+  onClick,
+}: {
+  faq: (typeof faqs)[0];
+  isActive: boolean;
+  onClick: () => void;
+}) => {
   const [open, setOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const isDiagnosticQuestion = faq.question === "Como saber se vai funcionar para mim?";
+
   return (
-    <section id="faq" className="w-full py-20 md:py-32 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
-            Suas Dúvidas, Nossas Respostas
-          </h2>
-          <p className="max-w-3xl text-lg md:text-xl text-muted-foreground">
-            Sabemos que você pode ter perguntas. Aqui estão as respostas para as
-            mais comuns.
-          </p>
+    <div
+      className={cn("faq-item", { active: isActive })}
+    >
+      <button className={cn("faq-question", { active: isActive })} onClick={onClick}>
+        <span>{faq.question}</span>
+        <svg className="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </button>
+      <div
+        ref={contentRef}
+        className="faq-answer"
+        style={{
+          maxHeight: isActive ? `${contentRef.current?.scrollHeight}px` : '0',
+        }}
+      >
+        <p>
+          {faq.answer}
+          {isDiagnosticQuestion && (
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <button
+                  className="text-green-600 font-bold mt-2 hover:underline"
+                >
+                  Faça nosso diagnóstico gratuito online!
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md md:max-w-lg">
+                <SkinDiagnosticForm setOpen={setOpen} />
+              </DialogContent>
+            </Dialog>
+          )}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+
+export function Faq() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const faqItemsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleItemClick = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const items = faqItemsRef.current.filter(el => el !== null);
+    items.forEach((item) => {
+        observer.observe(item!);
+    });
+
+    return () => {
+      items.forEach((item) => {
+        if (item) observer.unobserve(item);
+      });
+    };
+  }, []);
+
+
+  return (
+    <section id="faq" className="faq-section">
+      <div className="faq-container">
+        <div className="faq-header">
+          <svg className="leaf-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.52,22.06,8.5,20.41,9.5,17.16a7.48,7.48,0,0,1-4-10.82,7.49,7.49,0,0,1,12.32-6,7.49,7.49,0,0,1-1.15,11.23L15.5,20.73Z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+            <path d="M12.5,12.55A4.49,4.49,0,0,1,8,8.05" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+          </svg>
+          <h2>Suas Dúvidas, Nossas Respostas</h2>
+          <p className="faq-subtitle">Sabemos que você pode ter perguntas. Aqui estão as respostas para as mais comuns.</p>
         </div>
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-background rounded-xl shadow-sm border border-border/50"
-              >
-                <AccordionTrigger className="text-left text-lg font-semibold px-6 py-5 group text-primary">
-                  <span className="flex-1">{faq.question}</span>
-                  <Plus className="h-6 w-6 text-secondary transition-transform duration-300 group-data-[state=open]:hidden" />
-                  <Minus className="h-6 w-6 text-secondary transition-transform duration-300 hidden group-data-[state=open]:block" />
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground text-left px-6 pb-5">
-                  {faq.answer}
-                  {faq.question ===
-                    "Como saber se vai funcionar para mim?" && (
-                    <Dialog open={open} onOpenChange={setOpen}>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant="link"
-                          className="text-secondary font-bold p-0 h-auto mt-2 text-left text-base"
-                        >
-                          Faça nosso diagnóstico gratuito online!
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-md md:max-w-lg">
-                        <SkinDiagnosticForm setOpen={setOpen} />
-                      </DialogContent>
-                    </Dialog>
-                  )}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        
+        <div className="faq-items">
+          {faqs.map((faq, index) => (
+             <FaqItem
+              key={index}
+              faq={faq}
+              isActive={activeIndex === index}
+              onClick={() => handleItemClick(index)}
+            />
+          ))}
         </div>
-        <div className="flex justify-center mt-12">
+        
+        <div className="faq-cta">
            <a href="#pricing">
-              <Button
-                variant="cta"
-                size="xl"
-                className="w-full max-w-lg"
-              >
+              <button className="cta-button">
                 Quero Começar Minha Transformação
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14m-7-7 7 7-7 7" />
+                </svg>
+              </button>
             </a>
         </div>
       </div>
+      
+      <div className="leaf-decoration leaf-top-left"></div>
+      <div className="leaf-decoration leaf-bottom-right"></div>
     </section>
   );
 }
+

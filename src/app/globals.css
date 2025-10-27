@@ -1351,3 +1351,363 @@
     font-size: 28px;
   }
 }
+/* ========================================
+   SEÇÃO FAQ - DESIGN MODERNO E NATURAL
+   ======================================== */
+
+.faq-section {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 50%, #f5faf5 100%);
+  overflow: hidden;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
+   CABEÇALHO DO FAQ
+   ======================================== */
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.leaf-icon {
+  color: #3d7a4f;
+  margin: 0 auto 20px;
+  stroke-width: 2px;
+  animation: leafFloat 3s ease-in-out infinite;
+}
+
+@keyframes leafFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.faq-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a3a2e;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  color: #4a6b5a;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   ITENS DO FAQ
+   ======================================== */
+
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(45, 95, 63, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(45, 95, 63, 0.08);
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(45, 95, 63, 0.15);
+  border-color: rgba(45, 95, 63, 0.2);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d5f3f;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq-question:hover {
+  color: #3d7a4f;
+}
+
+.faq-question::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3d7a4f;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-question.active::before {
+  opacity: 1;
+}
+
+
+.faq-question span {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  stroke: #3d7a4f;
+  stroke-width: 2.5px;
+  fill: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 28px;
+}
+
+.faq-question.active + .faq-answer {
+  max-height: 500px;
+  padding: 0 28px 24px 28px;
+}
+
+.faq-answer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0;
+  padding-top: 4px;
+}
+
+/* ========================================
+   BOTÃO CTA FAQ
+   ======================================== */
+
+.faq-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.faq-cta .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3d7a4f 0%, #2d5f3f 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(45, 95, 63, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-cta .cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.faq-cta .cta-button:hover::before {
+  left: 100%;
+}
+
+.faq-cta .cta-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(45, 95, 63, 0.4);
+}
+
+.faq-cta .cta-button:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.faq-cta .cta-button svg {
+  stroke: currentColor;
+  stroke-width: 2.5px;
+  fill: none;
+  transition: transform 0.3s ease;
+}
+
+.faq-cta .cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   ELEMENTOS DECORATIVOS FAQ
+   ======================================== */
+
+.leaf-decoration {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q70 30 70 50 Q70 70 50 90 Q30 70 30 50 Q30 30 50 10' fill='%232d5f3f'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.leaf-top-left {
+  top: -50px;
+  left: -50px;
+  transform: rotate(-25deg);
+  animation: leafRotate 20s linear infinite;
+}
+
+.leaf-bottom-right {
+  bottom: -50px;
+  right: -50px;
+  transform: rotate(45deg);
+  animation: leafRotate 25s linear infinite reverse;
+}
+
+@keyframes leafRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE FAQ
+   ======================================== */
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 16px;
+  }
+
+  .faq-header h2 {
+    font-size: 32px;
+  }
+
+  .faq-subtitle {
+    font-size: 16px;
+  }
+
+  .faq-question {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
+  }
+
+  .faq-question.active + .faq-answer {
+    padding: 0 20px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+  }
+
+  .faq-cta .cta-button {
+    padding: 16px 32px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .leaf-decoration {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-header h2 {
+    font-size: 28px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+  }
+
+  .faq-cta .cta-button {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+}
+
+/* ========================================
+   ESTADOS DE ACESSIBILIDADE FAQ
+   ======================================== */
+
+.faq-question:focus-visible {
+  outline: 3px solid #3d7a4f;
+  outline-offset: 2px;
+}
+
+.faq-cta .cta-button:focus-visible {
+  outline: 3px solid #3d7a4f;
+  outline-offset: 4px;
+}
+
+/* Reduzir movimento para usuários com preferência */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
