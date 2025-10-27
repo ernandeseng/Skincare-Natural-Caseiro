@@ -30,6 +30,16 @@ const testimonials = [
     name: "Julia M.",
     location: "Rio de Janeiro, RJ",
   },
+  {
+    videoUrl: "https://www.dropbox.com/scl/fi/6j6mjj48l8c8zptr8ub0u/573e8a5d-5b6c-4526-a6a0-ba3d7737a5cc.mp4?rlkey=ps1a3vwtnx890vdutzct84oy8&st=h5z3wpy3&raw=1",
+    name: "Carla B.",
+    location: "Curitiba, PR",
+  },
+  {
+    videoUrl: "https://www.dropbox.com/scl/fi/uy08o94godaxga9e4kp9e/59e31251-25e1-455f-b88f-ae29aa9d6779.mp4?rlkey=0dsutapa9xebc34vcm4qtn8xj&st=6vzcq2m9&raw=1",
+    name: "Beatriz L.",
+    location: "Fortaleza, CE",
+  },
 ];
 
 export function TargetAudience() {
@@ -192,4 +202,5 @@ export function TargetAudience() {
     </section>
   );
 }
+
 
