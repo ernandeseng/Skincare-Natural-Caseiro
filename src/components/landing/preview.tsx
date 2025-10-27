@@ -135,11 +135,6 @@ export function Preview() {
               <CarouselItem key={index}>
                 <div className="flex flex-col items-center gap-6 px-5">
                   <div className="carousel-slide-card w-full max-w-3xl group">
-                     <div 
-                      className={`module-badge ${item.badge.startsWith('Bônus') ? 'bonus' : ''}`}
-                    >
-                      {item.badgeIcon} {item.badge}
-                    </div>
                     <Image
                       src={item.image.imageUrl}
                       alt={item.image.description}
