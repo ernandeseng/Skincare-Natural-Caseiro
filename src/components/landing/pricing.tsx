@@ -262,7 +262,7 @@ export function Pricing() {
             </div>
           </div>
 
-          <a href="#" className="block">
+          <a href="https://www.ggcheckout.com/checkout/v2/30wAKDKIxVLqpbUF4sUH" className="block">
             <button className="cta-button">
               GARANTIR MEU ACESSO AGORA
               <span className="cta-icon">→</span>
