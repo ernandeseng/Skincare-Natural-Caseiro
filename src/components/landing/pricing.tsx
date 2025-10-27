@@ -166,11 +166,10 @@ export function Pricing() {
                 <div className="bonus-icon">🎁</div>
                 <div className="bonus-content">
                   <div className="bonus-name">
-                    BÔNUS 1: O Método dos 5 Minutos Dourados
+                    BÔNUS 1: LISTA DE COMPRAS MENSAL
                   </div>
                   <div className="bonus-desc">
-                    Rotina express que transforma sua pele mesmo com agenda
-                    lotada
+                    O Guia Definitivo Para Economizar R$ 150 Todo Mês Em Skincare
                   </div>
                 </div>
                 <div className="bonus-value">
@@ -183,10 +182,10 @@ export function Pricing() {
                 <div className="bonus-icon">🎁</div>
                 <div className="bonus-content">
                   <div className="bonus-name">
-                    BÔNUS 2: Truques Para Mulheres Ocupadas
+                    BÔNUS 2: RECEITAS SOS
                   </div>
                   <div className="bonus-desc">
-                    Hacks rápidos para cuidar da pele em meio à rotina corrida
+                    5 Soluções Emergenciais Para Espinhas que Aparecem de Última Hora
                   </div>
                 </div>
                 <div className="bonus-value">
@@ -199,10 +198,10 @@ export function Pricing() {
                 <div className="bonus-icon">🎁</div>
                 <div className="bonus-content">
                   <div className="bonus-name">
-                    BÔNUS 3: Os Segredos Que Ninguém Te Conta
+                    BÔNUS 3: GUIA DE CONSERVAÇÃO
                   </div>
                   <div className="bonus-desc">
-                    Ingredientes &apos;secretos&apos; e combinações poderosas
+                    Como Fazer Seus Preparados Durarem Mais e Economizar Ainda Mais
                   </div>
                 </div>
                 <div className="bonus-value">
