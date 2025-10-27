@@ -69,37 +69,37 @@
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://images.unsplash.com/photo-1698780537000-c0bf896f736a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1588561181397-fed38f837e17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe page layout"
     },
     {
       "id": "preview-shopping",
       "description": "A grid layout of recipe cards with ingredient photos and cost breakdowns, under the title '15 Revolutionary Recipes Under R$50'.",
-      "imageUrl": "https://images.unsplash.com/photo-1665110180279-ee5372bb96bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWNpcGUlMjBncmlkJTIwZWJvb2t8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZWNpcGUlMjBncmlkJTIwZWJvb2t8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe grid ebook"
     },
     {
       "id": "preview-routine",
       "description": "A step-by-step visual guide of a quick morning skincare routine, titled 'The 5 Golden Minutes Method', with timer icons.",
-      "imageUrl": "https://images.unsplash.com/photo-1610992015734-080387c1f66f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1679517354337-6037a4cdeda1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "skincare routine timeline"
     },
     {
       "id": "preview-hacks",
       "description": "A digital planner page with quick skincare tips and hacks for busy women, titled 'Tricks for Busy Working Women'.",
-      "imageUrl": "https://images.unsplash.com/photo-1641630376356-fb9e646b0ea4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGlnaXRhbCUyMHBsYW5uZXIlMjBwYWdlfGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1657040298726-7189d3090d5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwcGxhbm5lciUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "digital planner page"
     },
     {
       "id": "preview-secrets",
       "description": "An exclusive-looking page from a guide titled 'Secrets Nobody Tells You', featuring 'hidden' ingredients with a premium, mysterious aesthetic.",
-      "imageUrl": "https://images.unsplash.com/photo-1723812792798-dfcc0cbf539f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWNyZXQlMjBndWlkZSUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1633963793294-4a7e34d6a9af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzZWNyZXQlMjBndWlkZSUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "secret guide page"
     },
     {
       "id": "preview-economy",
       "description": "A visual guide on how to prepare, conserve, and maximize ingredients, with visuals of stored herbs and labeled jars.",
-      "imageUrl": "https://images.unsplash.com/photo-1761125802333-d145773f4461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1595835088291-8690a8044df1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ingredient conservation"
     }
   ]
