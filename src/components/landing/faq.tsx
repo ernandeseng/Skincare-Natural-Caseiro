@@ -52,7 +52,6 @@ const FaqItem = ({
   onClick: () => void;
 }) => {
   const [open, setOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   const isDiagnosticQuestion = faq.question === "Como saber se vai funcionar para mim?";
 
@@ -67,29 +66,30 @@ const FaqItem = ({
         </svg>
       </button>
       <div
-        ref={contentRef}
         className="faq-answer"
         style={{
-          maxHeight: isActive ? `${contentRef.current?.scrollHeight}px` : '0',
+          maxHeight: isActive ? `500px` : '0', // Simplified for now
         }}
       >
-        <p>
-          {faq.answer}
-          {isDiagnosticQuestion && (
-            <Dialog open={open} onOpenChange={setOpen}>
-              <DialogTrigger asChild>
-                <button
-                  className="text-green-600 font-bold mt-2 hover:underline"
-                >
-                  Faça nosso diagnóstico gratuito online!
-                </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md md:max-w-lg">
-                <SkinDiagnosticForm setOpen={setOpen} />
-              </DialogContent>
-            </Dialog>
-          )}
-        </p>
+        <div className="p-4">
+            <p>
+            {faq.answer}
+            {isDiagnosticQuestion && (
+                <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                    <button
+                    className="text-green-600 font-bold mt-2 hover:underline"
+                    >
+                    Faça nosso diagnóstico gratuito online!
+                    </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md md:max-w-lg">
+                    <SkinDiagnosticForm setOpen={setOpen} />
+                </DialogContent>
+                </Dialog>
+            )}
+            </p>
+        </div>
       </div>
     </div>
   );
@@ -98,34 +98,34 @@ const FaqItem = ({
 
 export function Faq() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const faqItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
 
-    const items = faqItemsRef.current.filter(el => el !== null);
-    items.forEach((item) => {
-        observer.observe(item!);
+  useEffect(() => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    faqItems.forEach((item, index) => {
+      (item as HTMLElement).style.opacity = '0';
+      (item as HTMLElement).style.transform = 'translateY(20px)';
+      (item as HTMLElement).style.transition = `all 0.6s ease ${index * 0.1}s`;
+      observer.observe(item);
     });
 
     return () => {
-      items.forEach((item) => {
-        if (item) observer.unobserve(item);
-      });
-    };
+        faqItems.forEach(item => {
+            observer.unobserve(item);
+        });
+    }
+
   }, []);
 
 
@@ -133,12 +133,12 @@ export function Faq() {
     <section id="faq" className="faq-section">
       <div className="faq-container">
         <div className="faq-header">
-          <svg className="leaf-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.52,22.06,8.5,20.41,9.5,17.16a7.48,7.48,0,0,1-4-10.82,7.49,7.49,0,0,1,12.32-6,7.49,7.49,0,0,1-1.15,11.23L15.5,20.73Z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
-            <path d="M12.5,12.55A4.49,4.49,0,0,1,8,8.05" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
-          </svg>
-          <h2>Suas Dúvidas, Nossas Respostas</h2>
-          <p className="faq-subtitle">Sabemos que você pode ter perguntas. Aqui estão as respostas para as mais comuns.</p>
+            <svg className="leaf-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.52,22.06,8.5,20.41,9.5,17.16a7.48,7.48,0,0,1-4-10.82,7.49,7.49,0,0,1,12.32-6,7.49,7.49,0,0,1-1.15,11.23L15.5,20.73Z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+                <path d="M12.5,12.55A4.49,4.49,0,0,1,8,8.05" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></path>
+            </svg>
+            <h2>Suas Dúvidas, Nossas Respostas</h2>
+            <p className="faq-subtitle">Sabemos que você pode ter perguntas. Aqui estão as respostas para as mais comuns.</p>
         </div>
         
         <div className="faq-items">
@@ -154,7 +154,7 @@ export function Faq() {
         
         <div className="faq-cta">
            <a href="#pricing">
-              <button className="cta-button">
+              <button className="cta-button justify-center">
                 Quero Começar Minha Transformação
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M5 12h14m-7-7 7 7-7 7" />
@@ -169,4 +169,3 @@ export function Faq() {
     </section>
   );
 }
-
