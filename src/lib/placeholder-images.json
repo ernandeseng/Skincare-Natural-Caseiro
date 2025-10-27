@@ -69,7 +69,7 @@
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://images.unsplash.com/photo-1698780537000-c0bf896f736a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://picsum.photos/seed/recipes2/800/500",
       "imageHint": "recipe page layout"
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "preview-economy",
       "description": "A visual guide on how to prepare, conserve, and maximize ingredients, with visuals of stored herbs and labeled jars.",
-      "imageUrl": "https://images.unsplash.com/photo-1595835088291-8690a8044df1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://picsum.photos/seed/economy4/800/500",
       "imageHint": "ingredient conservation"
     }
   ]
