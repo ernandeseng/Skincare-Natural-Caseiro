@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -38,6 +39,14 @@ const deliverables = [
     highlight: "Menos de R$50",
     description: "Receitas comprovadas com ingredientes naturais acessíveis e fáceis de encontrar.",
     image: PlaceHolderImages.find((p) => p.id === "preview-shopping")!,
+  },
+  {
+    badge: "Módulo 4",
+    badgeIcon: "📚",
+    title: "ECONOMIA MÁXIMA: Como Preparar, Conservar e Maximizar Cada Ingrediente",
+    highlight: "ECONOMIA MÁXIMA",
+    description: "Aprenda a preparar, conservar e maximizar cada ingrediente para um aproveitamento total e desperdício zero.",
+    image: PlaceHolderImages.find((p) => p.id === "preview-economy")!,
   },
   {
     badge: "Bônus 1",
@@ -241,3 +250,5 @@ export function Preview() {
     </section>
   );
 }
+
+    
