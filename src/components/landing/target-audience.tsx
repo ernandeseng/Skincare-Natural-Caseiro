@@ -120,7 +120,7 @@ export function TargetAudience() {
             className="text-3xl md:text-5xl font-extrabold text-primary mb-4"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            Elas Pararam de Gastar R$500/Mês e Conseguiram Pele Perfeita — Veja Como
+            Elas Pararam de Gastar R$300/Mês e Conseguiram Pele Perfeita — Veja Como
           </h2>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Resultados reais, transformações comprovadas. Veja o que acontece

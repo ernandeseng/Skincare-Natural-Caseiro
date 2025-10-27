@@ -23,7 +23,7 @@ export function Hero() {
             className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tighter max-w-4xl text-balance"
             style={{ fontFamily: 'Montserrat, sans-serif', color: '#1F2937', letterSpacing: '-0.5px' }}
           >
-            Pare de Gastar <span style={{ color: '#DC2626' }}>R$500/Mês</span> em Produtos de Pele que <span style={{ color: '#DC2626' }}>Não Funcionam</span>
+            Pare de Gastar <span style={{ color: '#DC2626' }}>R$300/Mês</span> em Produtos de Pele que <span style={{ color: '#DC2626' }}>Não Funcionam</span>
           </h1>
 
           <div

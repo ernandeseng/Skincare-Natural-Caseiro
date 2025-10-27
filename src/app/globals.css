@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600;700;800&display=swap');
 
 @tailwind base;
@@ -478,6 +479,296 @@
         font-size: 36px;
     }
 }
+
+/* Bonus Section */
+.bonus-section {
+    background: linear-gradient(180deg, #FEF3C7 0%, #FFFBEB 50%, #F0F9F4 100%);
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bonus-glow-decoration {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.08), transparent 70%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+}
+
+.bonus-header-container {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.bonus-main-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 28px;
+    border-radius: 50px;
+    box-shadow: 0px 6px 20px rgba(251, 191, 36, 0.4);
+    animation: pulse-badge-gold 2s infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse-badge-gold {
+  0%, 100% { transform: scale(1); box-shadow: 0px 6px 20px rgba(251, 191, 36, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0px 8px 25px rgba(251, 191, 36, 0.5); }
+}
+
+.bonus-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    color: #92400E;
+    max-width: 900px;
+    margin: 16px auto 0;
+}
+
+.bonus-subheadline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #78350F;
+    margin-top: 16px;
+}
+
+.bonus-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bonus-card-item {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
+    border: 3px solid transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.bonus-card-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bonus-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 16px 48px rgba(251, 191, 36, 0.2);
+    border-color: #FBBF24;
+}
+
+.bonus-card-badge {
+    position: absolute;
+    top: -18px;
+    right: 24px;
+    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 16px rgba(251, 191, 36, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bonus-card-icon-wrapper {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    box-shadow: 0px 6px 20px rgba(251, 191, 36, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bonus-card-item:hover .bonus-card-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.bonus-card-icon {
+    font-size: 36px;
+}
+
+.bonus-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #92400E;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.bonus-card-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: #15803D;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.bonus-card-description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.bonus-card-value-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bonus-card-original-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #9CA3AF;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+}
+
+.bonus-card-current-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: #16A34A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bonus-cta-container {
+    margin-top: 72px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bonus-cta-pretext {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #92400E;
+    margin-bottom: 24px;
+}
+
+.bonus-cta-button {
+    background: linear-gradient(135deg, #16A34A, #15803D);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 24px 56px;
+    border-radius: 60px;
+    box-shadow: 0px 12px 40px rgba(22, 163, 74, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    border: none;
+}
+
+.bonus-cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 16px 48px rgba(22, 163, 74, 0.5);
+}
+
+.bonus-cta-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.bonus-cta-button:hover .bonus-cta-arrow {
+    transform: translateX(4px);
+}
+
+.bonus-cta-trustline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.bonus-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .bonus-section {
+        padding: 64px 24px;
+    }
+    .bonus-headline {
+        font-size: 28px;
+    }
+    .bonus-subheadline {
+        font-size: 16px;
+    }
+    .bonus-cards-grid {
+        gap: 24px;
+    }
+    .bonus-card-item {
+        padding: 32px 24px;
+    }
+    .bonus-card-title {
+        font-size: 19px;
+    }
+    .bonus-card-subtitle {
+        font-size: 15px;
+    }
+    .bonus-card-description {
+        font-size: 14px;
+    }
+    .bonus-cta-button {
+        font-size: 17px;
+        padding: 20px 40px;
+        width: 90%;
+    }
+    .bonus-cta-trustline {
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+}
+
 
 /* Target Audience / Testimonials Section */
 .video-carousel-section {
