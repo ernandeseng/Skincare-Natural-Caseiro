@@ -63,13 +63,13 @@
     {
       "id": "preview-quiz",
       "description": "A clean, modern UI of a skincare quiz titled 'Descubra Seu Tipo de Pele em 10 Minutos' with multiple-choice questions.",
-      "imageUrl": "https://picsum.photos/seed/quiz1/800/500",
+      "imageUrl": "https://i.imgur.com/HSH2MaE.jpeg",
       "imageHint": "skincare quiz UI"
     },
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://picsum.photos/seed/recipes2/800/500",
+      "imageUrl": "https://images.unsplash.com/photo-1581431886211-6b932f8367f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZWNpcGUlMjBwYWdlJTIwbGF5b3V0fGVufDB8fHx8MTc2MTQ4MTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe page layout"
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "preview-economy",
       "description": "A visual guide on how to prepare, conserve, and maximize ingredients, with visuals of stored herbs and labeled jars.",
-      "imageUrl": "https://picsum.photos/seed/economy4/800/500",
+      "imageUrl": "https://images.unsplash.com/photo-1751199484060-7845af711ec0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ingredient conservation"
     }
   ]
