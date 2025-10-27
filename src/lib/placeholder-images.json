@@ -69,19 +69,19 @@
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://i.imgur.com/v02MQeC.jpeg",
+      "imageUrl": "https://i.imgur.com/Zaeugi6.jpeg",
       "imageHint": "recipe page layout"
     },
     {
       "id": "preview-shopping",
       "description": "A grid layout of recipe cards with ingredient photos and cost breakdowns, under the title '15 Revolutionary Recipes Under R$50'.",
-      "imageUrl": "https://images.unsplash.com/photo-1623667322051-18662ce6334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyZWNpcGUlMjBncmlkJTIwZWJvb2t8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1570570329584-b41861c52c5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWNpcGUlMjBncmlkJTIwZWJvb2t8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recipe grid ebook"
     },
     {
       "id": "preview-routine",
       "description": "A step-by-step visual guide of a quick morning skincare routine, titled 'The 5 Golden Minutes Method', with timer icons.",
-      "imageUrl": "https://images.unsplash.com/photo-1620900128841-15543daaf4ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1627368019583-842150b38916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxza2luY2FyZSUyMHJvdXRpbmUlMjB0aW1lbGluZXxlbnwwfHx8fDE3NjE0ODE3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "skincare routine timeline"
     },
     {
@@ -93,13 +93,13 @@
     {
       "id": "preview-secrets",
       "description": "An exclusive-looking page from a guide titled 'Secrets Nobody Tells You', featuring 'hidden' ingredients with a premium, mysterious aesthetic.",
-      "imageUrl": "https://images.unsplash.com/photo-1723812792798-dfcc0cbf539f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzZWNyZXQlMjBndWlkZSUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1622551557192-a9f2a1386dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzZWNyZXQlMjBndWlkZSUyMHBhZ2V8ZW58MHx8fHwxNzYxNDgxNzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "secret guide page"
     },
     {
       "id": "preview-economy",
       "description": "A visual guide on how to prepare, conserve, and maximize ingredients, with visuals of stored herbs and labeled jars.",
-      "imageUrl": "https://images.unsplash.com/photo-1761125802333-d145773f4461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1751199484060-7845af711ec0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmdyZWRpZW50JTIwY29uc2VydmF0aW9ufGVufDB8fHx8MTc2MTUyNjAyMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "ingredient conservation"
     }
   ]
