@@ -52,6 +52,7 @@ const FaqItem = ({
   onClick: () => void;
 }) => {
   const [open, setOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const isDiagnosticQuestion = faq.question === "Como saber se vai funcionar para mim?";
 
@@ -66,30 +67,29 @@ const FaqItem = ({
         </svg>
       </button>
       <div
+        ref={contentRef}
         className="faq-answer"
         style={{
-          maxHeight: isActive ? `500px` : '0', // Simplified for now
+          maxHeight: isActive ? `${contentRef.current?.scrollHeight}px` : '0',
         }}
       >
-        <div className="p-4">
-            <p>
-            {faq.answer}
-            {isDiagnosticQuestion && (
-                <Dialog open={open} onOpenChange={setOpen}>
-                <DialogTrigger asChild>
-                    <button
-                    className="text-green-600 font-bold mt-2 hover:underline"
-                    >
-                    Faça nosso diagnóstico gratuito online!
-                    </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md md:max-w-lg">
-                    <SkinDiagnosticForm setOpen={setOpen} />
-                </DialogContent>
-                </Dialog>
-            )}
-            </p>
-        </div>
+        <p>
+          {faq.answer.split("Você também pode fazer nosso diagnóstico gratuito online!")[0]}
+          {isDiagnosticQuestion && (
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <button
+                  className="text-green-600 font-bold mt-2 hover:underline"
+                >
+                  Você também pode fazer nosso diagnóstico gratuito online!
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md md:max-w-lg">
+                <SkinDiagnosticForm setOpen={setOpen} />
+              </DialogContent>
+            </Dialog>
+          )}
+        </p>
       </div>
     </div>
   );
@@ -97,7 +97,7 @@ const FaqItem = ({
 
 
 export function Faq() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -109,6 +109,8 @@ export function Faq() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          (entry.target as HTMLElement).style.opacity = '1';
+          (entry.target as HTMLElement).style.transform = 'translateY(0)';
         }
       });
     }, { threshold: 0.1 });
