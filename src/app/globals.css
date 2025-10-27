@@ -1379,7 +1379,7 @@
 }
 
 .leaf-icon {
-  color: #3d7a4f;
+  color: #15803D;
   margin: 0 auto 20px;
   stroke-width: 2px;
   animation: leafFloat 3s ease-in-out infinite;
@@ -1399,7 +1399,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 42px;
   font-weight: 700;
-  color: #1a3a2e;
+  color: #15803D;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
   line-height: 1.2;
@@ -1407,7 +1407,7 @@
 
 .faq-subtitle {
   font-size: 18px;
-  color: #4a6b5a;
+  color: #4B5563;
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
@@ -1452,13 +1452,13 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #2d5f3f;
+  color: #15803D;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .faq-question:hover {
-  color: #3d7a4f;
+  color: #16A34A;
 }
 
 .faq-question::before {
@@ -1468,7 +1468,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: #3d7a4f;
+  background: #16A34A;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1487,7 +1487,7 @@
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  stroke: #3d7a4f;
+  stroke: #16A34A;
   stroke-width: 2.5px;
   fill: none;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1536,7 +1536,7 @@
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(135deg, #3d7a4f 0%, #2d5f3f 100%);
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -1692,12 +1692,12 @@
    ======================================== */
 
 .faq-question:focus-visible {
-  outline: 3px solid #3d7a4f;
+  outline: 3px solid #16A34A;
   outline-offset: 2px;
 }
 
 .faq-cta .cta-button:focus-visible {
-  outline: 3px solid #3d7a4f;
+  outline: 3px solid #16A34A;
   outline-offset: 4px;
 }
 
