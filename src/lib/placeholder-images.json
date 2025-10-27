@@ -69,7 +69,7 @@
     {
       "id": "preview-recipes",
       "description": "A page from a digital guide showing recipes for specific skin problems like dark spots and acne, with images of natural ingredients.",
-      "imageUrl": "https://i.imgur.com/Zaeugi6.jpeg",
+      "imageUrl": "https://i.imgur.com/9xjKNpD.jpeg",
       "imageHint": "recipe page layout"
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "preview-economy",
       "description": "A visual guide on how to prepare, conserve, and maximize ingredients, with visuals of stored herbs and labeled jars.",
-      "imageUrl": "https://i.imgur.com/wSSsaeZ.jpeg",
+      "imageUrl": "https://i.imgur.com/zdRjg7A.png",
       "imageHint": "ingredient conservation"
     }
   ]
