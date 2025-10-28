@@ -1,14 +1,17 @@
 
-import { Benefits } from "@/components/landing/benefits";
-import { Bonus } from "@/components/landing/bonus";
-import { Faq } from "@/components/landing/faq";
-import { FinalCall } from "@/components/landing/final-call";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
-import { Pricing } from "@/components/landing/pricing";
-import { Preview } from "@/components/landing/preview";
 import { SalesNotification } from "@/components/landing/sales-notification";
-import { TargetAudience } from "@/components/landing/target-audience";
+import dynamic from "next/dynamic";
+
+const Preview = dynamic(() => import('@/components/landing/preview').then(mod => mod.Preview));
+const Benefits = dynamic(() => import('@/components/landing/benefits').then(mod => mod.Benefits));
+const Bonus = dynamic(() => import('@/components/landing/bonus').then(mod => mod.Bonus));
+const TargetAudience = dynamic(() => import('@/components/landing/target-audience').then(mod => mod.TargetAudience));
+const Pricing = dynamic(() => import('@/components/landing/pricing').then(mod => mod.Pricing));
+const Faq = dynamic(() => import('@/components/landing/faq').then(mod => mod.Faq));
+const FinalCall = dynamic(() => import('@/components/landing/final-call').then(mod => mod.FinalCall));
+
 
 export default function Home() {
   return (

@@ -82,6 +82,7 @@ export function TargetAudience() {
   useEffect(() => {
     if (!api) return;
 
+    setCurrent(api.selectedScrollSnap());
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
@@ -101,13 +102,19 @@ export function TargetAudience() {
     
     api.on("select", onSelect);
     
+    // Auto-play the first video on mount
     const firstVideo = videoRefs.current[0];
     if(firstVideo) {
-      firstVideo.play().catch(error => console.error("Error playing first video:", error));
+      firstVideo.play().catch(error => {
+        // Autoplay with sound might be blocked, we already handle this by starting muted.
+        console.error("Error attempting to autoplay first video:", error);
+      });
     }
   
     return () => {
-      api.off("select", onSelect);
+      if (api) {
+        api.off("select", onSelect);
+      }
     };
   }, [api]);
 
@@ -149,7 +156,7 @@ export function TargetAudience() {
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
                       playsInline
-                      autoPlay
+                      autoPlay={index === 0} // Autoplay only the first video initially
                       muted
                       loop
                       className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
@@ -202,5 +209,3 @@ export function TargetAudience() {
     </section>
   );
 }
-
-

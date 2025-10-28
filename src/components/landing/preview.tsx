@@ -109,7 +109,7 @@ export function Preview() {
           <h2
             className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight"
             style={{
-              fontFamily: "Montserrat, sans-serif",
+              fontFamily: "var(--font-montserrat), sans-serif",
               background: 'linear-gradient(135deg, #15803D 0%, #16A34A 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -120,7 +120,7 @@ export function Preview() {
           <p
             className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600"
             style={{
-              fontFamily: "Montserrat, sans-serif",
+              fontFamily: "var(--font-montserrat), sans-serif",
               fontWeight: 500,
               lineHeight: 1.6,
             }}
@@ -147,7 +147,7 @@ export function Preview() {
                   <h3
                     className="text-2xl md:text-3xl font-bold max-w-2xl text-center"
                     style={{
-                      fontFamily: "Montserrat, sans-serif",
+                      fontFamily: "var(--font-montserrat), sans-serif",
                       color: "#15803D",
                       lineHeight: 1.3,
                       margin: "28px 0 16px",
@@ -179,7 +179,7 @@ export function Preview() {
                   <p
                     className="text-base md:text-lg max-w-xl text-center"
                     style={{
-                      fontFamily: "Montserrat, sans-serif",
+                      fontFamily: "var(--font-montserrat), sans-serif",
                       color: "#6B7280",
                       lineHeight: 1.6,
                     }}
@@ -245,5 +245,3 @@ export function Preview() {
     </section>
   );
 }
-
-    

@@ -1,7 +1,5 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -70,6 +68,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
   }
   html {
     scroll-behavior: smooth;
@@ -103,7 +102,7 @@
 }
 
 .logo-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 600; /* SemiBold */
   font-size: 18px;
   color: #15803D;
@@ -123,14 +122,14 @@
 }
 
 .timer-label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 500; /* Medium */
   font-size: 13px;
   color: #DC2626;
 }
 
 .timer-digits {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 700; /* Bold */
   font-size: 16px;
   color: #1F2937;
@@ -220,7 +219,7 @@
   left: 24px;
   background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 24px;
@@ -314,7 +313,7 @@
 .preview-cta-button {
   background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 20px;
   font-weight: 800;
   text-transform: uppercase;
@@ -510,7 +509,7 @@
     align-items: center;
     background: linear-gradient(135deg, #FBBF24, #F59E0B);
     color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 800;
     font-size: 14px;
     padding: 10px 28px;
@@ -527,7 +526,7 @@
 }
 
 .bonus-headline {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 900;
     font-size: 44px;
     color: #92400E;
@@ -536,7 +535,7 @@
 }
 
 .bonus-subheadline {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 600;
     font-size: 20px;
     color: #78350F;
@@ -583,7 +582,7 @@
     right: 24px;
     background: linear-gradient(135deg, #FBBF24, #F59E0B);
     color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 700;
     font-size: 13px;
     padding: 8px 20px;
@@ -615,7 +614,7 @@
 }
 
 .bonus-card-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 800;
     font-size: 22px;
     color: #92400E;
@@ -624,7 +623,7 @@
 }
 
 .bonus-card-subtitle {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 600;
     font-size: 17px;
     color: #15803D;
@@ -633,7 +632,7 @@
 }
 
 .bonus-card-description {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 400;
     font-size: 15px;
     color: #6B7280;
@@ -648,7 +647,7 @@
 }
 
 .bonus-card-original-value {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #9CA3AF;
@@ -657,7 +656,7 @@
 }
 
 .bonus-card-current-value {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 900;
     font-size: 26px;
     color: #16A34A;
@@ -674,7 +673,7 @@
 }
 
 .bonus-cta-pretext {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 600;
     font-size: 20px;
     color: #92400E;
@@ -684,7 +683,7 @@
 .bonus-cta-button {
     background: linear-gradient(135deg, #16A34A, #15803D);
     color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 800;
     font-size: 20px;
     padding: 24px 56px;
@@ -714,7 +713,7 @@
 }
 
 .bonus-cta-trustline {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 500;
     font-size: 14px;
     color: #6B7280;
@@ -884,7 +883,7 @@
 }
 
 .testimonials-cta-headline {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
     font-weight: 800;
     font-size: 32px;
     color: #15803D;
@@ -986,7 +985,7 @@
   gap: 8px;
   background: linear-gradient(135deg, #EF4444, #DC2626);
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1019,7 +1018,7 @@
 }
 
 .offer-headline {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 42px;
   font-weight: 900;
   text-align: center;
@@ -1037,7 +1036,7 @@
 }
 
 .offer-subheadline {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 22px;
   font-weight: 600;
   text-align: center;
@@ -1094,7 +1093,7 @@
 }
 
 .product-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 32px;
   font-weight: 800;
   color: #15803D;
@@ -1161,7 +1160,7 @@
 }
 
 .module-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #1F2937;
@@ -1192,7 +1191,7 @@
 }
 
 .bonus-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 24px;
   font-weight: 800;
   color: #92400E;
@@ -1237,7 +1236,7 @@
 }
 
 .bonus-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 17px;
   font-weight: 700;
   color: #1F2937;
@@ -1289,7 +1288,7 @@
 }
 
 .original-price {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 32px;
   font-weight: 400;
   color: #9CA3AF;
@@ -1319,7 +1318,7 @@
 }
 
 .current-price {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 72px;
   font-weight: 900;
   background: linear-gradient(135deg, #16A34A, #15803D);
@@ -1371,7 +1370,7 @@
 }
 
 .urgency-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 15px;
   font-weight: 700;
   color: #991B1B;
@@ -1400,7 +1399,7 @@
 }
 
 .timer-number {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 36px;
   font-weight: 900;
   line-height: 1;
@@ -1418,7 +1417,7 @@
   width: 100%;
   background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 24px;
   font-weight: 900;
   text-transform: uppercase;
@@ -1509,7 +1508,7 @@
 }
 
 .trust-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 15px;
   font-weight: 700;
   color: #1F2937;
@@ -1551,7 +1550,7 @@
 }
 
 .guarantee-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 24px;
   font-weight: 800;
   color: #1E3A8A;
@@ -1687,7 +1686,7 @@
 }
 
 .faq-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 42px;
   font-weight: 700;
   color: #15803D;
@@ -1740,7 +1739,7 @@
   align-items: center;
   cursor: pointer;
   text-align: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: #15803D;
@@ -1802,7 +1801,7 @@
 }
 
 .faq-answer p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: #4a4a4a;

@@ -21,7 +21,7 @@ export function Hero() {
         <div className="flex flex-col items-center text-center space-y-6">
           <h1 
             className="font-bold text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tighter max-w-4xl text-balance"
-            style={{ fontFamily: 'Montserrat, sans-serif', color: '#1F2937', letterSpacing: '-0.5px' }}
+            style={{ fontFamily: 'var(--font-montserrat), sans-serif', color: '#1F2937', letterSpacing: '-0.5px' }}
           >
             Pare de Gastar <span style={{ color: '#DC2626' }}>R$300/Mês</span> em Produtos de Pele que <span style={{ color: '#DC2626' }}>Não Funcionam</span>
           </h1>
@@ -33,7 +33,7 @@ export function Hero() {
 
           <p 
             className="max-w-3xl text-lg md:text-xl"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500, color: '#4B5563', lineHeight: 1.6 }}
+            style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: 500, color: '#4B5563', lineHeight: 1.6 }}
           >
             Descubra receitas naturais caseiras que transformam sua pele em <strong style={{color: '#15803D'}}>30 dias</strong> - <strong style={{color: '#15803D'}}>sem químicas</strong> agressivas, sem gastar fortunas, apenas <strong style={{color: '#15803D'}}>ingredientes que você já tem</strong> em casa.
           </p>

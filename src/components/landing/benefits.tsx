@@ -54,13 +54,13 @@ export function Benefits() {
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
           <h2 
             className="text-3xl md:text-5xl font-extrabold text-[#15803D]" 
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
           >
             Por Que Mais de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16A34A] to-[#15803D]">5.000 Mulheres</span> Escolheram o Protocolo Anti-Indústria
           </h2>
           <p 
             className="max-w-3xl text-lg md:text-xl text-[#4B5563]"
-            style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500 }}
+            style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: 500 }}
           >
             Mais do que receitas naturais — você está investindo em <strong className="text-[#15803D]">autoestima</strong>, <strong className="text-[#15803D]">liberdade financeira</strong> e <strong className="text-[#15803D]">conhecimento</strong> para a vida toda.
           </p>
@@ -88,7 +88,7 @@ export function Benefits() {
               
               <h3 
                 className="text-xl font-bold text-[#1F2937] mb-3"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
               >
                 {benefit.title}
               </h3>
