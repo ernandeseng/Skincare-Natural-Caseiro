@@ -100,7 +100,7 @@ export function Bonus() {
             Todos esses bônus são seus de presente ao garantir acesso hoje
           </p>
           <a href="#pricing">
-            <Button size="xl" className="bonus-cta-button group text-[15px] md:text-xl">
+            <Button size="xl" className="bonus-cta-button group text-sm md:text-xl">
               QUERO TODOS OS BÔNUS AGORA <span className="bonus-cta-arrow">→</span>
             </Button>
           </a>
