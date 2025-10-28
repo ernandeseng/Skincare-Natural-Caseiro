@@ -675,7 +675,7 @@
 .bonus-cta-pretext {
     font-family: var(--font-montserrat), sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 15px;
     color: #92400E;
     margin-bottom: 24px;
 }
@@ -1420,7 +1420,7 @@
   background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
   color: #FFFFFF;
   font-family: var(--font-montserrat), sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
