@@ -54,7 +54,7 @@ export function Hero() {
              <a href="#pricing" className="w-full max-w-md md:max-w-lg">
                 <Button
                     size="xl"
-                    className="hero-cta-button w-full rounded-full text-white font-bold text-lg uppercase tracking-wider py-5 px-12 group"
+                    className="hero-cta-button w-full rounded-full text-white font-bold text-base md:text-lg uppercase tracking-wider py-5 px-12 group"
                 >
                     Quero Transformar Minha Pele
                     <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
