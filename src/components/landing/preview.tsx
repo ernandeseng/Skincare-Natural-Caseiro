@@ -213,7 +213,7 @@ export function Preview() {
            <a href="#pricing">
               <Button
                   size="xl"
-                  className="preview-cta-button w-full max-w-lg text-base md:text-xl"
+                  className="preview-cta-button w-full max-w-lg text-[15px] md:text-xl"
               >
                   Quero Acesso Completo Agora
                   <span className="preview-cta-button-icon">→</span>
