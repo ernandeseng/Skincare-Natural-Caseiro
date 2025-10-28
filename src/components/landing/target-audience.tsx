@@ -198,7 +198,7 @@ export function TargetAudience() {
             </p>
             <a href="#pricing" className="w-full flex justify-center">
                 <Button size="xl" className="testimonials-cta-button group text-base md:text-lg">
-                    QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+                    COMEÇAR TRANSFORMAÇÃO
                     <ArrowRight className="ml-2 transition-transform group-hover:translate-x-2" />
                 </Button>
             </a>
