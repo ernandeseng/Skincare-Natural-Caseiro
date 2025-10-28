@@ -757,9 +757,9 @@
         font-size: 14px;
     }
     .bonus-cta-button {
-        font-size: 17px;
+        font-size: 16px;
         padding: 20px 40px;
-        width: 90%;
+        width: 100%;
     }
     .bonus-cta-trustline {
       flex-direction: column;
@@ -780,6 +780,7 @@
   overflow: hidden;
   border-radius: 1.5rem; /* 24px */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 9 / 16;
 }
 
 .video-overlay {
@@ -926,7 +927,8 @@
     }
     .testimonials-cta-button {
         width: 100%;
-        padding: 20px 40px;
+        font-size: 16px;
+        padding: 20px 32px;
     }
 }
 
@@ -1617,7 +1619,7 @@
   }
 
   .bonus-section {
-    padding: 24px 20px;
+    padding: 24px;
   }
 
   .pricing-section {

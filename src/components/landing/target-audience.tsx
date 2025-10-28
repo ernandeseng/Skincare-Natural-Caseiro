@@ -31,7 +31,7 @@ const testimonials = [
     location: "Rio de Janeiro, RJ",
   },
   {
-    videoUrl: "https://www.dropbox.com/scl/fi/6j6mjj48l8c8zptr8ub0u/573e8a5d-5b6c-4526-a6a0-ba3d7737a5cc.mp4?rlkey=ps1a3vwtnx890vdutzct84oy8&st=h5z3wpy3&raw=1",
+    videoUrl: "https://www.dropbox.com/scl/fi/6j6mjj48l8c8zptr8ub0u/573e8a5d-5b6c-4526-a6a0-ba3d7737a5cc.mp4?rlkey=ps1a3vwtnx890vdutzct84oy8&raw=1",
     name: "Carla B.",
     location: "Curitiba, PR",
   },
@@ -81,37 +81,34 @@ export function TargetAudience() {
 
   useEffect(() => {
     if (!api) return;
-
-    const onSelect = () => {
+  
+    const onSelect = (api: CarouselApi) => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-
+  
       videoRefs.current.forEach((video, index) => {
         if (video) {
-          if (index === newIndex) {
-            video.currentTime = 0;
-            video.play().catch(error => console.error("Error trying to play video on select:", error));
-            setIsPlaying(true);
-          } else {
+          if (index !== newIndex) {
             video.pause();
+          } else {
+             // Only play if it's not the initial load or if user has interacted
+             if (!isMuted) {
+                video.play().catch(error => console.error("Error trying to play video on select:", error));
+                setIsPlaying(true);
+             }
           }
         }
       });
     };
-    
+  
     api.on("select", onSelect);
-    api.on("reInit", onSelect);
-
-    // Set initial state without auto-playing
     setCurrent(api.selectedScrollSnap());
   
     return () => {
-      if (api) {
-        api.off("select", onSelect);
-        api.off("reInit", onSelect);
-      }
+      api.off("select", onSelect);
     };
-  }, [api]);
+  }, [api, isMuted]);
+
 
 
   return (
@@ -133,7 +130,7 @@ export function TargetAudience() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                 <div className="video-container aspect-[9/16]" onClick={() => handleVideoClick(index)}>
+                 <div className="video-container" onClick={() => handleVideoClick(index)}>
                     {isMuted && (
                       <div className="video-overlay">
                         <div className="text-center">
@@ -151,8 +148,9 @@ export function TargetAudience() {
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
                       playsInline
-                      muted
+                      muted={isMuted}
                       loop
+                      preload="metadata"
                       className="rounded-lg shadow-2xl object-cover w-full h-full mx-auto drop-shadow-xl"
                     >
                       Your browser does not support the video tag.
