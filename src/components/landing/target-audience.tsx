@@ -46,7 +46,7 @@ export function TargetAudience() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const togglePlayPause = (index: number) => {
@@ -82,17 +82,16 @@ export function TargetAudience() {
   useEffect(() => {
     if (!api) return;
 
-    setCurrent(api.selectedScrollSnap());
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-      setIsPlaying(true); // Assume playing when slide changes
 
       videoRefs.current.forEach((video, index) => {
         if (video) {
           if (index === newIndex) {
             video.currentTime = 0;
             video.play().catch(error => console.error("Error trying to play video on select:", error));
+            setIsPlaying(true);
           } else {
             video.pause();
           }
@@ -101,19 +100,15 @@ export function TargetAudience() {
     };
     
     api.on("select", onSelect);
-    
-    // Auto-play the first video on mount
-    const firstVideo = videoRefs.current[0];
-    if(firstVideo) {
-      firstVideo.play().catch(error => {
-        // Autoplay with sound might be blocked, we already handle this by starting muted.
-        console.error("Error attempting to autoplay first video:", error);
-      });
-    }
+    api.on("reInit", onSelect);
+
+    // Set initial state without auto-playing
+    setCurrent(api.selectedScrollSnap());
   
     return () => {
       if (api) {
         api.off("select", onSelect);
+        api.off("reInit", onSelect);
       }
     };
   }, [api]);
@@ -138,7 +133,7 @@ export function TargetAudience() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                 <div className="video-container" onClick={() => handleVideoClick(index)}>
+                 <div className="video-container aspect-[9/16]" onClick={() => handleVideoClick(index)}>
                     {isMuted && (
                       <div className="video-overlay">
                         <div className="text-center">
@@ -156,10 +151,9 @@ export function TargetAudience() {
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
                       playsInline
-                      autoPlay={index === 0} // Autoplay only the first video initially
                       muted
                       loop
-                      className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
+                      className="rounded-lg shadow-2xl object-cover w-full h-full mx-auto drop-shadow-xl"
                     >
                       Your browser does not support the video tag.
                     </video>
