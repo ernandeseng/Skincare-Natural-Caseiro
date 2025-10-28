@@ -757,7 +757,7 @@
         font-size: 14px;
     }
     .bonus-cta-button {
-        font-size: 16px;
+        font-size: 15px;
         padding: 20px 40px;
         width: 100%;
     }
@@ -927,7 +927,7 @@
     }
     .testimonials-cta-button {
         width: 100%;
-        font-size: 16px;
+        font-size: 15px;
         padding: 20px 32px;
     }
 }
@@ -1614,7 +1614,7 @@
   }
 
   .cta-button {
-    font-size: 18px;
+    font-size: 16px;
     padding: 24px 32px;
   }
 
