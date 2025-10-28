@@ -82,11 +82,10 @@ export function TargetAudience() {
   useEffect(() => {
     if (!api) return;
 
-    setCurrent(api.selectedScrollSnap());
     const onSelect = () => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-      setIsPlaying(true); // Assume playing when slide changes
+      setIsPlaying(true); 
 
       videoRefs.current.forEach((video, index) => {
         if (video) {
@@ -101,12 +100,12 @@ export function TargetAudience() {
     };
     
     api.on("select", onSelect);
+    setCurrent(api.selectedScrollSnap());
     
-    // Auto-play the first video on mount
+    
     const firstVideo = videoRefs.current[0];
     if(firstVideo) {
       firstVideo.play().catch(error => {
-        // Autoplay with sound might be blocked, we already handle this by starting muted.
         console.error("Error attempting to autoplay first video:", error);
       });
     }
@@ -198,7 +197,7 @@ export function TargetAudience() {
                 sua pele com o Protocolo Anti-Indústria
             </p>
             <a href="#pricing" className="w-full flex justify-center">
-                <Button size="xl" className="testimonials-cta-button group">
+                <Button size="xl" className="testimonials-cta-button group text-base md:text-lg">
                     QUERO COMEÇAR MINHA TRANSFORMAÇÃO
                     <ArrowRight className="ml-2 transition-transform group-hover:translate-x-2" />
                 </Button>

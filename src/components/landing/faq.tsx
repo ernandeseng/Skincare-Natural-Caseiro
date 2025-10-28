@@ -156,7 +156,7 @@ export function Faq() {
         
         <div className="faq-cta">
            <a href="#pricing">
-              <button className="cta-button justify-center">
+              <button className="cta-button justify-center text-base md:text-lg">
                 Quero Começar Minha Transformação
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M5 12h14m-7-7 7 7-7 7" />

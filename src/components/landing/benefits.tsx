@@ -106,7 +106,7 @@ export function Benefits() {
             <a href="#pricing">
                 <Button
                     size="xl"
-                    className="benefits-cta-button text-white font-bold uppercase tracking-wider group"
+                    className="benefits-cta-button text-white font-bold uppercase tracking-wider group text-base"
                 >
                     Quero Começar Agora
                     <ArrowRight className="ml-2 inline-block benefits-cta-button-icon" />
