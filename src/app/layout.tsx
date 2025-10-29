@@ -43,7 +43,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <Script id="meta-pixel" strategy="afterInteractive">
+      </head>
+      <body className="font-body antialiased">
+        {children}
+        <Toaster />
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             window.pixelId = "68f2fb0c8f68a5038eccdcf0";
             var a = document.createElement("script");
@@ -55,15 +59,12 @@ export default function RootLayout({
         </Script>
         <Script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          strategy="lazyOnload"
           data-utmify-prevent-xcod-sck
           data-utmify-prevent-subids
           async
           defer
         ></Script>
-      </head>
-      <body className="font-body antialiased">
-        {children}
-        <Toaster />
       </body>
     </html>
   );
