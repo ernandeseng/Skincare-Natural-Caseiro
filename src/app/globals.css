@@ -1,5 +1,6 @@
 
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -759,7 +760,6 @@
         font-size: 16px;
         padding: 20px 40px;
         width: 90%;
-        justify-content: center;
     }
     .bonus-cta-trustline {
       flex-direction: column;
@@ -1790,16 +1790,15 @@
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0 28px;
 }
 
-.faq-question.active + .faq-answer {
-  max-height: 500px;
-  padding: 0 28px 24px 28px;
+.faq-answer.active {
+  grid-template-rows: 1fr;
+  padding-bottom: 24px;
 }
 
 .faq-answer p {
@@ -1943,8 +1942,8 @@
     padding: 0 20px;
   }
 
-  .faq-question.active + .faq-answer {
-    padding: 0 20px 20px;
+  .faq-answer.active {
+    padding-bottom: 20px;
   }
 
   .faq-answer p {
