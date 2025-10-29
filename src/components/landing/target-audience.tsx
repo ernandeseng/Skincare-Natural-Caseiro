@@ -31,7 +31,7 @@ const testimonials = [
     location: "Rio de Janeiro, RJ",
   },
   {
-    videoUrl: "https://www.dropbox.com/scl/fi/6j6mjj48l8c8zptr8ub0u/573e8a5d-5b6c-4526-a6a0-ba3d7737a5cc.mp4?rlkey=ps1a3vwtnx890vdutzct84oy8&st=h5z3wpy3&raw=1",
+    videoUrl: "https://www.dropbox.com/scl/fi/6j6mjj48l8c8zptr8ub0u/573e8a5d-5b6c-4526-a6a0-ba3d7737a5cc.mp4?rlkey=ps1a3vwtnx890vdutzct84oy8&raw=1",
     name: "Carla B.",
     location: "Curitiba, PR",
   },
@@ -46,7 +46,7 @@ export function TargetAudience() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const togglePlayPause = (index: number) => {
@@ -82,40 +82,33 @@ export function TargetAudience() {
   useEffect(() => {
     if (!api) return;
 
-    const onSelect = () => {
+    const onSelect = (api: CarouselApi) => {
       const newIndex = api.selectedScrollSnap();
       setCurrent(newIndex);
-      setIsPlaying(true); 
-
+  
       videoRefs.current.forEach((video, index) => {
         if (video) {
-          if (index === newIndex) {
-            video.currentTime = 0;
-            video.play().catch(error => console.error("Error trying to play video on select:", error));
-          } else {
+          if (index !== newIndex) {
             video.pause();
+          } else {
+             // Only play if it's not the initial load or if user has interacted
+             if (!isMuted) {
+                video.play().catch(error => console.error("Error trying to play video on select:", error));
+                setIsPlaying(true);
+             }
           }
         }
       });
     };
-    
+  
     api.on("select", onSelect);
     setCurrent(api.selectedScrollSnap());
-    
-    
-    const firstVideo = videoRefs.current[0];
-    if(firstVideo) {
-      firstVideo.play().catch(error => {
-        console.error("Error attempting to autoplay first video:", error);
-      });
-    }
   
     return () => {
-      if (api) {
-        api.off("select", onSelect);
-      }
+      api.off("select", onSelect);
     };
-  }, [api]);
+  }, [api, isMuted]);
+
 
 
   return (
@@ -155,10 +148,10 @@ export function TargetAudience() {
                       ref={(el) => (videoRefs.current[index] = el)}
                       src={testimonial.videoUrl}
                       playsInline
-                      autoPlay={index === 0} // Autoplay only the first video initially
-                      muted
+                      muted={isMuted}
                       loop
-                      className="rounded-lg shadow-2xl object-cover aspect-[9/16] w-full mx-auto drop-shadow-xl"
+                      preload="metadata"
+                      className="rounded-lg shadow-2xl object-cover w-full h-full mx-auto drop-shadow-xl"
                     >
                       Your browser does not support the video tag.
                     </video>
